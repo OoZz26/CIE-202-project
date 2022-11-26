@@ -29,26 +29,26 @@ void opAddLine::Execute()
 	pUI->ClearStatusBar();
 
 	//Preapre all Line parameters
-	GfxInfo RectGfxInfo;
+	GfxInfo LGfxInfo;
 
 	//get drawing, filling colors and pen width from the interface
-	RectGfxInfo.DrawClr = pUI->getCrntDrawColor();
-	RectGfxInfo.FillClr = pUI->getCrntFillColor();
-	RectGfxInfo.BorderWdth = pUI->getCrntPenWidth();
+	LGfxInfo.DrawClr = pUI->getCrntDrawColor();
+	LGfxInfo.FillClr = pUI->getCrntFillColor();
+	LGfxInfo.BorderWdth = pUI->getCrntPenWidth();
 
 
-	RectGfxInfo.isFilled = false;	//default is not filled
-	RectGfxInfo.isSelected = false;	//defualt is not selected
+	LGfxInfo.isFilled = false;	//default is not filled
+	LGfxInfo.isSelected = false;	//defualt is not selected
 
 
 	//Create a rectangle with the above parameters
-	//Line* R = new Line(P1, P2, RectGfxInfo);
+	Line* R = new Line(P1, P2, LGfxInfo);
 
 	//Get a pointer to the graph
 	Graph* pGr = pControl->getGraph();
 
 	//Add the Line to the list of shapes
-	//pGr->Addshape(R);
+	pGr->Addshape(R);
 
 }
 

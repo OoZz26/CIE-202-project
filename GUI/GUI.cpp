@@ -276,7 +276,7 @@ void GUI::DrawTri(Point P1, Point P2,Point P3, GfxInfo TriGfxInfo) const
 }
 
 
-void GUI::DrawL(Point P1, Point P2, GfxInfo LGfxInfo) const
+void GUI::DrawL(Point P1, Point P2,GfxInfo LGfxInfo) const
 {
 	color DrawingClr;
 	if (LGfxInfo.isSelected)	//shape is selected
@@ -317,7 +317,7 @@ void GUI::DrawSQU(Point P1, Point P2, GfxInfo SGfxInfo) const
 	else
 		style = FRAME;
 	//erorr no drawsquare in smugraphics
-	pWind->DrawRectangle(P1.x, P1.y, P2.x, P2.y, style);
+	pWind->DrawLine(P1.x, P1.y, P2.x, P2.y, style);
 
 
 }

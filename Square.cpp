@@ -11,6 +11,6 @@ Square::~Square()
 
 void Square::Draw(GUI* pUI) const
 {
-	//Call Output::DrawSquare to draw a rectangle on the screen	
+	//Call Output::DrawSquare to draw a square on the screen	
 	pUI->DrawSQU(Point1, Point2, ShpGfxInfo);
 }

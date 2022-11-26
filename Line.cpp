@@ -11,6 +11,6 @@ Line::~Line()
 
 void Line::Draw(GUI* pUI) const
 {
-	//Call Output::DrawRect to draw a rectangle on the screen	
+	//Call Output::DrawL to draw a line on the screen	
 	pUI->DrawL(start, end, ShpGfxInfo);
 }
