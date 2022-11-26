@@ -1,5 +1,6 @@
 #include "GUI.h"
 
+
 GUI::GUI()
 {
 	//Initialize user interface parameters
@@ -90,6 +91,10 @@ operationType GUI::GetUseroperation() const
 			case ICON_RECT: return DRAW_RECT;
 			case ICON_CIRC: return DRAW_CIRC;
 			case ICON_EXIT: return EXIT;
+			case ICON_Tri: return DRAW_TRI;
+			case ICON_Line: return DRAW_LINE;
+			case ICON_SQU: return DRAW_SQU;
+			
 
 			default: return EMPTY;	//A click on empty place in desgin toolbar
 			}
@@ -159,6 +164,9 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_RECT] = "images\\MenuIcons\\Menu_Rect.jpg";
 	MenuIconImages[ICON_CIRC] = "images\\MenuIcons\\Menu_Circ.jpg";
 	MenuIconImages[ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
+	MenuIconImages[ICON_Tri] = "images\\MenuIcons\\Menu_Tri.jpg";
+	MenuIconImages[ICON_Line] = "images\\MenuIcons\\Menu_Line.jpg";
+	MenuIconImages[ICON_SQU] = "images\\MenuIcons\\Menu_Square.jpg";
 
 	//TODO: Prepare images for each menu icon and add it to the list
 
@@ -244,7 +252,96 @@ void GUI::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const
 	pWind->DrawRectangle(P1.x, P1.y, P2.x, P2.y, style);
 
 }
+void GUI::DrawTri(Point P1, Point P2,Point P3, GfxInfo TriGfxInfo) const
+{
+	color DrawingClr;
+	if (TriGfxInfo.isSelected)	//shape is selected
+		DrawingClr = HighlightColor; //shape should be drawn highlighted
+	else
+		DrawingClr = TriGfxInfo.DrawClr;
 
+	pWind->SetPen(DrawingClr, TriGfxInfo.BorderWdth);	//Set Drawing color & width
+
+	drawstyle style;
+	if (TriGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(TriGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+
+	pWind->DrawTriangle(P1.x, P1.y, P2.x, P2.y,P3.x,P3.y, style);
+
+}
+
+
+void GUI::DrawL(Point P1, Point P2, GfxInfo LGfxInfo) const
+{
+	color DrawingClr;
+	if (LGfxInfo.isSelected)	//shape is selected
+		DrawingClr = HighlightColor; //shape should be drawn highlighted
+	else
+		DrawingClr = LGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, LGfxInfo.BorderWdth);	//Set Drawing color & width
+
+	drawstyle style;
+	if (LGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(LGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+
+	pWind->DrawLine(P1.x, P1.y, P2.x, P2.y, style);
+
+}
+void GUI::DrawSQU(Point P1, Point P2, GfxInfo SGfxInfo) const
+{
+	color DrawingClr;
+	if (SGfxInfo.isSelected)	//shape is selected
+		DrawingClr = HighlightColor; //shape should be drawn highlighted
+	else
+		DrawingClr = SGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, SGfxInfo.BorderWdth);	//Set Drawing color & width
+
+	drawstyle style;
+	if (SGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(SGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+	//erorr no drawsquare in smugraphics
+	pWind->DrawRectangle(P1.x, P1.y, P2.x, P2.y, style);
+
+
+}
+
+//void GUI::DrawELL(Point P1, Point P2, GfxInfo EGfxInfo) const
+//{
+//	color DrawingClr;
+//	if (EGfxInfo.isSelected)	//shape is selected
+//		DrawingClr = HighlightColor; //shape should be drawn highlighted
+//	else
+//		DrawingClr = EGfxInfo.DrawClr;
+//
+//	pWind->SetPen(DrawingClr, EGfxInfo.BorderWdth);	//Set Drawing color & width
+//
+//	drawstyle style;
+//	if (EGfxInfo.isFilled)
+//	{
+//		style = FILLED;
+//		pWind->SetBrush(EGfxInfo.FillClr);
+//	}
+//	else
+//		style = FRAME;
+//	//erorr no drawsquare in smugraphics
+//	pWind->DrawEllipse(P1.x, P1.y, P2.x, P2.y, style);
 
 //////////////////////////////////////////////////////////////////////////////////////////
 GUI::~GUI()

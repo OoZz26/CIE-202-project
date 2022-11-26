@@ -1,5 +1,9 @@
 #include "controller.h"
 #include "operations\opAddRect.h"
+#include"opAddLine.h"
+#include"opAddTriangle.h"
+#include"opAddSquare.h"
+
 
 
 //Constructor
@@ -31,9 +35,19 @@ operation* controller::createOperation(operationType OpType)
 			break;
 
 		case DRAW_LINE:
-			///create AddLineoperation here
-
+			pOp = new opAddLine(this);
 			break;
+		case DRAW_TRI:
+			pOp = new opAddTriangle(this);
+			break;
+
+		case DRAW_SQU:
+			pOp = new opAddSquare(this);
+			break;
+
+
+
+			
 
 		case EXIT:
 			///create Exitoperation here

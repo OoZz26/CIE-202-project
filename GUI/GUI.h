@@ -1,7 +1,7 @@
 #pragma once
 
 
-
+#include<iostream>
 #include "..\CMUgraphicsLib\CMUgraphics.h"
 #include "..\Defs.h"
 
@@ -43,8 +43,11 @@ class GUI
 		//TODO: Add more icons names here
 
 		ICON_EXIT,		//Exit icon
+		ICON_Tri,
+		ICON_Line,
+		ICON_SQU,
 
-		DRAW_ICON_COUNT		//no. of menu icons ==> This should be the last line in this enum
+		DRAW_ICON_COUNT,		//no. of menu icons ==> This should be the last line in this enum
 
 	};
 
@@ -103,6 +106,11 @@ public:
 
 	// -- shapes Drawing functions
 	void DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const;  //Draw a rectangle
+	void DrawTri(Point P1, Point P2,Point P3, GfxInfo TriGfxInfo) const;  //Draw a Trinangle
+	void DrawL(Point P1, Point P2, GfxInfo LGfxInfo) const;  //Draw a Line
+	void DrawSQU(Point P1, Point P2, GfxInfo SGfxInfo) const;  //Draw a Square
+	void DrawELL(Point P1, Point P2, GfxInfo EGfxInfo) const;  //Draw a Ellipse
+
 
 	///Make similar functions for drawing all other shapes.
 
