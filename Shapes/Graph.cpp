@@ -26,7 +26,7 @@ void Graph::load(ifstream& Infile) {
 		exit(1);
 	}
 	for (int i = 0; i < shapesList.size(); i++) {
-		Infile >> shapesList[i];
+	/*	Infile >> shapesList[i];*/
 	}
 	Infile.close();
 	// using Draw(GUI * pUI) const to draw all the shapes saved to the file 
