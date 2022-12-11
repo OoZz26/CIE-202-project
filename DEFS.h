@@ -5,11 +5,12 @@
 //This file contais some global constants and definitions to be used in the project.
 enum operationType //The operations supported (you can add more if needed)
 {
+	DRAW_CIRC,		//Draw Circle
 	DRAW_LINE,		//Draw Line
 	DRAW_RECT,		//Draw Rectangle
 	DRAW_SQU,		//Draw Square
+	DRAW_OVAL,		//DRAW OVAL
 	DRAW_TRI,		//Draw Triangle
-	DRAW_CIRC,		//Draw Circle
 	CHNG_DRAW_CLR,	//Change the drawing color
 	CHNG_FILL_CLR,	//Change the filling color
 	CHNG_BK_CLR,	//Change background color

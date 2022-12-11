@@ -14,7 +14,9 @@ protected:
 
 public:
 	shape(GfxInfo shapeGfxInfo);
+
 	virtual ~shape() {}
+	int distance(int x1,int y1,int x2,int y2);
 	void SetSelected(bool s);	//select/unselect the shape
 	bool IsSelected() const;	//check whether fig is selected
 
@@ -22,6 +24,7 @@ public:
 	
 	void ChngDrawClr(color Dclr);	//changes the shape's drawing color
 	void ChngFillClr(color Fclr);	//changes the shape's filling color
+	/*virtual bool INSHAPE(Point test) = 0;*/
 
 	///The following functions should be supported by the shape class
 	///It should be overridden by each inherited shape

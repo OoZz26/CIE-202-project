@@ -11,6 +11,6 @@ Triangle::~Triangle()
 
 void Triangle::Draw(GUI* pUI) const
 {
-	//Call Output::DrawRect to draw a rectangle on the screen	
+	//Call Output::DrawTri to draw a Triangle on the screen	
 	pUI->DrawTri(Corner1, Corner2,Corner3, ShpGfxInfo);
 }

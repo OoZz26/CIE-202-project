@@ -46,6 +46,7 @@ class GUI
 		ICON_Tri,
 		ICON_Line,
 		ICON_SQU,
+		ICON_OVAL,
 
 		DRAW_ICON_COUNT,		//no. of menu icons ==> This should be the last line in this enum
 
@@ -109,7 +110,9 @@ public:
 	void DrawTri(Point P1, Point P2,Point P3, GfxInfo TriGfxInfo) const;  //Draw a Trinangle
 	void DrawL(Point P1, Point P2, GfxInfo LGfxInfo) const;  //Draw a Line
 	void DrawSQU(Point P1, Point P2, GfxInfo SGfxInfo) const;  //Draw a Square
-	void DrawELL(Point P1, Point P2, GfxInfo EGfxInfo) const;  //Draw a Ellipse
+	void DrawOVAL(Point P1, Point P2, GfxInfo EGfxInfo) const;  //Draw a Ellipse
+	void DrawCircle(Point P1, int raduis, GfxInfo CGfxInfo) const;  //Draw a circle
+	void DrawRPolygon(Point P1, Point P2, GfxInfo REGfxInfo) const;  //Draw a Regular Polygon
 
 
 	///Make similar functions for drawing all other shapes.

@@ -128,6 +128,7 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Circle.cpp" />
     <ClCompile Include="CMUgraphicsLib\auxil.cpp" />
     <ClCompile Include="CMUgraphicsLib\CMUgraphics.cpp" />
     <ClCompile Include="CMUgraphicsLib\image.cpp" />
@@ -167,10 +168,14 @@
     <ClCompile Include="controller.cpp" />
     <ClCompile Include="Line.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="opAddCircle.cpp" />
     <ClCompile Include="opAddLine.cpp" />
+    <ClCompile Include="opAddOval.cpp" />
     <ClCompile Include="opAddSquare.cpp" />
     <ClCompile Include="operations\opAddRect.cpp" />
     <ClCompile Include="opAddTriangle.cpp" />
+    <ClCompile Include="opSelect.cpp" />
+    <ClCompile Include="Oval.cpp" />
     <ClCompile Include="RegularPolygon.cpp" />
     <ClCompile Include="Shapes\Graph.cpp" />
     <ClCompile Include="Shapes\Shape.cpp" />
@@ -179,6 +184,7 @@
     <ClCompile Include="Triangle.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Circle.h" />
     <ClInclude Include="CMUgraphicsLib\auxil.h" />
     <ClInclude Include="CMUgraphicsLib\CMUgraphics.h" />
     <ClInclude Include="CMUgraphicsLib\colors.h" />
@@ -203,11 +209,15 @@
     <ClInclude Include="controller.h" />
     <ClInclude Include="DEFS.h" />
     <ClInclude Include="Line.h" />
+    <ClInclude Include="opAddCircle.h" />
     <ClInclude Include="opAddLine.h" />
+    <ClInclude Include="opAddOval.h" />
     <ClInclude Include="opAddSquare.h" />
     <ClInclude Include="operations\opAddRect.h" />
     <ClInclude Include="operations\operation.h" />
     <ClInclude Include="opAddTriangle.h" />
+    <ClInclude Include="opSelect.h" />
+    <ClInclude Include="Oval.h" />
     <ClInclude Include="RegularPolygon.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Shapes\Graph.h" />
