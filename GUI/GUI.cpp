@@ -6,22 +6,29 @@ GUI::GUI()
 	InterfaceMode = MODE_DRAW;
 
 	width = 1300;
-	height = 700;
+	height = 600;
 	wx = 5;
 	wy = 5;
 
 
 	StatusBarHeight = 50;
+	StatusBarWidth = 1020;
 	ToolBarHeight = 50;
 	MenuIconWidth = 80;
 
 	DrawColor = BLUE;	//default Drawing color
 	FillColor = GREEN;	//default Filling color
-	MsgColor = BLACK;		//Messages color
+	MsgColor = WHITE;		//Messages color
 	BkGrndColor = WHITE;	//Background color
 	HighlightColor = MAGENTA;	//This color should NOT be used to draw shapes. use if for highlight only
-	StatusBarColor = LIGHTSEAGREEN;
+	StatusBarColor = BLACK;
+	StatusBarRedPa = RED; //colors of color palette displayed in the status bar
+	StatusBarBluePa = BLUE;
+	StatusBarBlackPa = BLACK;
+	StatusBarYellowPa = YELLOW;
+	StatusBarGreenPa = GREEN;
 	PenWidth = 3;	//default width of the shapes frames
+	message = "COLOR PALETTE";
 
 
 	//Create the output window
@@ -31,6 +38,12 @@ GUI::GUI()
 
 	CreateDrawToolBar();
 	CreateStatusBar();
+	CreateColorPalette();
+	CreateStatusBarRedPa();
+	CreateStatusBarBluePa();
+	CreateStatusBarBlackPa();
+	CreateStatusBarYellowPa();
+	CreateStatusBarGreenPa();
 }
 
 
@@ -134,7 +147,67 @@ void GUI::CreateStatusBar() const
 {
 	pWind->SetPen(StatusBarColor, 1);
 	pWind->SetBrush(StatusBarColor);
-	pWind->DrawRectangle(0, height - StatusBarHeight, width, height);
+	pWind->DrawRectangle(0, height - StatusBarHeight, StatusBarWidth, height);// main status bar rectangle
+}
+color GUI::CreateColorPalette() const
+{
+	int x, y;
+	pWind->WaitMouseClick(x, y);
+	if ((y > height - StatusBarHeight) && (y < height))
+	{
+		if ((x > StatusBarWidth) && (x < StatusBarWidth + 50)) 
+		{
+			return RED;
+		}
+		else if ((x > StatusBarWidth + 50) && (x < StatusBarWidth + 100))
+		{
+			return BLUE;
+		}
+		else if ((x > StatusBarWidth + 100) && (x < StatusBarWidth + 150)) 
+		{
+			return BLACK;
+		}
+		else if ((x > StatusBarWidth + 150) && (x < StatusBarWidth + 200)) 
+		{
+			return YELLOW;
+		}
+		else if ((x > StatusBarWidth + 200) && (x < width)) 
+		{
+			return GREEN;
+		}
+	}
+	
+}
+
+void GUI::CreateStatusBarRedPa() const
+{
+	pWind->SetPen(StatusBarRedPa, 1);
+	pWind->SetBrush(StatusBarRedPa);
+	pWind->DrawRectangle(StatusBarWidth, height - StatusBarHeight, StatusBarWidth+50, height);// main status bar rectangle
+}
+void GUI::CreateStatusBarBluePa() const
+{
+	pWind->SetPen(StatusBarBluePa, 1);
+	pWind->SetBrush(StatusBarBluePa);
+	pWind->DrawRectangle(StatusBarWidth+50, height - StatusBarHeight, StatusBarWidth +100, height);// main status bar rectangle
+}
+void GUI::CreateStatusBarBlackPa() const
+{
+	pWind->SetPen(StatusBarBlackPa, 1);
+	pWind->SetBrush(StatusBarBlackPa);
+	pWind->DrawRectangle(StatusBarWidth + 100, height - StatusBarHeight, StatusBarWidth + 150, height);// main status bar rectangle
+}
+void GUI::CreateStatusBarYellowPa() const
+{
+	pWind->SetPen(StatusBarYellowPa, 1);
+	pWind->SetBrush(StatusBarYellowPa);
+	pWind->DrawRectangle(StatusBarWidth + 150, height - StatusBarHeight, StatusBarWidth + 200, height);// main status bar rectangle
+}
+void GUI::CreateStatusBarGreenPa() const
+{
+	pWind->SetPen(StatusBarGreenPa, 1);
+	pWind->SetBrush(StatusBarGreenPa);
+	pWind->DrawRectangle(StatusBarWidth + 200, height - StatusBarHeight, width, height);// main status bar rectangle
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 void GUI::ClearStatusBar() const
@@ -142,7 +215,7 @@ void GUI::ClearStatusBar() const
 	//Clear Status bar by drawing a filled white rectangle
 	pWind->SetPen(StatusBarColor, 1);
 	pWind->SetBrush(StatusBarColor);
-	pWind->DrawRectangle(0, height - StatusBarHeight, width, height);
+	pWind->DrawRectangle(0, height - StatusBarHeight, StatusBarWidth, height);
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 void GUI::CreateDrawToolBar() 
@@ -159,6 +232,7 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_RECT] = "images\\MenuIcons\\Menu_Rect.jpg";
 	MenuIconImages[ICON_CIRC] = "images\\MenuIcons\\Menu_Circ.jpg";
 	MenuIconImages[ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
+	MenuIconImages[ICON_PEN] = "images\\MenuIcons\\Menu_PEN.jpg";
 
 	//TODO: Prepare images for each menu icon and add it to the list
 
@@ -186,7 +260,7 @@ void GUI::ClearDrawArea() const
 {
 	pWind->SetPen(BkGrndColor, 1);
 	pWind->SetBrush(BkGrndColor);
-	pWind->DrawRectangle(0, ToolBarHeight, width, height - StatusBarHeight);
+	pWind->DrawRectangle(0, ToolBarHeight, StatusBarWidth, height - StatusBarHeight);
 
 }
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -199,6 +273,17 @@ void GUI::PrintMessage(string msg) const	//Prints a message on status bar
 	pWind->SetFont(24, BOLD, BY_NAME, "Arial");
 	pWind->DrawString(10, height - (int)(0.75 * StatusBarHeight), msg);
 }
+
+
+
+// still not activated
+void GUI::PrintMessagePa(string msg) const
+{
+	msg = message;
+	pWind->SetPen(MsgColor, 50);
+	pWind->SetFont(24, BOLD, BY_NAME, "Arial");
+	pWind->DrawString(1000,height - StatusBarHeight, msg);
+}
 //////////////////////////////////////////////////////////////////////////////////////////
 
 color GUI::getCrntDrawColor() const	//get current drwawing color
@@ -206,6 +291,19 @@ color GUI::getCrntDrawColor() const	//get current drwawing color
 	return DrawColor;
 }
 //////////////////////////////////////////////////////////////////////////////////////////
+
+//color GUI::setGeneralDrawColor(const color& col)const // set a drawing color
+//{
+//	CreateColorPalette();
+//	DrawColor = col;
+//
+//
+//}
+//
+//color GUI :: setGeneralFillColor(const color& col) const // set a fill color
+//{
+//	FillColor = col;
+//}
 
 color GUI::getCrntFillColor() const	//get current filling color
 {
