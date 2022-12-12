@@ -299,7 +299,7 @@ void GUI::DrawL(Point P1, Point P2,GfxInfo LGfxInfo) const
 	pWind->DrawLine(P1.x, P1.y, P2.x, P2.y, style);
 
 }
-void GUI::DrawSQU(Point P1, Point P2, GfxInfo SGfxInfo) const
+void GUI::DrawSQU(Point P1,int Lenght ,GfxInfo SGfxInfo) const
 {
 	color DrawingClr;
 	if (SGfxInfo.isSelected)	//shape is selected
@@ -318,7 +318,13 @@ void GUI::DrawSQU(Point P1, Point P2, GfxInfo SGfxInfo) const
 	else
 		style = FRAME;
 	//erorr no drawsquare in smugraphics
-	pWind->DrawLine(P1.x, P1.y, P2.x, P2.y, style);
+	pWind->DrawLine(P1.x, P1.y, P1.x+Lenght, P1.y, style);
+	pWind->DrawLine(P1.x, P1.y, P1.x , P1.y + Lenght, style);
+	pWind->DrawLine(P1.x+Lenght, P1.y + Lenght, P1.x+Lenght, P1.y , style);
+	pWind->DrawLine(P1.x + Lenght, P1.y + Lenght, P1.x, P1.y + Lenght, style);
+	
+
+
 
 
 }

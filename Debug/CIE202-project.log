@@ -18,7 +18,7 @@ C:\Users\East-Sound\Documents\GitHub\cs-project\Shapes\Graph.cpp(28,20): warning
   RegularPolygon.cpp
   Oval.cpp
   Line.cpp
+  GUI.cpp
   Circle.cpp
-C:\Users\East-Sound\Documents\GitHub\cs-project\Circle.cpp(16,26): warning C4244: 'argument': conversion from 'const double' to 'int', possible loss of data
   Generating Code...
   CIE202-project.vcxproj -> C:\Users\East-Sound\Documents\GitHub\cs-project\Debug\CIE202-project.exe

@@ -7,7 +7,7 @@ class Circle : public shape
 private:
 	Point Center;
 	Point Raduis;
-	double Distance;
+	int Distance;
 	
 public:
 

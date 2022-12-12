@@ -109,7 +109,7 @@ public:
 	void DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const;  //Draw a rectangle
 	void DrawTri(Point P1, Point P2,Point P3, GfxInfo TriGfxInfo) const;  //Draw a Trinangle
 	void DrawL(Point P1, Point P2, GfxInfo LGfxInfo) const;  //Draw a Line
-	void DrawSQU(Point P1, Point P2, GfxInfo SGfxInfo) const;  //Draw a Square
+	void DrawSQU(Point P1, int lenght ,GfxInfo SGfxInfo) const;  //Draw a Square
 	void DrawOVAL(Point P1, Point P2, GfxInfo EGfxInfo) const;  //Draw a Ellipse
 	void DrawCircle(Point P1, int raduis, GfxInfo CGfxInfo) const;  //Draw a circle
 	void DrawRPolygon(Point P1, Point P2, GfxInfo REGfxInfo) const;  //Draw a Regular Polygon
