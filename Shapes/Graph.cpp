@@ -1,9 +1,29 @@
 #include "Graph.h"
 #include "../GUI/GUI.h"
+// AHMED ABDELSTAR WORK.....
 
 Graph::Graph()
 {
 	selectedShape = nullptr;
+}
+void Graph::Save(ofstream& savefile) {
+
+	/*GUI* pUI = ;
+
+	pUI->PrintMessage("Enter the file name: ");
+
+	string filename = pUI->GetSrting();*/
+
+	string filename = "filename.txt";
+
+	savefile.open(filename);
+
+	for ( auto shapepointer : shapesList ) {
+		savefile << shapepointer->save(savefile);
+	}
+	
+
+	savefile.close();
 }
 
 Graph::~Graph()

@@ -19,4 +19,7 @@ void shape::ChngFillClr(color Fclr)
 	ShpGfxInfo.isFilled = true;
 	ShpGfxInfo.FillClr = Fclr; 
 }
+ string shape::save(ofstream& savefile) {  
+	 return ",";
+}
 
