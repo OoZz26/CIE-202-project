@@ -166,6 +166,7 @@
     <ClCompile Include="GUI\GUI.cpp" />
     <ClCompile Include="controller.cpp" />
     <ClCompile Include="Line.cpp" />
+    <ClCompile Include="Load.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="opAddLine.cpp" />
     <ClCompile Include="opAddSquare.cpp" />
@@ -204,6 +205,7 @@
     <ClInclude Include="controller.h" />
     <ClInclude Include="DEFS.h" />
     <ClInclude Include="Line.h" />
+    <ClInclude Include="Load.h" />
     <ClInclude Include="opAddLine.h" />
     <ClInclude Include="opAddSquare.h" />
     <ClInclude Include="operations\opAddRect.h" />
