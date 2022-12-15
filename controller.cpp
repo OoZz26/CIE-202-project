@@ -1,6 +1,7 @@
 #include "controller.h"
 #include "operations\opAddRect.h"
-
+#include "operations/OpAddPen.h"
+#include "operations/OpChangeColor.h"
 
 //Constructor
 controller::controller()
@@ -39,8 +40,13 @@ operation* controller::createOperation(operationType OpType)
 			///create Exitoperation here
 			
 			break;
+		case PEN_WIDTH:
+			pOp = new OpAddPen(this);
+			break;
+
 		
 		case STATUS:	//a click on the status bar ==> no operation
+			pOp = new OpChangeColor(this);
 			break;
 	}
 

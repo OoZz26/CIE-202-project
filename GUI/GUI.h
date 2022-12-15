@@ -27,6 +27,9 @@ struct GfxInfo	//Graphical info common for all shapes (you may add more members)
 
 class GUI
 {
+public: 
+	color DrawColor;
+private:
 	enum GUI_MODE	//Graphical user interface mode
 	{
 		MODE_DRAW,	//Drawing mode (startup mode)
@@ -71,7 +74,7 @@ class GUI
 		MenuIconWidth;		//Width of each icon in toolbar menu
 	string message;
 
-	color DrawColor;		//Drawing color
+			//Drawing color
 	color FillColor;		//Filling color
 	color HighlightColor;	//Highlighting color
 	color MsgColor;			//Messages color
@@ -104,7 +107,7 @@ public:
 	void CreateDrawToolBar();	//creates Draw mode toolbar & menu
 	void CreatePlayToolBar();	//creates Play mode toolbar & menu
 	void CreateStatusBar() const;	//create the status bar
-	color CreateColorPalette() const; 
+	color CreateColorPalette(); 
 	void CreateStatusBarRedPa() const;	//color displayed on status bar
 	void CreateStatusBarBluePa() const;	//color displayed on status bar
 	void CreateStatusBarBlackPa() const;	//color displayed on status bar
@@ -121,11 +124,12 @@ public:
 	void PrintMessage(string msg) const;	//Print a message on Status bar
 	void PrintMessagePa(string msg) const; //Message displayed to define the color pallete
 
-	color getCrntDrawColor() const;	//get current drwawing color
-	color setGeneralDrawColor(const color& col)const; // set a drawing color
+	color getCrntDrawColor() ;	//get current drwawing color
+	color setGeneralDrawColor(color col); // set a drawing color
 	color getCrntFillColor() const;	//get current filling color
-	color setGeneralFillColor(const color& col) const; // set a fill color
+	//color setGeneralFillColor(color col); // set a fill color
 	int getCrntPenWidth() const;		//get current pen width
+	void setCrntPenWidth(int Pen);
 
 
 	~GUI();

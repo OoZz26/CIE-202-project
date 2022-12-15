@@ -17,7 +17,7 @@ GUI::GUI()
 	MenuIconWidth = 80;
 
 	DrawColor = BLUE;	//default Drawing color
-	FillColor = GREEN;	//default Filling color
+	FillColor = SKYBLUE;	//default Filling color
 	MsgColor = WHITE;		//Messages color
 	BkGrndColor = WHITE;	//Background color
 	HighlightColor = MAGENTA;	//This color should NOT be used to draw shapes. use if for highlight only
@@ -38,7 +38,6 @@ GUI::GUI()
 
 	CreateDrawToolBar();
 	CreateStatusBar();
-	CreateColorPalette();
 	CreateStatusBarRedPa();
 	CreateStatusBarBluePa();
 	CreateStatusBarBlackPa();
@@ -92,6 +91,7 @@ operationType GUI::GetUseroperation() const
 		//[1] If user clicks on the Toolbar
 		if (y >= 0 && y < ToolBarHeight)
 		{
+
 			//Check whick Menu icon was clicked
 			//==> This assumes that menu icons are lined up horizontally <==
 			int ClickedIconOrder = (x / MenuIconWidth);
@@ -103,6 +103,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_RECT: return DRAW_RECT;
 			case ICON_CIRC: return DRAW_CIRC;
 			case ICON_EXIT: return EXIT;
+			case ICON_PEN: return PEN_WIDTH;
 
 			default: return EMPTY;	//A click on empty place in desgin toolbar
 			}
@@ -149,34 +150,36 @@ void GUI::CreateStatusBar() const
 	pWind->SetBrush(StatusBarColor);
 	pWind->DrawRectangle(0, height - StatusBarHeight, StatusBarWidth, height);// main status bar rectangle
 }
-color GUI::CreateColorPalette() const
+
+color GUI::CreateColorPalette()
 {
+	color COL;
 	int x, y;
 	pWind->WaitMouseClick(x, y);
 	if ((y > height - StatusBarHeight) && (y < height))
 	{
-		if ((x > StatusBarWidth) && (x < StatusBarWidth + 50)) 
+		if ((x > StatusBarWidth) && (x < StatusBarWidth + 50))
 		{
-			return RED;
+			COL = RED;
 		}
 		else if ((x > StatusBarWidth + 50) && (x < StatusBarWidth + 100))
 		{
-			return BLUE;
+			COL =  BLUE;
 		}
-		else if ((x > StatusBarWidth + 100) && (x < StatusBarWidth + 150)) 
+		else if ((x > StatusBarWidth + 100) && (x < StatusBarWidth + 150))
 		{
-			return BLACK;
+			COL = BLACK;
 		}
-		else if ((x > StatusBarWidth + 150) && (x < StatusBarWidth + 200)) 
+		else if ((x > StatusBarWidth + 150) && (x < StatusBarWidth + 200))
 		{
-			return YELLOW;
+			COL = YELLOW;
 		}
-		else if ((x > StatusBarWidth + 200) && (x < width)) 
+		else if ((x > StatusBarWidth + 200) && (x < width))
 		{
-			return GREEN;
+			COL = GREEN;
 		}
 	}
-	
+	return COL;
 }
 
 void GUI::CreateStatusBarRedPa() const
@@ -286,24 +289,17 @@ void GUI::PrintMessagePa(string msg) const
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-color GUI::getCrntDrawColor() const	//get current drwawing color
+color GUI::getCrntDrawColor() 	//get current drwawing color
 {
 	return DrawColor;
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-//color GUI::setGeneralDrawColor(const color& col)const // set a drawing color
-//{
-//	CreateColorPalette();
-//	DrawColor = col;
-//
-//
-//}
-//
-//color GUI :: setGeneralFillColor(const color& col) const // set a fill color
-//{
-//	FillColor = col;
-//}
+color GUI::setGeneralDrawColor(color col) // set a drawing color
+{
+	DrawColor = col;
+	return 0;
+}
 
 color GUI::getCrntFillColor() const	//get current filling color
 {
@@ -314,6 +310,10 @@ color GUI::getCrntFillColor() const	//get current filling color
 int GUI::getCrntPenWidth() const		//get current pen width
 {
 	return PenWidth;
+}
+void GUI::setCrntPenWidth(int Pen)
+{
+	PenWidth = Pen;
 }
 
 //======================================================================================//
