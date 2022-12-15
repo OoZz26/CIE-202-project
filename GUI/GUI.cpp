@@ -305,6 +305,12 @@ color GUI::getCrntFillColor() const	//get current filling color
 {
 	return FillColor;
 }
+
+color GUI:: setGeneralFillColor(color col) // set a filling color
+{
+	FillColor = col;
+	return 0;
+}
 //////////////////////////////////////////////////////////////////////////////////////////
 
 int GUI::getCrntPenWidth() const		//get current pen width

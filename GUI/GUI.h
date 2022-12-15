@@ -127,7 +127,7 @@ public:
 	color getCrntDrawColor() ;	//get current drwawing color
 	color setGeneralDrawColor(color col); // set a drawing color
 	color getCrntFillColor() const;	//get current filling color
-	//color setGeneralFillColor(color col); // set a fill color
+	color setGeneralFillColor(color col); // set a fill color
 	int getCrntPenWidth() const;		//get current pen width
 	void setCrntPenWidth(int Pen);
 
