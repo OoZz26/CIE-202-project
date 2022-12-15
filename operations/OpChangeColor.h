@@ -6,7 +6,7 @@
 class OpChangeColor : public operation
 {
 public:
-	int PenChosen;
+	string FillOrDraw;
 	OpChangeColor(controller* pCont);
 	virtual ~OpChangeColor();
 

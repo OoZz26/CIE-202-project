@@ -10,7 +10,21 @@ OpChangeColor::~OpChangeColor()
 void OpChangeColor::Execute()
 {
 	GUI* pUI = pControl->GetUI();
-	color clr = pUI->CreateColorPalette();
-	pUI->DrawColor = clr;
+
+	pUI->PrintMessage("Do you want to 'FILL' or 'DRAW' : ");
+	FillOrDraw = pUI->GetSrting();
+	if (FillOrDraw == "fill")
+	{
+		GUI* pUI = pControl->GetUI();
+		color clr = pUI->CreateColorPalette();
+		pUI->FillColor = clr;
+	}
+	else if (FillOrDraw == "draw")
+	{
+		GUI* pUI = pControl->GetUI();
+		color clr = pUI->CreateColorPalette();
+		pUI->DrawColor = clr;
+	}
+	pUI->ClearStatusBar();
 
 }

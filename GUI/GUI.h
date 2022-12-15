@@ -28,7 +28,8 @@ struct GfxInfo	//Graphical info common for all shapes (you may add more members)
 class GUI
 {
 public: 
-	color DrawColor;
+	color DrawColor;//Drawing color
+	color FillColor;//Filling color
 private:
 	enum GUI_MODE	//Graphical user interface mode
 	{
@@ -74,8 +75,7 @@ private:
 		MenuIconWidth;		//Width of each icon in toolbar menu
 	string message;
 
-			//Drawing color
-	color FillColor;		//Filling color
+			
 	color HighlightColor;	//Highlighting color
 	color MsgColor;			//Messages color
 	color BkGrndColor;		//Background color
