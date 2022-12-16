@@ -105,9 +105,6 @@
     <ClCompile Include="CMUgraphicsLib\windowinput.cpp">
       <Filter>GraphicsLib</Filter>
     </ClCompile>
-    <ClCompile Include="operations\opAddRect.cpp">
-      <Filter>Operations</Filter>
-    </ClCompile>
     <ClCompile Include="CMUgraphicsLib\CMUgraphics.cpp">
       <Filter>GraphicsLib</Filter>
     </ClCompile>
@@ -122,6 +119,24 @@
     </ClCompile>
     <ClCompile Include="Shapes\Graph.cpp">
       <Filter>Shapes&amp;Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="operations\opAddRect.cpp">
+      <Filter>opearations</Filter>
+    </ClCompile>
+    <ClCompile Include="operations\opDel.cpp">
+      <Filter>opearations</Filter>
+    </ClCompile>
+    <ClCompile Include="operations\opExit.cpp">
+      <Filter>opearations</Filter>
+    </ClCompile>
+    <ClCompile Include="opModePlay.cpp">
+      <Filter>opearations</Filter>
+    </ClCompile>
+    <ClCompile Include="opstick.cpp">
+      <Filter>opearations</Filter>
+    </ClCompile>
+    <ClCompile Include="opModeDraw.cpp">
+      <Filter>opearations</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -181,12 +196,6 @@
     <ClInclude Include="CMUgraphicsLib\windowinput.h">
       <Filter>GraphicsLib</Filter>
     </ClInclude>
-    <ClInclude Include="operations\operation.h">
-      <Filter>Operations</Filter>
-    </ClInclude>
-    <ClInclude Include="operations\opAddRect.h">
-      <Filter>Operations</Filter>
-    </ClInclude>
     <ClInclude Include="CMUgraphicsLib\CMUgraphics.h">
       <Filter>GraphicsLib</Filter>
     </ClInclude>
@@ -206,11 +215,29 @@
       <Filter>Shapes&amp;Graph</Filter>
     </ClInclude>
     <ClInclude Include="resource.h" />
+    <ClInclude Include="operations\opAddRect.h">
+      <Filter>Shapes&amp;Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="operations\opDel.h">
+      <Filter>opearations</Filter>
+    </ClInclude>
+    <ClInclude Include="operations\operation.h">
+      <Filter>opearations</Filter>
+    </ClInclude>
+    <ClInclude Include="operations\opExit.h">
+      <Filter>opearations</Filter>
+    </ClInclude>
+    <ClInclude Include="operations\opModeDraw.h">
+      <Filter>opearations</Filter>
+    </ClInclude>
+    <ClInclude Include="operations\opModePlay.h">
+      <Filter>opearations</Filter>
+    </ClInclude>
+    <ClInclude Include="opStick.h">
+      <Filter>opearations</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Operations">
-      <UniqueIdentifier>{5b559cbb-08f2-4197-993f-7a3028ee6b52}</UniqueIdentifier>
-    </Filter>
     <Filter Include="GraphicsLib">
       <UniqueIdentifier>{c076192c-7f4c-49d2-a595-55ff119d3ef7}</UniqueIdentifier>
     </Filter>
@@ -220,9 +247,9 @@
     <Filter Include="Shapes&amp;Graph">
       <UniqueIdentifier>{5e150dff-8a89-44f3-b58a-731df9cea925}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="CIE202-project.rc" />
+    <Filter Include="opearations">
+      <UniqueIdentifier>{b504b87a-26a4-4275-a6b0-848dfe0ebf69}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

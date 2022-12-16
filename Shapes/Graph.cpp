@@ -20,7 +20,13 @@ void Graph::Addshape(shape* pShp)
 	//Add a new shape to the shapes vector
 	shapesList.push_back(pShp);	
 }
+
 ////////////////////////////////////////////////////////////////////////////////////
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
 //Draw all shapes on the user interface
 void Graph::Draw(GUI* pUI) const
 {
@@ -29,6 +35,12 @@ void Graph::Draw(GUI* pUI) const
 		shapePointer->Draw(pUI);
 }
 
+/// ///////////////////////////////////////////////////////////////////////////
+
+
+shape* Graph::getSelected() {
+	return selectedShape;
+}
 
 shape* Graph::Getshape(int x, int y) const
 {

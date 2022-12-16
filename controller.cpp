@@ -1,6 +1,9 @@
 #include "controller.h"
 #include "operations\opAddRect.h"
-
+#include "operations\opExit.h"
+#include "operations\opModePlay.h"
+#include"operations\opModeDraw.h"
+#include"operations\opDel.h"
 
 //Constructor
 controller::controller()
@@ -10,12 +13,12 @@ controller::controller()
 }
 
 //==================================================================================//
-//								operations-Related Functions							//
+//								operations-Related Functions						//
 //==================================================================================//
 operationType controller::GetUseroperation() const
 {
 	//Ask the input to get the operation from the user.
-	return pGUI->GetUseroperation();		
+	return pGUI->GetUseroperation();
 }
 ////////////////////////////////////////////////////////////////////////////////////
 //Creates an operation and executes it
@@ -26,22 +29,36 @@ operation* controller::createOperation(operationType OpType)
 	//According to operation Type, create the corresponding operation object
 	switch (OpType)
 	{
+
+	    case TO_DRAW:
+			pOp = new opModeDraw(this);
+			
+			break;
+			
+		case TO_PLAY:
+			pOp = new opModePlay(this);
+			break;
 		case DRAW_RECT:
 			pOp = new opAddRect(this);
 			break;
 
 		case DRAW_LINE:
 			///create AddLineoperation here
-
+			
 			break;
 
 		case EXIT:
 			///create Exitoperation here
-			
+			pOp = new opExit(this); 
 			break;
 		
+		case DEL:
+			pOp = new opDel(this);
+			break;
+			
 		case STATUS:	//a click on the status bar ==> no operation
 			break;
+
 	}
 
 	return pOp;

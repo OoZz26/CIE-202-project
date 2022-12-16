@@ -30,6 +30,7 @@ GUI::GUI()
 	pWind->ChangeTitle("- - - - - - - - - - PAINT ^ ^ PLAY - - - - - - - - - -");
 
 	CreateDrawToolBar();
+	//CreatePlayToolBar();
 	CreateStatusBar();
 }
 
@@ -68,7 +69,7 @@ string GUI::GetSrting() const
 	}
 }
 
-//This function reads the position where the user clicks to determine the desired operation
+//This function reads the . where the user clicks to determine the desired operation
 operationType GUI::GetUseroperation() const
 {
 	int x, y;
@@ -89,7 +90,11 @@ operationType GUI::GetUseroperation() const
 			{
 			case ICON_RECT: return DRAW_RECT;
 			case ICON_CIRC: return DRAW_CIRC;
+			case ICON_PLAY: return TO_PLAY;
 			case ICON_EXIT: return EXIT;
+			case ICON_DELETE :return DEL;
+			/*case DRAW_ICON_COUNT: return TO_DRAW;*/
+			
 
 			default: return EMPTY;	//A click on empty place in desgin toolbar
 			}
@@ -109,6 +114,28 @@ operationType GUI::GetUseroperation() const
 		///TODO:
 		//perform checks similar to Draw mode checks above
 		//and return the correspoding operation
+		if (y >= 0 && y < ToolBarHeight)
+		{
+			//Check whick Menu icon was clicked
+			//==> This assumes that menu icons are lined up horizontally <==
+			int ClickedIconOrder = (x / MenuIconWidth);
+			//Divide x coord of the point clicked by the menu icon width (int division)
+			//if division result is 0 ==> first icon is clicked, if 1 ==> 2nd icon and so on
+
+			switch (ClickedIconOrder)
+			{
+			case ICON_DRAW: return TO_DRAW;
+				/*case DRAW_ICON_COUNT: return TO_DRAW;*/
+
+
+			default: return EMPTY;	//A click on empty place in desgin toolbar
+			}
+		}
+		if (y >= ToolBarHeight && y < height - StatusBarHeight)
+		{
+			return DRAWING_AREA;
+		}
+
 		return TO_PLAY;	//just for now. This should be updated
 	}
 
@@ -127,8 +154,22 @@ window* GUI::CreateWind(int w, int h, int x, int y) const
 	pW->SetBrush(BkGrndColor);
 	pW->SetPen(BkGrndColor, 1);
 	pW->DrawRectangle(0, ToolBarHeight, w, h);
+
 	return pW;
 }
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+
+
+void GUI::exit(string a)
+{
+	if (a == "y")
+
+		return;
+}
+
+
 //////////////////////////////////////////////////////////////////////////////////////////
 void GUI::CreateStatusBar() const
 {
@@ -155,10 +196,14 @@ void GUI::CreateDrawToolBar()
 	//First prepare List of images for each menu icon
 	//To control the order of these images in the menu, 
 	//reoder them in UI_Info.h ==> enum DrawMenuIcon
+
 	string MenuIconImages[DRAW_ICON_COUNT];
 	MenuIconImages[ICON_RECT] = "images\\MenuIcons\\Menu_Rect.jpg";
 	MenuIconImages[ICON_CIRC] = "images\\MenuIcons\\Menu_Circ.jpg";
 	MenuIconImages[ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
+	MenuIconImages[ICON_DELETE] = "images\\MenuIcons\\Menu_Delete.jpg";
+	MenuIconImages[ICON_PLAY] = "images\\MenuIcons\\menu_Play_Mode.jpg";
+	
 
 	//TODO: Prepare images for each menu icon and add it to the list
 
@@ -178,9 +223,16 @@ void GUI::CreateDrawToolBar()
 void GUI::CreatePlayToolBar() 
 {
 	InterfaceMode = MODE_PLAY;
+	
+	string PLAYMenuIconImages[PLAY_ICON_COUNT];
+	PLAYMenuIconImages[ICON_DRAW] = "images\\MenuIcons\\menu_draw_Mode.jpg";
+	for (int i = 0; i < PLAY_ICON_COUNT; i++)
+		pWind->DrawImage(PLAYMenuIconImages[i], i * MenuIconWidth, 0, MenuIconWidth, ToolBarHeight);
+
 	///TODO: write code to create Play mode menu
 }
 //////////////////////////////////////////////////////////////////////////////////////////
+
 
 void GUI::ClearDrawArea() const
 {
@@ -212,6 +264,7 @@ color GUI::getCrntFillColor() const	//get current filling color
 	return FillColor;
 }
 //////////////////////////////////////////////////////////////////////////////////////////
+
 
 int GUI::getCrntPenWidth() const		//get current pen width
 {

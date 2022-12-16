@@ -167,6 +167,11 @@
     <ClCompile Include="controller.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="operations\opAddRect.cpp" />
+    <ClCompile Include="operations\opDel.cpp" />
+    <ClCompile Include="operations\opExit.cpp" />
+    <ClCompile Include="opModeDraw.cpp" />
+    <ClCompile Include="opModePlay.cpp" />
+    <ClCompile Include="opstick.cpp" />
     <ClCompile Include="Shapes\Graph.cpp" />
     <ClCompile Include="Shapes\Shape.cpp" />
     <ClCompile Include="Shapes\Rect.cpp" />
@@ -196,14 +201,16 @@
     <ClInclude Include="controller.h" />
     <ClInclude Include="DEFS.h" />
     <ClInclude Include="operations\opAddRect.h" />
+    <ClInclude Include="operations\opDel.h" />
     <ClInclude Include="operations\operation.h" />
+    <ClInclude Include="operations\opExit.h" />
+    <ClInclude Include="operations\opModeDraw.h" />
+    <ClInclude Include="operations\opModePlay.h" />
+    <ClInclude Include="opStick.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Shapes\Graph.h" />
     <ClInclude Include="Shapes\Shape.h" />
     <ClInclude Include="Shapes\Rect.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="CIE202-project.rc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

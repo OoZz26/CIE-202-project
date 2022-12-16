@@ -14,7 +14,7 @@ protected:
 
 public:
 	shape(GfxInfo shapeGfxInfo);
-	virtual ~shape() {}
+	virtual ~shape() {};
 	void SetSelected(bool s);	//select/unselect the shape
 	bool IsSelected() const;	//check whether fig is selected
 
