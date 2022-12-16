@@ -14,5 +14,5 @@ public:
 	Circle(Point, Point, GfxInfo shapeGfxInfo);
 	virtual ~Circle();
 	virtual void Draw(GUI* pUI) const;
-	//virtual bool INSHAPE(Point test);
+	bool IsINSHAPE(Point test);
 };

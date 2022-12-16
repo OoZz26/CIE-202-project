@@ -11,6 +11,7 @@ private:
 public:
 	Triangle(Point, Point,Point, GfxInfo shapeGfxInfo);
 	virtual ~Triangle();
+	bool IsINSHAPE(Point test);
 	virtual void Draw(GUI* pUI) const;
 };
 

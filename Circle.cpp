@@ -15,13 +15,13 @@ void Circle::Draw(GUI* pUI) const
 	//Call Output::Circle to draw a circle on the screen	
 	pUI->DrawCircle(Center, Distance, ShpGfxInfo);
 }
-//bool Circle::INSHAPE(Point test) {
-//	int d = distance(Center.x, Center.y, test.x, test.y);
-//	if (d <= Distance) {
-//		return true;
-//	}
-//	else
-//	{
-//		return false;
-//	}
-//}	
+bool Circle::IsINSHAPE(Point test) {
+	int d = distance(Center.x, Center.y, test.x, test.y);
+	if (d <= Distance) {
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}	

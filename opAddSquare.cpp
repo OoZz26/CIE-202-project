@@ -1,8 +1,6 @@
 #include "opAddSquare.h"
 #include"Square.h"
-
 #include "controller.h"
-
 #include "GUI\GUI.h"
 
 opAddSquare::opAddSquare(controller* pCont) :operation(pCont)

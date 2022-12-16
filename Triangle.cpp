@@ -9,6 +9,22 @@ Triangle::Triangle(Point P1, Point P2, Point P3, GfxInfo shapeGfxInfo) :shape(sh
 Triangle::~Triangle()
 {}
 
+bool Triangle::IsINSHAPE(Point test) {
+
+	double area_T, area1, area2, area3,sum_area;
+	area_T = tri_area(Corner1, Corner2, Corner3);
+	area1= tri_area(Corner1, Corner2, test);
+	area2 = tri_area(Corner1, Corner3, test);
+	area3 = tri_area(Corner3, Corner2, test);
+	sum_area = area1 + area2 + area3;
+	if (sum_area == area_T) {
+		return true;
+	}
+	else
+		return false;
+}
+
+
 void Triangle::Draw(GUI* pUI) const
 {
 	//Call Output::DrawTri to draw a Triangle on the screen	

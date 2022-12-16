@@ -91,10 +91,11 @@ operationType GUI::GetUseroperation() const
 			case ICON_RECT: return DRAW_RECT;
 			case ICON_CIRC: return DRAW_CIRC;
 			case ICON_EXIT: return EXIT;
-			case ICON_Tri: return DRAW_TRI;
+			case ICON_Tri: return DRAW_TRI; 
 			case ICON_Line: return DRAW_LINE;
 			case ICON_SQU: return DRAW_SQU;
 			case ICON_OVAL: return DRAW_OVAL;
+			case ICON_SELECT: return SELECT ;
 
 			default: return EMPTY;	//A click on empty place in desgin toolbar
 			}
@@ -167,10 +168,11 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_Tri] = "images\\MenuIcons\\Menu_Tri.jpg";
 	MenuIconImages[ICON_Line] = "images\\MenuIcons\\Menu_Line.jpg";
 	MenuIconImages[ICON_SQU] = "images\\MenuIcons\\Menu_Square.jpg";
+	MenuIconImages[ICON_SELECT] = "images\\MenuIcons\\Menu_Select.jpg";
 	MenuIconImages[ICON_OVAL] = "images\\MenuIcons\\Menu_OVAL.jpg";
+	
 
 	//TODO: Prepare images for each menu icon and add it to the list
-
 	//Draw menu icon one image at a time
 	for (int i = 0; i < DRAW_ICON_COUNT; i++)
 		pWind->DrawImage(MenuIconImages[i], i * MenuIconWidth, 0, MenuIconWidth, ToolBarHeight);

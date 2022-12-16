@@ -5,6 +5,7 @@
 #include"opAddSquare.h"
 #include"opAddCircle.h"
 #include"opAddOval.h"
+#include"opSelect.h"
 
 
 //Constructor
@@ -52,6 +53,10 @@ operation* controller::createOperation(operationType OpType)
 		case DRAW_OVAL:
 			pOp = new opAddOval(this);
 			break;
+		case SELECT:
+			pOp = new opSelect(this);
+			break;
+
 		 
 
 

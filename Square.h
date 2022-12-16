@@ -5,11 +5,12 @@
 class Square : public shape
 {
 private:
-	Point Point1;
-	Point Point2;
+	Point Corner1;
+	Point Corner2;
 	int Lenght;
 public:
 	Square(Point p1, Point p2 ,GfxInfo shapeGfxInfo);
 	virtual ~Square();
+	bool IsINSHAPE(Point test);
 	virtual void Draw(GUI* pUI) const;
 };

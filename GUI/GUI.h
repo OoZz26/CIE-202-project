@@ -41,13 +41,12 @@ class GUI
 		ICON_CIRC,		//Circle icon in menu
 
 		//TODO: Add more icons names here
-
-		ICON_EXIT,		//Exit icon
 		ICON_Tri,
 		ICON_Line,
 		ICON_SQU,
 		ICON_OVAL,
-
+		ICON_SELECT,
+		ICON_EXIT,		//Exit icon
 		DRAW_ICON_COUNT,		//no. of menu icons ==> This should be the last line in this enum
 
 	};
