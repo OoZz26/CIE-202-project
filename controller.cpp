@@ -6,6 +6,8 @@
 #include"opAddCircle.h"
 #include"opAddOval.h"
 #include"opSelect.h"
+#include"opAddIrRegularPolygon.h"
+#include"opAddRegularPolygon.h"
 
 
 //Constructor
@@ -54,6 +56,12 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case SELECT:
 			pOp = new opSelect(this);
+			break;
+		case DRAW_IRRPOLYGON:
+			pOp = new opAddIrRegularPolygon(this);
+			break;
+		case DRAW_RPOLYGON:
+			pOp = new opAddRegularPolygon(this);
 			break;
 
 		 

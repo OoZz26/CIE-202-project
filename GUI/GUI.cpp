@@ -95,6 +95,8 @@ operationType GUI::GetUseroperation() const
 			case ICON_Line: return DRAW_LINE;
 			case ICON_SQU: return DRAW_SQU;
 			case ICON_OVAL: return DRAW_OVAL;
+			case ICON_IRRegularpolygon: return DRAW_IRRPOLYGON;
+			case ICON_Regularpolygon: return DRAW_RPOLYGON;
 			case ICON_SELECT: return SELECT ;
 
 			default: return EMPTY;	//A click on empty place in desgin toolbar
@@ -169,6 +171,8 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_Line] = "images\\MenuIcons\\Menu_Line.jpg";
 	MenuIconImages[ICON_SQU] = "images\\MenuIcons\\Menu_Square.jpg";
 	MenuIconImages[ICON_OVAL] = "images\\MenuIcons\\Menu_OVAL.jpg";
+	MenuIconImages[ICON_Regularpolygon] = "images\\MenuIcons\\Menu_Regularpolygon.jpg";
+	MenuIconImages[ICON_IRRegularpolygon] = "images\\MenuIcons\\Menu_IRRegular.jpg";
 	MenuIconImages[ICON_SELECT] = "images\\MenuIcons\\Menu_Select.jpg";
 
 	//TODO: Prepare images for each menu icon and add it to the list
@@ -375,27 +379,48 @@ void GUI::DrawCircle(Point P1, int  raduis, GfxInfo CGfxInfo) const
 }
 
 
-void GUI::DrawRPolygon(Point P1, Point P2, GfxInfo RPGfxInfo) const
+void GUI::DrawRPolygon(int* arrx, int* arrY, int nvertices, GfxInfo RPolygonGfxInfo) const
 {
 	color DrawingClr;
-	if (RPGfxInfo.isSelected)	//shape is selected
+	if (RPolygonGfxInfo.isSelected)	//shape is selected
 		DrawingClr = HighlightColor; //shape should be drawn highlighted
 	else
-		DrawingClr = RPGfxInfo.DrawClr;
+		DrawingClr = RPolygonGfxInfo.DrawClr;
 
-	pWind->SetPen(DrawingClr, RPGfxInfo.BorderWdth);	//Set Drawing color & width
+	pWind->SetPen(DrawingClr, RPolygonGfxInfo.BorderWdth);	//Set Drawing color & width
 
 	drawstyle style;
-	if (RPGfxInfo.isFilled)
+	if (RPolygonGfxInfo.isFilled)
 	{
 		style = FILLED;
-		pWind->SetBrush(RPGfxInfo.FillClr);
+		pWind->SetBrush(RPolygonGfxInfo.FillClr);
 	}
 	else
 		style = FRAME;
 
-	/*pWind->DrawPolygon(, style);*/
+	pWind->DrawPolygon(arrx, arrY, nvertices, style);
 
+}
+void GUI::IrRegularPolygon(int* arrx, int* arry, int nvertices, GfxInfo IrRPolygonGfxInfo) const
+{
+	color DrawingClr;
+	if (IrRPolygonGfxInfo.isSelected)	//shape is selected
+		DrawingClr = HighlightColor; //shape should be drawn highlighted
+	else
+		DrawingClr = IrRPolygonGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, IrRPolygonGfxInfo.BorderWdth);	//Set Drawing color & width
+
+	drawstyle style;
+	if (IrRPolygonGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(IrRPolygonGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+
+	pWind->DrawPolygon(arrx, arry, nvertices, style);
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////

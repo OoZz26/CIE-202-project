@@ -9,6 +9,7 @@ private:
 public:
 	Oval(Point, Point, GfxInfo shapeGfxInfo);
 	virtual ~Oval();
+	bool IsINSHAPE(Point test);
 	virtual void Draw(GUI* pUI) const;
 
 };

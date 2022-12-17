@@ -8,7 +8,9 @@ Oval:: Oval (Point p1, Point p2, GfxInfo shapeGfxInfo) :  shape(shapeGfxInfo)
 
 Oval::~Oval()
 {}
-
+bool Oval::IsINSHAPE(Point test) {
+	return false;
+}
 void Oval::Draw(GUI* pUI) const
 {
 	//Call Output::DrawOVAL to draw a oval on the screen	

@@ -6,6 +6,8 @@
 enum operationType //The operations supported (you can add more if needed)
 {
 	SELECT,			// select shape
+	DRAW_IRRPOLYGON, //Draw Irregularpolygon
+	DRAW_RPOLYGON,  // Draw RegularPolygon
 	DRAW_CIRC,		//Draw Circle
 	DRAW_LINE,		//Draw Line
 	DRAW_RECT,		//Draw Rectangle
@@ -28,7 +30,6 @@ enum operationType //The operations supported (you can add more if needed)
 	DRAWING_AREA,	//A click on the drawing area
 	STATUS,			//A click on the status bar
 	EMPTY,			//A click on empty place in the toolbar
-	//SELECT,			//
 	TO_DRAW,		//Switch interface to Draw mode
 	TO_PLAY			//Switch interface to Play mode
 
