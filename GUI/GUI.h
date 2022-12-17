@@ -27,6 +27,10 @@ struct GfxInfo	//Graphical info common for all shapes (you may add more members)
 
 class GUI
 {
+public: 
+	color DrawColor;//Drawing color
+	color FillColor;//Filling color
+private:
 	enum GUI_MODE	//Graphical user interface mode
 	{
 		MODE_DRAW,	//Drawing mode (startup mode)
@@ -39,7 +43,11 @@ class GUI
 		//If you want to change the menu icons order, change the order here
 		ICON_RECT,		//Recangle icon in menu
 		ICON_CIRC,		//Circle icon in menu
-
+		ICON_PEN, 
+		ICON_SELECT,
+		ICON_Border,
+		ICON_Fill,
+		ICON_Draw,
 		//TODO: Add more icons names here
 		ICON_Tri,
 		ICON_Line,
@@ -70,17 +78,24 @@ class GUI
 	int	width, height,	//Window width and height
 		wx, wy,			//Window starting coordinates
 		StatusBarHeight,	//Status Bar Height
+		StatusBarWidth,
 		ToolBarHeight,		//Tool Bar Height (distance from top of window to bottom line of toolbar)
 		MenuIconWidth;		//Width of each icon in toolbar menu
+	string message;
+	bool Isfilled;
 
-
-	color DrawColor;		//Drawing color
-	color FillColor;		//Filling color
+			
 	color HighlightColor;	//Highlighting color
 	color MsgColor;			//Messages color
 	color BkGrndColor;		//Background color
 	color StatusBarColor;	//Status bar color
+	color StatusBarRedPa;//colors of color palette displayed in the status bar
+	color StatusBarBluePa;
+	color StatusBarBlackPa;
+	color StatusBarYellowPa;
+	color StatusBarGreenPa;
 	int PenWidth;			//width of the pen that draws shapes
+	bool isfilled;
 
 	/// Add more members if needed
 
@@ -102,7 +117,12 @@ public:
 	void CreateDrawToolBar();	//creates Draw mode toolbar & menu
 	void CreatePlayToolBar();	//creates Play mode toolbar & menu
 	void CreateStatusBar() const;	//create the status bar
-
+	color CreateColorPalette(); 
+	void CreateStatusBarRedPa() const;	//color displayed on status bar
+	void CreateStatusBarBluePa() const;	//color displayed on status bar
+	void CreateStatusBarBlackPa() const;	//color displayed on status bar
+	void CreateStatusBarYellowPa() const;	//color displayed on status bar
+	void CreateStatusBarGreenPa() const;	//color displayed on status bar
 	void ClearStatusBar() const;	//Clears the status bar
 	void ClearDrawArea() const;	//Clears the drawing area
 
@@ -120,11 +140,16 @@ public:
 	///Make similar functions for drawing all other shapes.
 
 	void PrintMessage(string msg) const;	//Print a message on Status bar
+	
 
-	color getCrntDrawColor() const;	//get current drwawing color
+	color getCrntDrawColor() ;	//get current drwawing color
+	color setGeneralDrawColor(color col); // set a drawing color
 	color getCrntFillColor() const;	//get current filling color
+	color setGeneralFillColor(color col); // set a fill color
 	int getCrntPenWidth() const;		//get current pen width
-
+	void setCrntPenWidth(int Pen);
+	bool getFillSt()const ;
+	bool getIsFilled();
 
 	~GUI();
 };
