@@ -1,6 +1,18 @@
 #include "controller.h"
 #include "operations\opAddRect.h"
-
+#include"opAddLine.h"
+#include"opAddTriangle.h"
+#include"opAddSquare.h"
+#include"opAddCircle.h"
+#include"opAddOval.h"
+#include"opSelect.h"
+#include"opAddIrRegularPolygon.h"
+#include"opAddRegularPolygon.h"
+#include "operations/OpAddPen.h"
+#include "operations/OpChangeColor.h"
+#include "operations/opBorderWidth.h"
+#include "operations/opFillColor.h"
+#include "operations/opDrawColor.h"
 
 //Constructor
 controller::controller()
@@ -31,17 +43,63 @@ operation* controller::createOperation(operationType OpType)
 			break;
 
 		case DRAW_LINE:
-			///create AddLineoperation here
+			pOp = new opAddLine(this);
+			break;
+		case DRAW_TRI:
+			pOp = new opAddTriangle(this);
+			break;
+
+		case DRAW_SQU:
+			pOp = new opAddSquare(this);
+			break;
+		case DRAW_CIRC:
+			pOp = new opAddCircle(this);
+			break;
+		case DRAW_OVAL:
+			pOp = new opAddOval(this);
+			break;
+		case SELECT:
+			pOp = new opSelect(this);
+			break;
+		case DRAW_IRRPOLYGON:
+			pOp = new opAddIrRegularPolygon(this);
+			break;
+		case DRAW_RPOLYGON:
+			pOp = new opAddRegularPolygon(this);
+			break;
 
 			break;
+		case PEN_WIDTH:
+			pOp = new OpAddPen(this);
+			break;
+
+		case BORDER_WIDTH:
+			pOp = new opBorderWidth(this);
+			break;
+
+		case FILL_COLOR:
+			pOp = new opFillColor(this);
+			break;
+		case DRAW_COLOR:
+			pOp = new opDrawColor(this);
+			break;
+
+
+		case STATUS:	//a click on the status bar ==> no operation
+			pOp = new OpChangeColor(this);
+			break;
+		 
+
+
+			
 
 		case EXIT:
 			///create Exitoperation here
 			
 			break;
 		
-		case STATUS:	//a click on the status bar ==> no operation
-			break;
+		//case STATUS:	//a click on the status bar ==> no operation
+		//	break;
 	}
 
 	return pOp;

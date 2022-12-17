@@ -8,6 +8,13 @@ Rect::Rect(Point P1, Point P2, GfxInfo shapeGfxInfo):shape(shapeGfxInfo)
 
 Rect::~Rect()
 {}
+bool Rect::IsINSHAPE(Point test){
+	if (test.x >= min(Corner1.x, Corner2.x) && test.x <= max(Corner1.x, Corner2.x) && test.y >= min(Corner1.y, Corner2.y) && test.y <= max(Corner1.y, Corner2.y)) {
+		return true;
+	}
+	else
+		return false;
+}
 
 void Rect::Draw(GUI* pUI) const
 {

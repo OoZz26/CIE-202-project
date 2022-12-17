@@ -30,17 +30,22 @@ void opAddRect::Execute()
 	pUI->ClearStatusBar();
 
 	//Preapre all rectangle parameters
-	GfxInfo RectGfxInfo;
-	
+	GfxInfo RectGfxInfo;	//default is not filled
 	//get drawing, filling colors and pen width from the interface
 	RectGfxInfo.DrawClr = pUI->getCrntDrawColor();
-	RectGfxInfo.FillClr = pUI->getCrntFillColor();
+	//RectGfxInfo.FillClr = pUI->getCrntFillColor();
 	RectGfxInfo.BorderWdth = pUI->getCrntPenWidth();
+	if (pUI->getFillSt() == true)
+	{
+		RectGfxInfo.FillClr = pUI->getCrntFillColor();
+		RectGfxInfo.isFilled = true;
+	}
+	else
+	{
+		RectGfxInfo.isFilled = false;
+	}
 
-
-	RectGfxInfo.isFilled = false;	//default is not filled
 	RectGfxInfo.isSelected = false;	//defualt is not selected
-
 
 	//Create a rectangle with the above parameters
 	Rect *R=new Rect(P1, P2, RectGfxInfo);
@@ -52,3 +57,7 @@ void opAddRect::Execute()
 	pGr->Addshape(R);
 
 }
+
+
+
+
