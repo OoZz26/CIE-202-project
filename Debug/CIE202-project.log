@@ -1,8 +1,3 @@
 ﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
-  IrRegularPolygon.cpp
-C:\Users\East-Sound\Documents\GitHub\cs-project\IrRegularPolygon.cpp(31,24): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\East-Sound\Documents\GitHub\cs-project\IrRegularPolygon.cpp(33,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\East-Sound\Documents\GitHub\cs-project\IrRegularPolygon.cpp(36,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\East-Sound\Documents\GitHub\cs-project\IrRegularPolygon.cpp(26): warning C4700: uninitialized local variable 'i' used
-Circle.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
+  Oval.cpp
   CIE202-project.vcxproj -> C:\Users\East-Sound\Documents\GitHub\cs-project\Debug\CIE202-project.exe
