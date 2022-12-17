@@ -47,6 +47,7 @@ private:
 		ICON_SELECT,
 		ICON_Border,
 		ICON_Fill,
+		ICON_Draw,
 		//TODO: Add more icons names here
 
 		ICON_EXIT,		//Exit icon
@@ -76,6 +77,7 @@ private:
 		ToolBarHeight,		//Tool Bar Height (distance from top of window to bottom line of toolbar)
 		MenuIconWidth;		//Width of each icon in toolbar menu
 	string message;
+	bool Isfilled;
 
 			
 	color HighlightColor;	//Highlighting color
@@ -88,6 +90,7 @@ private:
 	color StatusBarYellowPa;
 	color StatusBarGreenPa;
 	int PenWidth;			//width of the pen that draws shapes
+	bool isfilled;
 
 	/// Add more members if needed
 
@@ -132,7 +135,8 @@ public:
 	color setGeneralFillColor(color col); // set a fill color
 	int getCrntPenWidth() const;		//get current pen width
 	void setCrntPenWidth(int Pen);
-
+	bool getFillSt()const ;
+	bool getIsFilled();
 
 	~GUI();
 };

@@ -1,3 +1,6 @@
 ﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
   opFillColor.cpp
+  opBorderWidth.cpp
+  OpChangeColor.cpp
+  Generating Code...
   CIE202-project.vcxproj -> E:\Zewail academic years\C++ project git hub\CIE-202-project\Debug\CIE202-project.exe

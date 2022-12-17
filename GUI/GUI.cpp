@@ -29,7 +29,7 @@ GUI::GUI()
 	StatusBarGreenPa = GREEN;
 	PenWidth = 3;	//default width of the shapes frames
 	message = "COLOR PALETTE";
-
+	Isfilled = false;
 
 	//Create the output window
 	pWind = CreateWind(width, height, wx, wy);
@@ -43,6 +43,7 @@ GUI::GUI()
 	CreateStatusBarBlackPa();
 	CreateStatusBarYellowPa();
 	CreateStatusBarGreenPa();
+	
 }
 
 
@@ -107,6 +108,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_Border: return BORDER_WIDTH;
 			case ICON_SELECT: return SELECT;
 			case ICON_Fill: return FILL_COLOR;
+			case ICON_Draw: return DRAW_COLOR;
 			default: return EMPTY;	//A click on empty place in desgin toolbar
 			}
 		}
@@ -242,6 +244,7 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_SELECT] = "images\\MenuIcons\\Menu_Select.jpg";
 	MenuIconImages[ICON_Border] = "images\\MenuIcons\\Menu_Border.jpg";
 	MenuIconImages[ICON_Fill] = "images\\MenuIcons\\Menu_Fill.jpg";
+	MenuIconImages[ICON_Draw] = "images\\MenuIcons\\Menu_Draw.jpg";
 	//TODO: Prepare images for each menu icon and add it to the list
 
 	//Draw menu icon one image at a time
@@ -304,11 +307,17 @@ color GUI::getCrntFillColor() const	//get current filling color
 
 color GUI:: setGeneralFillColor(color col) // set a filling color
 {
+	//Isfilled = true;
 	FillColor = col;
-	return 0;
+	return 	FillColor;
+	
 }
 //////////////////////////////////////////////////////////////////////////////////////////
-
+bool GUI::getIsFilled()
+{
+	Isfilled = true;
+	return Isfilled;
+}
 int GUI::getCrntPenWidth() const		//get current pen width
 {
 	return PenWidth;
@@ -316,6 +325,10 @@ int GUI::getCrntPenWidth() const		//get current pen width
 void GUI::setCrntPenWidth(int Pen)
 {
 	PenWidth = Pen;
+}
+bool GUI::getFillSt()const
+{
+	return Isfilled;
 }
 
 //======================================================================================//

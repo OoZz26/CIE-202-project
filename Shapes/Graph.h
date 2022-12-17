@@ -21,6 +21,7 @@ public:
 	shape* Getshape(Point p) const; //Search for a shape given a point inside the shape
 	shape* GetSelected();
 	void SetSelected(shape* sh);
+	bool setFilled(bool state);
 	void Save(ofstream& outfile);	//Save all shapes to a file
 	void load(ifstream& inputfile);	//Load all shapes from a file
 };

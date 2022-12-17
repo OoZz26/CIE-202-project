@@ -14,20 +14,21 @@ void opBorderWidth::Execute()
 	GUI* pUI = pControl->GetUI();
 	Graph* pGraph = pControl->getGraph();
 	pUI->PrintMessage("ENTER THE BORDER WIDTH YOU NEED : ");
-	//BorderChosen = stoi(pUI->GetSrting());
+
 	if (pGraph->GetSelected() != nullptr)
 	{
 		BorderChosen = stoi(pUI->GetSrting());
 		pGraph->GetSelected()->ChngBorderWidth(BorderChosen);
+		pUI->ClearStatusBar();
 	}
-	else if (pGraph->GetSelected() == nullptr)
+	else 
 	{
 		pUI->PrintMessage("YOU DID NOT SELECT A SHAPE ");
 		BorderChosen = pUI->getCrntPenWidth();
-		pGraph->GetSelected()->ChngBorderWidth(BorderChosen);
-	
+
 	}
 
+
 	//// clear the status bar
-	pUI->ClearStatusBar();
+
 }

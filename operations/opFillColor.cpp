@@ -17,15 +17,17 @@ void opFillColor::Execute()
 		pUI->PrintMessage("CHOOSE A COLOR FROM PALETTE : ");
 		color clr = pUI->CreateColorPalette();
 		pGraph->GetSelected()->ChngFillClr(clr);
+		pUI->ClearStatusBar();
 	}
+
 	else if (pGraph->GetSelected() == nullptr)
 	{
 		pUI->PrintMessage("YOU DID NOT SELECT A SHAPE ");
 		color col = pUI->getCrntFillColor();
-		pGraph->GetSelected()->ChngFillClr(col);
+
 
 	}
+
 	
-	pUI->ClearStatusBar();
 
 }
