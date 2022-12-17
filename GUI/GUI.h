@@ -46,7 +46,7 @@ private:
 		ICON_PEN, 
 		ICON_SELECT,
 		ICON_Border,
-
+		ICON_Fill,
 		//TODO: Add more icons names here
 
 		ICON_EXIT,		//Exit icon

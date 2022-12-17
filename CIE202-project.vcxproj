@@ -170,6 +170,7 @@
     <ClCompile Include="operations\opAddRect.cpp" />
     <ClCompile Include="operations\opBorderWidth.cpp" />
     <ClCompile Include="operations\OpChangeColor.cpp" />
+    <ClCompile Include="operations\opFillColor.cpp" />
     <ClCompile Include="opSelect.cpp" />
     <ClCompile Include="Shapes\Graph.cpp" />
     <ClCompile Include="Shapes\Shape.cpp" />
@@ -204,6 +205,7 @@
     <ClInclude Include="operations\opBorderWidth.h" />
     <ClInclude Include="operations\OpChangeColor.h" />
     <ClInclude Include="operations\operation.h" />
+    <ClInclude Include="operations\opFillColor.h" />
     <ClInclude Include="opSelect.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Shapes\Graph.h" />

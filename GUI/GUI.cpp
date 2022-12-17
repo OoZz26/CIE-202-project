@@ -106,6 +106,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_PEN: return PEN_WIDTH;
 			case ICON_Border: return BORDER_WIDTH;
 			case ICON_SELECT: return SELECT;
+			case ICON_Fill: return FILL_COLOR;
 			default: return EMPTY;	//A click on empty place in desgin toolbar
 			}
 		}
@@ -240,6 +241,7 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_PEN] = "images\\MenuIcons\\Menu_PEN.jpg";
 	MenuIconImages[ICON_SELECT] = "images\\MenuIcons\\Menu_Select.jpg";
 	MenuIconImages[ICON_Border] = "images\\MenuIcons\\Menu_Border.jpg";
+	MenuIconImages[ICON_Fill] = "images\\MenuIcons\\Menu_Fill.jpg";
 	//TODO: Prepare images for each menu icon and add it to the list
 
 	//Draw menu icon one image at a time

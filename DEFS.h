@@ -26,6 +26,7 @@ enum operationType //The operations supported (you can add more if needed)
 	STATUS,			//A click on the status bar
 	EMPTY,			//A click on empty place in the toolbar
 	BORDER_WIDTH,
+	FILL_COLOR,
 
 	SELECT,
 	TO_DRAW,		//Switch interface to Draw mode
