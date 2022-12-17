@@ -168,9 +168,8 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_Tri] = "images\\MenuIcons\\Menu_Tri.jpg";
 	MenuIconImages[ICON_Line] = "images\\MenuIcons\\Menu_Line.jpg";
 	MenuIconImages[ICON_SQU] = "images\\MenuIcons\\Menu_Square.jpg";
-	MenuIconImages[ICON_SELECT] = "images\\MenuIcons\\Menu_Select.jpg";
 	MenuIconImages[ICON_OVAL] = "images\\MenuIcons\\Menu_OVAL.jpg";
-	
+	MenuIconImages[ICON_SELECT] = "images\\MenuIcons\\Menu_Select.jpg";
 
 	//TODO: Prepare images for each menu icon and add it to the list
 	//Draw menu icon one image at a time

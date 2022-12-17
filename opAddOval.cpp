@@ -41,12 +41,12 @@ void opAddOval::Execute()
 
 
 	//Create a oval with the above parameters
-	Oval* R = new Oval(P1, P2, OvalGfxInfo);
+	//Oval* R = new Oval(P1, P2, OvalGfxInfo);
 
 	//Get a pointer to the graph
 	Graph* pGr = pControl->getGraph();
 
 	//Add the Oval to the list of shapes
-	pGr->Addshape(R);
+	//pGr->Addshape(R);
 
 }

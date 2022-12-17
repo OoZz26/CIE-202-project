@@ -11,7 +11,7 @@ Square::Square(Point P1, Point P2, GfxInfo shapeGfxInfo) :shape(shapeGfxInfo)
 Square::~Square()
 {}
 bool Square::IsINSHAPE(Point test) {
-	if (test.x >= min(Corner1.x, Corner2.x) && test.x <= max(Corner1.x, Corner2.x) && test.y >= min(Corner1.y, Corner2.y) && test.y <= max(Corner1.y, Corner2.y)) {
+	if (test.x >= Corner1.x && test.x <= (Corner1.x)+Lenght && test.y >= Corner1.y && test.y <= (Corner1.y)+Lenght) {
 		return true;
 	}
 	else

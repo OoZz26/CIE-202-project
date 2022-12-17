@@ -1,14 +1,4 @@
 ﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
-  opAddOval.cpp
-C:\Users\East-Sound\Documents\GitHub\cs-project\opAddOval.cpp(44): error C2259: 'Oval': cannot instantiate abstract class
-C:\Users\East-Sound\Documents\GitHub\cs-project\Oval.h(4): message : see declaration of 'Oval'
-C:\Users\East-Sound\Documents\GitHub\cs-project\opAddOval.cpp(44): message : due to following members:
-C:\Users\East-Sound\Documents\GitHub\cs-project\opAddOval.cpp(44): message : 'bool shape::IsINSHAPE(Point)': is abstract
-C:\Users\East-Sound\Documents\GitHub\cs-project\Shapes\Shape.h(29): message : see declaration of 'shape::IsINSHAPE'
-C:\Users\East-Sound\Documents\GitHub\cs-project\opAddOval.cpp(44,20): error C2259: 'Oval': cannot instantiate abstract class
-C:\Users\East-Sound\Documents\GitHub\cs-project\Oval.h(4): message : see declaration of 'Oval'
-C:\Users\East-Sound\Documents\GitHub\cs-project\opAddOval.cpp(44,20): message : due to following members:
-C:\Users\East-Sound\Documents\GitHub\cs-project\opAddOval.cpp(44,20): message : 'bool shape::IsINSHAPE(Point)': is abstract
-C:\Users\East-Sound\Documents\GitHub\cs-project\Shapes\Shape.h(29): message : see declaration of 'shape::IsINSHAPE'
-  GUI.cpp
-  Generating Code...
+  Square.cpp
+C:\Users\East-Sound\Documents\GitHub\cs-project\Square.cpp(7,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  CIE202-project.vcxproj -> C:\Users\East-Sound\Documents\GitHub\cs-project\Debug\CIE202-project.exe
