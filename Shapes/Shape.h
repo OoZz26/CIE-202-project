@@ -18,11 +18,12 @@ public:
 	void SetSelected(bool s);	//select/unselect the shape
 	bool IsSelected() const;	//check whether fig is selected
 
-	virtual void Draw(GUI* pUI) const  = 0 ;		//Draw the shape
+	virtual bool IsINSHAPE(Point p)   = 0 ;		//Draw the shape
 	
 	void ChngDrawClr(color Dclr);	//changes the shape's drawing color
 	void ChngFillClr(color Fclr);	//changes the shape's filling color
-
+	int ChngBorderWidth(int BoWi); //changes the shape's border width
+	virtual void Draw(GUI* pUI) const = 0;
 	///The following functions should be supported by the shape class
 	///It should be overridden by each inherited shape
 

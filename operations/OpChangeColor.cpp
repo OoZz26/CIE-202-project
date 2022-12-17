@@ -9,8 +9,8 @@ OpChangeColor::~OpChangeColor()
 ////Execute the operation
 void OpChangeColor::Execute()
 {
-	GUI* pUI = pControl->GetUI();
-
+	GUI* pUI = pControl->GetUI
+();
 	pUI->PrintMessage("Do you want to 'FILL' or 'DRAW' : ");
 	FillOrDraw = pUI->GetSrting();
 	if (FillOrDraw == "fill")

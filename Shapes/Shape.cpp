@@ -14,6 +14,11 @@ bool shape::IsSelected() const
 void shape::ChngDrawClr(color Dclr)
 {	ShpGfxInfo.DrawClr = Dclr; }
 
+int shape::ChngBorderWidth(int BoWi)
+{
+	return ShpGfxInfo.BorderWdth = BoWi;
+}
+
 void shape::ChngFillClr(color Fclr)
 {	
 	ShpGfxInfo.isFilled = true;

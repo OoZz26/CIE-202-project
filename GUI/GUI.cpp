@@ -104,7 +104,8 @@ operationType GUI::GetUseroperation() const
 			case ICON_CIRC: return DRAW_CIRC;
 			case ICON_EXIT: return EXIT;
 			case ICON_PEN: return PEN_WIDTH;
-
+			case ICON_Border: return BORDER_WIDTH;
+			case ICON_SELECT: return SELECT;
 			default: return EMPTY;	//A click on empty place in desgin toolbar
 			}
 		}
@@ -149,6 +150,7 @@ void GUI::CreateStatusBar() const
 	pWind->SetPen(StatusBarColor, 1);
 	pWind->SetBrush(StatusBarColor);
 	pWind->DrawRectangle(0, height - StatusBarHeight, StatusBarWidth, height);// main status bar rectangle
+
 }
 
 color GUI::CreateColorPalette()
@@ -236,7 +238,8 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_CIRC] = "images\\MenuIcons\\Menu_Circ.jpg";
 	MenuIconImages[ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
 	MenuIconImages[ICON_PEN] = "images\\MenuIcons\\Menu_PEN.jpg";
-
+	MenuIconImages[ICON_SELECT] = "images\\MenuIcons\\Menu_Select.jpg";
+	MenuIconImages[ICON_Border] = "images\\MenuIcons\\Menu_Border.jpg";
 	//TODO: Prepare images for each menu icon and add it to the list
 
 	//Draw menu icon one image at a time
@@ -278,15 +281,6 @@ void GUI::PrintMessage(string msg) const	//Prints a message on status bar
 }
 
 
-
-// still not activated
-void GUI::PrintMessagePa(string msg) const
-{
-	msg = message;
-	pWind->SetPen(MsgColor, 50);
-	pWind->SetFont(24, BOLD, BY_NAME, "Arial");
-	pWind->DrawString(1000,height - StatusBarHeight, msg);
-}
 //////////////////////////////////////////////////////////////////////////////////////////
 
 color GUI::getCrntDrawColor() 	//get current drwawing color

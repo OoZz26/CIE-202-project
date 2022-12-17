@@ -1,6 +1,7 @@
 #include "Graph.h"
 #include "../GUI/GUI.h"
 
+
 Graph::Graph()
 {
 	selectedShape = nullptr;
@@ -30,13 +31,18 @@ void Graph::Draw(GUI* pUI) const
 }
 
 
-shape* Graph::Getshape(int x, int y) const
+shape* Graph::GetSelected() {
+	return selectedShape;
+}
+
+void Graph::SetSelected(shape* sh) {
+	selectedShape = sh;
+}
+shape* Graph::Getshape(Point p) const
 {
-	//If a shape is found return a pointer to it.
-	//if this point (x,y) does not belong to any shape return NULL
-
-
-	///Add your code here to search for a shape given a point x,y	
-
+	for (auto shapePointer : shapesList)
+		if (shapePointer->IsINSHAPE(p)) {
+			return shapePointer;
+		}
 	return nullptr;
 }

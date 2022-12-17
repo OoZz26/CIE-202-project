@@ -2,7 +2,8 @@
 #include "operations\opAddRect.h"
 #include "operations/OpAddPen.h"
 #include "operations/OpChangeColor.h"
-
+#include "operations/opBorderWidth.h"
+#include "opSelect.h"
 //Constructor
 controller::controller()
 {
@@ -44,6 +45,13 @@ operation* controller::createOperation(operationType OpType)
 			pOp = new OpAddPen(this);
 			break;
 
+		case BORDER_WIDTH:
+			pOp = new opBorderWidth(this);
+			break;
+			
+		case SELECT:	//a click on the status bar ==> no operation
+			pOp = new opSelect(this);
+			break;
 		
 		case STATUS:	//a click on the status bar ==> no operation
 			pOp = new OpChangeColor(this);

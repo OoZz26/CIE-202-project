@@ -44,6 +44,8 @@ private:
 		ICON_RECT,		//Recangle icon in menu
 		ICON_CIRC,		//Circle icon in menu
 		ICON_PEN, 
+		ICON_SELECT,
+		ICON_Border,
 
 		//TODO: Add more icons names here
 
@@ -122,7 +124,7 @@ public:
 	///Make similar functions for drawing all other shapes.
 
 	void PrintMessage(string msg) const;	//Print a message on Status bar
-	void PrintMessagePa(string msg) const; //Message displayed to define the color pallete
+	
 
 	color getCrntDrawColor() ;	//get current drwawing color
 	color setGeneralDrawColor(color col); // set a drawing color
