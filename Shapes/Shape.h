@@ -1,4 +1,5 @@
 #pragma once
+
 #include "..\defs.h"
 #include "..\GUI\GUI.h"
 
@@ -14,7 +15,10 @@ protected:
 
 public:
 	shape(GfxInfo shapeGfxInfo);
+
 	virtual ~shape() {}
+	double distance(int x1,int y1,int x2,int y2);
+	double tri_area(Point p1, Point p2, Point p3 );
 	void SetSelected(bool s);	//select/unselect the shape
 	bool IsSelected() const;	//check whether fig is selected
 
@@ -22,6 +26,7 @@ public:
 	
 	void ChngDrawClr(color Dclr);	//changes the shape's drawing color
 	void ChngFillClr(color Fclr);	//changes the shape's filling color
+	virtual bool IsINSHAPE(Point test) = 0;
 
 	///The following functions should be supported by the shape class
 	///It should be overridden by each inherited shape

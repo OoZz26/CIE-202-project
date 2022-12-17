@@ -1,5 +1,13 @@
 #include "controller.h"
 #include "operations\opAddRect.h"
+#include"opAddLine.h"
+#include"opAddTriangle.h"
+#include"opAddSquare.h"
+#include"opAddCircle.h"
+#include"opAddOval.h"
+#include"opSelect.h"
+#include"opAddIrRegularPolygon.h"
+#include"opAddRegularPolygon.h"
 
 
 //Constructor
@@ -31,9 +39,35 @@ operation* controller::createOperation(operationType OpType)
 			break;
 
 		case DRAW_LINE:
-			///create AddLineoperation here
-
+			pOp = new opAddLine(this);
 			break;
+		case DRAW_TRI:
+			pOp = new opAddTriangle(this);
+			break;
+
+		case DRAW_SQU:
+			pOp = new opAddSquare(this);
+			break;
+		case DRAW_CIRC:
+			pOp = new opAddCircle(this);
+			break;
+		case DRAW_OVAL:
+			pOp = new opAddOval(this);
+			break;
+		case SELECT:
+			pOp = new opSelect(this);
+			break;
+		case DRAW_IRRPOLYGON:
+			pOp = new opAddIrRegularPolygon(this);
+			break;
+		case DRAW_RPOLYGON:
+			pOp = new opAddRegularPolygon(this);
+			break;
+
+		 
+
+
+			
 
 		case EXIT:
 			///create Exitoperation here

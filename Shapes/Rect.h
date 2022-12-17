@@ -10,6 +10,7 @@ private:
 public:
 	Rect(Point , Point, GfxInfo shapeGfxInfo );
 	virtual ~Rect();
+	bool IsINSHAPE(Point test);
 	virtual void Draw(GUI* pUI) const;
 };
 

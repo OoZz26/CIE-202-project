@@ -1,5 +1,6 @@
 #include "GUI.h"
 
+
 GUI::GUI()
 {
 	//Initialize user interface parameters
@@ -90,6 +91,13 @@ operationType GUI::GetUseroperation() const
 			case ICON_RECT: return DRAW_RECT;
 			case ICON_CIRC: return DRAW_CIRC;
 			case ICON_EXIT: return EXIT;
+			case ICON_Tri: return DRAW_TRI; 
+			case ICON_Line: return DRAW_LINE;
+			case ICON_SQU: return DRAW_SQU;
+			case ICON_OVAL: return DRAW_OVAL;
+			case ICON_IRRegularpolygon: return DRAW_IRRPOLYGON;
+			case ICON_Regularpolygon: return DRAW_RPOLYGON;
+			case ICON_SELECT: return SELECT ;
 
 			default: return EMPTY;	//A click on empty place in desgin toolbar
 			}
@@ -159,9 +167,15 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_RECT] = "images\\MenuIcons\\Menu_Rect.jpg";
 	MenuIconImages[ICON_CIRC] = "images\\MenuIcons\\Menu_Circ.jpg";
 	MenuIconImages[ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
+	MenuIconImages[ICON_Tri] = "images\\MenuIcons\\Menu_Tri.jpg";
+	MenuIconImages[ICON_Line] = "images\\MenuIcons\\Menu_Line.jpg";
+	MenuIconImages[ICON_SQU] = "images\\MenuIcons\\Menu_Square.jpg";
+	MenuIconImages[ICON_OVAL] = "images\\MenuIcons\\Menu_OVAL.jpg";
+	MenuIconImages[ICON_Regularpolygon] = "images\\MenuIcons\\Menu_Regularpolygon.jpg";
+	MenuIconImages[ICON_IRRegularpolygon] = "images\\MenuIcons\\Menu_IRRegular.jpg";
+	MenuIconImages[ICON_SELECT] = "images\\MenuIcons\\Menu_Select.jpg";
 
 	//TODO: Prepare images for each menu icon and add it to the list
-
 	//Draw menu icon one image at a time
 	for (int i = 0; i < DRAW_ICON_COUNT; i++)
 		pWind->DrawImage(MenuIconImages[i], i * MenuIconWidth, 0, MenuIconWidth, ToolBarHeight);
@@ -244,7 +258,170 @@ void GUI::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const
 	pWind->DrawRectangle(P1.x, P1.y, P2.x, P2.y, style);
 
 }
+void GUI::DrawTri(Point P1, Point P2,Point P3, GfxInfo TriGfxInfo) const
+{
+	color DrawingClr;
+	if (TriGfxInfo.isSelected)	//shape is selected
+		DrawingClr = HighlightColor; //shape should be drawn highlighted
+	else
+		DrawingClr = TriGfxInfo.DrawClr;
 
+	pWind->SetPen(DrawingClr, TriGfxInfo.BorderWdth);	//Set Drawing color & width
+
+	drawstyle style;
+	if (TriGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(TriGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+
+	pWind->DrawTriangle(P1.x, P1.y, P2.x, P2.y,P3.x,P3.y, style);
+
+}
+
+
+void GUI::DrawL(Point P1, Point P2,GfxInfo LGfxInfo) const
+{
+	color DrawingClr;
+	if (LGfxInfo.isSelected)	//shape is selected
+		DrawingClr = HighlightColor; //shape should be drawn highlighted
+	else
+		DrawingClr = LGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, LGfxInfo.BorderWdth);	//Set Drawing color & width
+
+	drawstyle style;
+	if (LGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(LGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+
+	pWind->DrawLine(P1.x, P1.y, P2.x, P2.y, style);
+
+}
+void GUI::DrawSQU(Point P1,int Lenght ,GfxInfo SGfxInfo) const
+{
+	color DrawingClr;
+	if (SGfxInfo.isSelected)	//shape is selected
+		DrawingClr = HighlightColor; //shape should be drawn highlighted
+	else
+		DrawingClr = SGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, SGfxInfo.BorderWdth);	//Set Drawing color & width
+
+	drawstyle style;
+	if (SGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(SGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+	//erorr no drawsquare in smugraphics
+	pWind->DrawLine(P1.x, P1.y, P1.x+Lenght, P1.y, style);
+	pWind->DrawLine(P1.x, P1.y, P1.x , P1.y + Lenght, style);
+	pWind->DrawLine(P1.x+Lenght, P1.y + Lenght, P1.x+Lenght, P1.y , style);
+	pWind->DrawLine(P1.x + Lenght, P1.y + Lenght, P1.x, P1.y + Lenght, style);
+	
+
+
+
+
+}
+
+void GUI::DrawOVAL(Point P1, Point P2, GfxInfo OVALGfxInfo) const
+{
+	color DrawingClr;
+	if (OVALGfxInfo.isSelected)	//shape is selected
+		DrawingClr = HighlightColor; //shape should be drawn highlighted
+	else
+		DrawingClr = OVALGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, OVALGfxInfo.BorderWdth);	//Set Drawing color & width
+
+	drawstyle style;
+	if (OVALGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(OVALGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+	//erorr no Draw Oval in smugraphics
+	pWind->DrawEllipse(P1.x, P1.y, P2.x, P2.y, style);
+}
+
+void GUI::DrawCircle(Point P1, int  raduis, GfxInfo CGfxInfo) const
+{
+	color DrawingClr;
+	if (CGfxInfo.isSelected)	//shape is selected
+		DrawingClr = HighlightColor; //shape should be drawn highlighted
+	else
+		DrawingClr = CGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, CGfxInfo.BorderWdth);	//Set Drawing color & width
+
+	drawstyle style;
+	if (CGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(CGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+
+	pWind->DrawCircle(P1.x, P1.y,raduis ,style);
+}
+
+
+void GUI::DrawRPolygon(int* arrx, int* arrY, int nvertices, GfxInfo RPolygonGfxInfo) const
+{
+	color DrawingClr;
+	if (RPolygonGfxInfo.isSelected)	//shape is selected
+		DrawingClr = HighlightColor; //shape should be drawn highlighted
+	else
+		DrawingClr = RPolygonGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, RPolygonGfxInfo.BorderWdth);	//Set Drawing color & width
+
+	drawstyle style;
+	if (RPolygonGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(RPolygonGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+
+	pWind->DrawPolygon(arrx, arrY, nvertices, style);
+
+}
+void GUI::IrRegularPolygon(int* arrx, int* arry, int nvertices, GfxInfo IrRPolygonGfxInfo) const
+{
+	color DrawingClr;
+	if (IrRPolygonGfxInfo.isSelected)	//shape is selected
+		DrawingClr = HighlightColor; //shape should be drawn highlighted
+	else
+		DrawingClr = IrRPolygonGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, IrRPolygonGfxInfo.BorderWdth);	//Set Drawing color & width
+
+	drawstyle style;
+	if (IrRPolygonGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(IrRPolygonGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+
+	pWind->DrawPolygon(arrx, arry, nvertices, style);
+}
 
 //////////////////////////////////////////////////////////////////////////////////////////
 GUI::~GUI()

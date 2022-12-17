@@ -1,7 +1,7 @@
 #pragma once
 
 
-
+#include<iostream>
 #include "..\CMUgraphicsLib\CMUgraphics.h"
 #include "..\Defs.h"
 
@@ -41,10 +41,15 @@ class GUI
 		ICON_CIRC,		//Circle icon in menu
 
 		//TODO: Add more icons names here
-
+		ICON_Tri,
+		ICON_Line,
+		ICON_SQU,
+		ICON_OVAL,
+		ICON_Regularpolygon,
+		ICON_IRRegularpolygon,
+		ICON_SELECT,
 		ICON_EXIT,		//Exit icon
-
-		DRAW_ICON_COUNT		//no. of menu icons ==> This should be the last line in this enum
+		DRAW_ICON_COUNT,		//no. of menu icons ==> This should be the last line in this enum
 
 	};
 
@@ -103,6 +108,14 @@ public:
 
 	// -- shapes Drawing functions
 	void DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const;  //Draw a rectangle
+	void DrawTri(Point P1, Point P2,Point P3, GfxInfo TriGfxInfo) const;  //Draw a Trinangle
+	void DrawL(Point P1, Point P2, GfxInfo LGfxInfo) const;  //Draw a Line
+	void DrawSQU(Point P1, int lenght ,GfxInfo SGfxInfo) const;  //Draw a Square
+	void DrawOVAL(Point P1, Point P2, GfxInfo EGfxInfo) const;  //Draw a Ellipse
+	void DrawCircle(Point P1, int raduis, GfxInfo CGfxInfo) const;  //Draw a circle
+	void DrawRPolygon(int* arrx, int* arrY, int nvertices, GfxInfo RPolygonGfxInfo) const;  //Draw a Regular Polygon
+	void IrRegularPolygon(int* arrx, int* arry, int nvertices, GfxInfo IrRPolygonGfxInfo) const;
+
 
 	///Make similar functions for drawing all other shapes.
 
