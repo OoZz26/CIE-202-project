@@ -44,7 +44,7 @@ void opAddRect::Execute()
 	{
 		RectGfxInfo.isFilled = false;
 	}
-	
+
 	RectGfxInfo.isSelected = false;	//defualt is not selected
 
 	//Create a rectangle with the above parameters
@@ -52,8 +52,12 @@ void opAddRect::Execute()
 
 	//Get a pointer to the graph
 	Graph* pGr = pControl->getGraph();
-	/*RectGfxInfo.isFilled = pGr.isFill*/
+
 	//Add the rectangle to the list of shapes
 	pGr->Addshape(R);
 
 }
+
+
+
+

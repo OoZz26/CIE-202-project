@@ -1,3 +1,112 @@
 ﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  Triangle.cpp
+D:\Series\hager\cs-project\Triangle.cpp(15,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\Series\hager\cs-project\Triangle.cpp(16,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\Series\hager\cs-project\Triangle.cpp(17,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\Series\hager\cs-project\Triangle.cpp(18,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Square.cpp
+D:\Series\hager\cs-project\Square.cpp(7,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Rect.cpp
+  Shape.cpp
+  Graph.cpp
+  Save.cpp
+  RegularPolygon.cpp
+D:\Series\hager\cs-project\RegularPolygon.cpp(9,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\Series\hager\cs-project\RegularPolygon.cpp(12,22): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\Series\hager\cs-project\RegularPolygon.cpp(13,22): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\Series\hager\cs-project\RegularPolygon.cpp(33,23): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\Series\hager\cs-project\RegularPolygon.cpp(37,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\Series\hager\cs-project\RegularPolygon.cpp(45,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
   Oval.cpp
-  CIE202-project.vcxproj -> C:\Users\East-Sound\Documents\GitHub\cs-project\Debug\CIE202-project.exe
+  opSelect.cpp
+  opLoad.cpp
+D:\Series\hager\cs-project\opLoad.cpp(195,16): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+D:\Series\hager\cs-project\opLoad.cpp(196,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+D:\Series\hager\cs-project\opLoad.cpp(197,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+D:\Series\hager\cs-project\opLoad.cpp(36,6): warning C4101: 'nvertices': unreferenced local variable
+D:\Series\hager\cs-project\opLoad.cpp(27,6): warning C4101: 'ID': unreferenced local variable
+  opFillColor.cpp
+  opDrawColor.cpp
+  OpChangeColor.cpp
+  opBorderWidth.cpp
+  opAddSelect.cpp
+  opAddTriangle.cpp
+  opAddRect.cpp
+  OpAddPen.cpp
+  opAddSquare.cpp
+  opAddRegularPolygon.cpp
+  Generating Code...
+  Compiling...
+  opAddOval.cpp
+  opAddLine.cpp
+  opAddIrRegularPolygon.cpp
+  opAddCircle.cpp
+  main.cpp
+  Line.cpp
+D:\Series\hager\cs-project\Line.cpp(16,12): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  IrRegularPolygon.cpp
+D:\Series\hager\cs-project\IrRegularPolygon.cpp(31,24): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\Series\hager\cs-project\IrRegularPolygon.cpp(35,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\Series\hager\cs-project\IrRegularPolygon.cpp(43,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  controller.cpp
+  GUI.cpp
+  windowinput.cpp
+  mousequeue.cpp
+  keyqueue.cpp
+  image.cpp
+D:\Series\hager\cs-project\CMUgraphicsLib\image.cpp(115,29): warning C4018: '<': signed/unsigned mismatch
+  CMUgraphics.cpp
+D:\Series\hager\cs-project\CMUgraphicsLib\CMUgraphics.cpp(257,9): warning C4101: 'iX': unreferenced local variable
+D:\Series\hager\cs-project\CMUgraphicsLib\CMUgraphics.cpp(257,13): warning C4101: 'iY': unreferenced local variable
+D:\Series\hager\cs-project\CMUgraphicsLib\CMUgraphics.cpp(751,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Series\hager\cs-project\CMUgraphicsLib\CMUgraphics.cpp(1164,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Series\hager\cs-project\CMUgraphicsLib\CMUgraphics.cpp(1171,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Series\hager\cs-project\CMUgraphicsLib\CMUgraphics.cpp(1202,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Series\hager\cs-project\CMUgraphicsLib\CMUgraphics.cpp(1210,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Series\hager\cs-project\CMUgraphicsLib\CMUgraphics.cpp(1357,23): warning C4018: '>': signed/unsigned mismatch
+  auxil.cpp
+  Circle.cpp
+D:\Series\hager\cs-project\Circle.cpp(7,21): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\Series\hager\cs-project\Circle.cpp(19,8): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  Generating Code...
+D:\Series\hager\cs-project\controller.cpp(173): warning C4715: 'controller::stringtocolor': not all control paths return a value
+cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  jutils.c
+  jquant2.c
+  jquant1.c
+  jmemnobs.c
+  jmemmgr.c
+D:\Series\hager\cs-project\CMUgraphicsLib\jpeg\jmemmgr.c(1103,19): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Series\hager\cs-project\CMUgraphicsLib\jpeg\jmemmgr.c(1106,11): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  jidctred.c
+  jidctint.c
+  jidctfst.c
+  jidctflt.c
+  jerror.c
+D:\Series\hager\cs-project\CMUgraphicsLib\jpeg\jerror.c(169,5): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+D:\Series\hager\cs-project\CMUgraphicsLib\jpeg\jerror.c(171,5): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  jdtrans.c
+  jdsample.c
+  jdpostct.c
+  jdphuff.c
+  jdmerge.c
+  jdmaster.c
+  jdmarker.c
+  jdmainct.c
+  jdinput.c
+  jdhuff.c
+  Generating Code...
+  Compiling...
+  jddctmgr.c
+  jdcolor.c
+  jdcoefct.c
+  jdatasrc.c
+  jdapistd.c
+  jdapimin.c
+  jcparam.c
+  jcomapi.c
+  jpegload.c
+D:\Series\hager\cs-project\CMUgraphicsLib\jpegload.c(23,12): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Generating Code...
+Circle.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
+  CIE202-project.vcxproj -> D:\Series\hager\cs-project\Debug\CIE202-project.exe

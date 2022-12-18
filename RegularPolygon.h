@@ -17,4 +17,5 @@ public:
 	virtual ~RegularPolygon();
 	void Draw(GUI* pUI) const;
 	bool IsINSHAPE(Point test);
+	string save(ofstream& savefile, string filename, string fcl, string drc, string pnw);
 };

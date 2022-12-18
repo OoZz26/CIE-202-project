@@ -1,6 +1,6 @@
 #pragma once
 #include "Shape.h"
-#include <fstream>
+#include<fstream>
 #include <vector>
 using namespace std;
 
@@ -22,6 +22,7 @@ public:
 	shape* GetSelected();
 	void SetSelected(shape* sh);
 	bool setFilled(bool state);
-	void Save(ofstream& outfile);	//Save all shapes to a file
-	void load(ifstream& inputfile);	//Load all shapes from a file
+	virtual void Save(ofstream& savefile, string filename, string fcl, string drc, string pnw);		//Save all shapes to a file
+	//void load(ifstream& inputfile);	//Load all shapes from a file
+
 };

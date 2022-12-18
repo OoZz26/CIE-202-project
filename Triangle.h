@@ -13,5 +13,6 @@ public:
 	virtual ~Triangle();
 	bool IsINSHAPE(Point test);
 	virtual void Draw(GUI* pUI) const;
+	string save(ofstream& savefile, string filename, string fcl, string drc, string pnw);
 };
 

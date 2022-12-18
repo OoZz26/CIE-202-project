@@ -1,7 +1,21 @@
 #include "Graph.h"
 #include "../GUI/GUI.h"
+#include"Shape.h"
+
+void Graph::Save(ofstream& savefile, string filename, string fcl, string drc, string pnw) {
+
+	filename = filename + ".txt";
+	savefile.open(filename);
+	savefile << fcl << " " << drc << " " << pnw << endl;
+	savefile << to_string(shapesList.size()) << endl;
+	for (auto shapepp : shapesList) {
+
+		savefile << shapepp->save(savefile, filename, fcl, drc, pnw) << endl;
+	}
 
 
+	savefile.close();
+}
 Graph::Graph()
 {
 	selectedShape = nullptr;

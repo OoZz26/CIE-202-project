@@ -30,3 +30,18 @@ void Oval::Draw(GUI* pUI) const
 	//Call Output::DrawOVAL to draw a oval on the screen	
 	pUI->DrawOVAL(P1, P2, ShpGfxInfo);
 }
+string Oval::save(ofstream& savefile, string filename, string fcl, string drc, string pnw)
+{
+	if (ShpGfxInfo.isFilled = true) {
+		string x = colortostring(ShpGfxInfo.DrawClr);
+		string y = colortostring(ShpGfxInfo.FillClr);
+		string info = "Oval " + to_string(P1.x) + " " + to_string(P1.y) + " " + to_string(P2.x) + " " + to_string(P2.y) + " " + x + " " + y;
+		return info;
+	}
+	else {
+		string x = colortostring(ShpGfxInfo.DrawClr);
+		string y = "NO_FILL";
+		string info = "Oval " + to_string(P1.x) + " " + to_string(P1.y) + " " + to_string(P2.x) + " " + to_string(P2.y) + " " + x + " " + y;
+		return info;
+	}
+}

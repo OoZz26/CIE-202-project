@@ -33,11 +33,17 @@ void opAddLine::Execute()
 
 	//get drawing, filling colors and pen width from the interface
 	LGfxInfo.DrawClr = pUI->getCrntDrawColor();
-	LGfxInfo.FillClr = pUI->getCrntFillColor();
+	//RectGfxInfo.FillClr = pUI->getCrntFillColor();
 	LGfxInfo.BorderWdth = pUI->getCrntPenWidth();
-
-
-	LGfxInfo.isFilled = false;	//default is not filled
+	if (pUI->getFillSt() == true)
+	{
+		LGfxInfo.FillClr = pUI->getCrntFillColor();
+		LGfxInfo.isFilled = true;
+	}
+	else
+	{
+		LGfxInfo.isFilled = false;
+	}
 	LGfxInfo.isSelected = false;	//defualt is not selected
 
 
