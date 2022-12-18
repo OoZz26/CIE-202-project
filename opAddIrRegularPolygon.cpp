@@ -34,13 +34,17 @@ void opAddIrRegularPolygon::Execute()
 
 	//get drawing, filling colors and pen width from the interface
 	IrRegularPolygonGfxInfo.DrawClr = pUI->getCrntDrawColor();
-	IrRegularPolygonGfxInfo.FillClr = pUI->getCrntFillColor();
+	//RectGfxInfo.FillClr = pUI->getCrntFillColor();
 	IrRegularPolygonGfxInfo.BorderWdth = pUI->getCrntPenWidth();
-
-
-	IrRegularPolygonGfxInfo.isFilled = false;	//default is not filled
-	IrRegularPolygonGfxInfo.isSelected = false;	//defualt is not selected
-
+	if (pUI->getFillSt() == true)
+	{
+		IrRegularPolygonGfxInfo.FillClr = pUI->getCrntFillColor();
+		IrRegularPolygonGfxInfo.isFilled = true;
+	}
+	else
+	{
+		IrRegularPolygonGfxInfo.isFilled = false;
+	}
 
 	//Create an irregularPolygon with the above parameters
 	IrRegularPolygon* R = new IrRegularPolygon(array,stoi(x), IrRegularPolygonGfxInfo);

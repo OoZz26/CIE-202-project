@@ -1,35 +1,20 @@
 #include "Graph.h"
 #include "../GUI/GUI.h"
-// AHMED ABDELSTAR WORK.....
-void Graph::Save(ofstream& outfile) {
-	//Assuming there is a Save Button
-	//After pressing the Button SAVE it will call this function and this function will use shapeslist which is a dynamic array that contains all drawn shapes to save all shapes into one file just after saving the parameters of each shape Separately 
-	cout << "Save the file with the name: ";
-	string filename;
-	cin >> filename;
-	filename = filename + ".txt";
+#include"Shape.h"
 
-	outfile.open(filename);
-	outfile.close();
-	for (int i = 0; i < shapesList.size(); i++) {
-		outfile << shapesList[i];
-	}
-}
-void Graph::load(ifstream& Infile) {
-	cout << "Enter the file name : ";
-	string filename;
-	cin >> filename;
+void Graph::Save(ofstream& savefile, string filename, string fcl, string drc, string pnw) {
+
 	filename = filename + ".txt";
-	Infile.open(filename);
-	if (!Infile) {
-		cout << "Error: file could not be opened" << endl;
-		exit(1);
+	savefile.open(filename);
+	savefile << fcl << " " << drc << " " << pnw << endl;
+	savefile << to_string(shapesList.size()) << endl;
+	for (auto shapepp : shapesList) {
+
+		savefile << shapepp->save(savefile, filename, fcl, drc, pnw) << endl;
 	}
-	for (int i = 0; i < shapesList.size(); i++) {
-	/*	Infile >> shapesList[i];*/
-	}
-	Infile.close();
-	// using Draw(GUI * pUI) const to draw all the shapes saved to the file 
+
+
+	savefile.close();
 }
 Graph::Graph()
 {
@@ -74,4 +59,17 @@ shape* Graph::Getshape(Point p) const
 			return shapePointer;
 		}
 	return nullptr;
+}
+void Graph::DeleteShape()
+{
+	int mycount = -1;
+	for (auto selected : shapesList)
+	{
+		mycount++;
+		if (selected->IsSelected())
+		{
+			shapesList.erase(shapesList.begin() + mycount);
+			mycount--;
+		}
+	}
 }

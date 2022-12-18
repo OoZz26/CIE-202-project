@@ -32,11 +32,18 @@ void opAddOval::Execute()
 
 	//get drawing, filling colors and pen width from the interface
 	OvalGfxInfo.DrawClr = pUI->getCrntDrawColor();
-	OvalGfxInfo.FillClr = pUI->getCrntFillColor();
+	//RectGfxInfo.FillClr = pUI->getCrntFillColor();
 	OvalGfxInfo.BorderWdth = pUI->getCrntPenWidth();
+	if (pUI->getFillSt() == true)
+	{
+		OvalGfxInfo.FillClr = pUI->getCrntFillColor();
+		OvalGfxInfo.isFilled = true;
+	}
+	else
+	{
+		OvalGfxInfo.isFilled = false;
+	}
 
-
-	OvalGfxInfo.isFilled = false;	//default is not filled
 	OvalGfxInfo.isSelected = false;	//defualt is not selected
 
 

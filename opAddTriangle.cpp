@@ -34,13 +34,19 @@ void opAddTriangle::Execute()
 	//Preapre all Triangle parameters
 	GfxInfo TrianGfxInfo;
 
-	//get drawing, filling colors and pen width from the interface
 	TrianGfxInfo.DrawClr = pUI->getCrntDrawColor();
-	TrianGfxInfo.FillClr = pUI->getCrntFillColor();
+	//RectGfxInfo.FillClr = pUI->getCrntFillColor();
 	TrianGfxInfo.BorderWdth = pUI->getCrntPenWidth();
+	if (pUI->getFillSt() == true)
+	{
+		TrianGfxInfo.FillClr = pUI->getCrntFillColor();
+		TrianGfxInfo.isFilled = true;
+	}
+	else
+	{
+		TrianGfxInfo.isFilled = false;
+	}
 
-
-	TrianGfxInfo.isFilled = false;	//default is not filled
 	TrianGfxInfo.isSelected = false;	//defualt is not selected
 
 

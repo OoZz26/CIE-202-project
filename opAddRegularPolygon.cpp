@@ -42,11 +42,19 @@ void opAddRegularPolygon::Execute()
 
 	//get drawing, filling colors and pen width from the interface
 	RegularpolygonGfxInfo.DrawClr = pUI->getCrntDrawColor();
-	RegularpolygonGfxInfo.FillClr = pUI->getCrntFillColor();
+	//RectGfxInfo.FillClr = pUI->getCrntFillColor();
 	RegularpolygonGfxInfo.BorderWdth = pUI->getCrntPenWidth();
+	if (pUI->getFillSt() == true)
+	{
+		RegularpolygonGfxInfo.FillClr = pUI->getCrntFillColor();
+		RegularpolygonGfxInfo.isFilled = true;
+	}
+	else
+	{
+		RegularpolygonGfxInfo.isFilled = false;
+	}
 
 
-	RegularpolygonGfxInfo.isFilled = false;	//default is not filled
 	RegularpolygonGfxInfo.isSelected = false;	//defualt is not selected
 
 

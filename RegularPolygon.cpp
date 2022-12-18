@@ -60,3 +60,21 @@ void RegularPolygon::Draw(GUI* pUI) const
 	//Call Output::DrawRegularPolygon to draw a regularPolygon on the screen	
 	pUI->DrawRPolygon(ArrX, ArrY, Vertices_num, ShpGfxInfo);
 }
+string RegularPolygon::save(ofstream& savefile, string filename, string fcl, string drc, string pnw)
+{/*Center = C;
+	P = p;
+	Vertices_num = x;
+	radius*/
+	if (ShpGfxInfo.isFilled = true) {
+		string x = colortostring(ShpGfxInfo.DrawClr);
+		string y = colortostring(ShpGfxInfo.FillClr);
+		string info = "RegularPolygon " + to_string(Center.x) + " " + to_string(Center.y) + " " + to_string(P->x) + " " + to_string(P->y) + " " + to_string(Vertices_num)+ " " + to_string(radius) + " " + x + " " + y;
+		return info;
+	}
+	else {
+		string x = colortostring(ShpGfxInfo.DrawClr);
+		string y = "NO_FILL";
+		string info = "RegularPolygon " + to_string(Center.x) + " " + to_string(Center.y) + " " + to_string(P->x) + " " + to_string(P->y) + " " + to_string(Vertices_num) + " " + to_string(radius) + " " + x + " " + y;
+		return info;
+	}
+}

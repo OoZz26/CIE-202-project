@@ -27,17 +27,21 @@ void opAddCircle::Execute()
 	//Read 2nd point and store in point P2
 	pUI->GetPointClicked(P2.x, P2.y);
 	pUI->ClearStatusBar();
-
-	//Preapre all Circle parameters
-	GfxInfo CGfxInfo;
-
+	//Preapre all rectangle parameters
+	GfxInfo CGfxInfo;	//default is not filled
 	//get drawing, filling colors and pen width from the interface
 	CGfxInfo.DrawClr = pUI->getCrntDrawColor();
-	CGfxInfo.FillClr = pUI->getCrntFillColor();
+	//RectGfxInfo.FillClr = pUI->getCrntFillColor();
 	CGfxInfo.BorderWdth = pUI->getCrntPenWidth();
-
-
-	CGfxInfo.isFilled = false;	//default is not filled
+	if (pUI->getFillSt() == true)
+	{
+		CGfxInfo.FillClr = pUI->getCrntFillColor();
+		CGfxInfo.isFilled = true;
+	}
+	else
+	{
+		CGfxInfo.isFilled = false;
+	}
 	CGfxInfo.isSelected = false;	//defualt is not selected
 
 

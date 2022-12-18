@@ -25,3 +25,17 @@ bool Circle::IsINSHAPE(Point test) {
 		return false;
 	}
 }	
+string Circle::save(ofstream& savefile, string filename, string fcl, string drc, string pnw) {
+	if (ShpGfxInfo.isFilled = true) {
+		string x = colortostring(ShpGfxInfo.DrawClr);
+		string y = colortostring(ShpGfxInfo.FillClr);
+		string info = "Circle " + to_string(Center.x) + " " + to_string(Center.y) + " " + to_string(Raduis.x) + " " + to_string(Raduis.y) + " " + to_string(Distance) + " " + x + " " + y;
+		return info;
+	}
+	else {
+		string x = colortostring(ShpGfxInfo.DrawClr);
+		string y = "NO_FILL";
+		string info = "Circle " + to_string(Center.x) + " " + to_string(Center.y) + " " + to_string(Raduis.x) + " " + to_string(Raduis.y) + " " + to_string(Distance) + " " + x + " " + y;
+		return info;
+	}
+}

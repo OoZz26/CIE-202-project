@@ -168,6 +168,48 @@
     <ClCompile Include="opAddRegularPolygon.cpp">
       <Filter>Operations</Filter>
     </ClCompile>
+    <ClCompile Include="operations\OpAddPen.cpp">
+      <Filter>Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="operations\opAddSelect.cpp">
+      <Filter>Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="operations\opBorderWidth.cpp">
+      <Filter>Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="operations\OpChangeColor.cpp">
+      <Filter>Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="operations\opDrawColor.cpp">
+      <Filter>Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="operations\opFillColor.cpp">
+      <Filter>Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="opLoad.cpp">
+      <Filter>Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="Save.cpp">
+      <Filter>Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="opDel.cpp">
+      <Filter>Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="opStick.cpp">
+      <Filter>Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="opModeDraw.cpp">
+      <Filter>Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="OpExit.cpp">
+      <Filter>Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="Stick.cpp">
+      <Filter>Shapes&amp;Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="opModePlay.cpp">
+      <Filter>Operations</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller.h" />
@@ -294,6 +336,48 @@
       <Filter>Operations</Filter>
     </ClInclude>
     <ClInclude Include="opAddRegularPolygon.h">
+      <Filter>Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="operations\OpAddPen.h">
+      <Filter>Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="operations\opAddSelect.h">
+      <Filter>Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="operations\opBorderWidth.h">
+      <Filter>Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="operations\OpChangeColor.h">
+      <Filter>Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="operations\opDrawColor.h">
+      <Filter>Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="operations\opFillColor.h">
+      <Filter>Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="opSave.h">
+      <Filter>Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="opLoad.h">
+      <Filter>Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="opDel.h">
+      <Filter>Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="opStick.h">
+      <Filter>Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="OpExit.h">
+      <Filter>Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="opModeDraw.h">
+      <Filter>Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="Stick.h">
+      <Filter>Shapes&amp;Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="opModePlay.h">
       <Filter>Operations</Filter>
     </ClInclude>
   </ItemGroup>

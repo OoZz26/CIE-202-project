@@ -29,14 +29,20 @@ void opAddSquare::Execute()
 
 	//Preapre all Square parameters
 	GfxInfo SquareGfxInfo;
-
 	//get drawing, filling colors and pen width from the interface
 	SquareGfxInfo.DrawClr = pUI->getCrntDrawColor();
-	SquareGfxInfo.FillClr = pUI->getCrntFillColor();
+	//RectGfxInfo.FillClr = pUI->getCrntFillColor();
 	SquareGfxInfo.BorderWdth = pUI->getCrntPenWidth();
+	if (pUI->getFillSt() == true)
+	{
+		SquareGfxInfo.FillClr = pUI->getCrntFillColor();
+		SquareGfxInfo.isFilled = true;
+	}
+	else
+	{
+		SquareGfxInfo.isFilled = false;
+	}
 
-
-	SquareGfxInfo.isFilled = false;	//default is not filled
 	SquareGfxInfo.isSelected = false;	//defualt is not selected
 
 
