@@ -7,13 +7,13 @@ GUI::GUI()
 	InterfaceMode = MODE_DRAW;
 
 	width = 1300;
-	height = 700;
+	height = 650;
 	wx = 5;
 	wy = 5;
 
 
 	StatusBarHeight = 50;
-	StatusBarWidth = 1020;
+	StatusBarWidth = 1000;
 	ToolBarHeight = 50;
 	MenuIconWidth = 80;
 
@@ -23,7 +23,8 @@ GUI::GUI()
 	BkGrndColor = WHITE;	//Background color
 	HighlightColor = MAGENTA;	//This color should NOT be used to draw shapes. use if for highlight only
 	StatusBarColor = BLACK;
-	StatusBarRedPa = RED; //colors of color palette displayed in the status bar
+	StatusBarWhitePa = WHITE; //colors of color palette displayed in the status bar
+	StatusBarRedPa = RED; 
 	StatusBarBluePa = BLUE;
 	StatusBarBlackPa = BLACK;
 	StatusBarYellowPa = YELLOW;
@@ -40,6 +41,7 @@ GUI::GUI()
 
 	CreateDrawToolBar();
 	CreateStatusBar();
+	CreateStatusBarWhitePa();
 	CreateStatusBarRedPa();
 	CreateStatusBarBluePa();
 	CreateStatusBarBlackPa();
@@ -112,9 +114,12 @@ operationType GUI::GetUseroperation() const
 			case ICON_Regularpolygon: return DRAW_RPOLYGON;
 			case ICON_PEN: return PEN_WIDTH;
 			case ICON_Border: return BORDER_WIDTH;
+			case ICON_BALETTE: return COLOR_PALETTE;
 			case ICON_SELECT: return SELECT;
 			case ICON_Fill: return FILL_COLOR;
 			case ICON_Draw: return DRAW_COLOR;
+			case ICON_SAVE: return SAVE;
+			case ICON_LOAD: return LOAD;
 
 			default: return EMPTY;	//A click on empty place in desgin toolbar
 			}
@@ -171,23 +176,27 @@ color GUI::CreateColorPalette()
 	pWind->WaitMouseClick(x, y);
 	if ((y > height - StatusBarHeight) && (y < height))
 	{
-		if ((x > StatusBarWidth) && (x < StatusBarWidth + 50))
+		if ((x > StatusBarWidth) && (x < StatusBarWidth + 45))
+		{
+			COL = WHITE;
+		}
+		else if ((x > StatusBarWidth+45) && (x < StatusBarWidth + 90))
 		{
 			COL = RED;
 		}
-		else if ((x > StatusBarWidth + 50) && (x < StatusBarWidth + 100))
+		else if ((x > StatusBarWidth + 90) && (x < StatusBarWidth + 135))
 		{
 			COL = BLUE;
 		}
-		else if ((x > StatusBarWidth + 100) && (x < StatusBarWidth + 150))
+		else if ((x > StatusBarWidth + 135) && (x < StatusBarWidth + 180))
 		{
 			COL = BLACK;
 		}
-		else if ((x > StatusBarWidth + 150) && (x < StatusBarWidth + 200))
+		else if ((x > StatusBarWidth + 180) && (x < StatusBarWidth + 225))
 		{
 			COL = YELLOW;
 		}
-		else if ((x > StatusBarWidth + 200) && (x < width))
+		else if ((x > StatusBarWidth + 225) && (x < width))
 		{
 			COL = GREEN;
 		}
@@ -195,35 +204,38 @@ color GUI::CreateColorPalette()
 	return COL;
 }
 
+void GUI::CreateStatusBarWhitePa() const
+{
+	pWind->SetPen(BLACK, 1);
+	pWind->SetBrush(StatusBarWhitePa);
+	pWind->DrawRectangle(StatusBarWidth, height - StatusBarHeight, StatusBarWidth + 45, height);
+	pWind->DrawLine(0, StatusBarHeight, width, StatusBarHeight);
+}
+
 void GUI::CreateStatusBarRedPa() const
 {
-	pWind->SetPen(StatusBarRedPa, 1);
 	pWind->SetBrush(StatusBarRedPa);
-	pWind->DrawRectangle(StatusBarWidth, height - StatusBarHeight, StatusBarWidth + 50, height);// main status bar rectangle
+	pWind->DrawRectangle(StatusBarWidth + 45, height - StatusBarHeight, StatusBarWidth + 90, height);
 }
 void GUI::CreateStatusBarBluePa() const
 {
-	pWind->SetPen(StatusBarBluePa, 1);
 	pWind->SetBrush(StatusBarBluePa);
-	pWind->DrawRectangle(StatusBarWidth + 50, height - StatusBarHeight, StatusBarWidth + 100, height);// main status bar rectangle
+	pWind->DrawRectangle(StatusBarWidth + 90, height - StatusBarHeight, StatusBarWidth + 135, height);
 }
 void GUI::CreateStatusBarBlackPa() const
 {
-	pWind->SetPen(StatusBarBlackPa, 1);
 	pWind->SetBrush(StatusBarBlackPa);
-	pWind->DrawRectangle(StatusBarWidth + 100, height - StatusBarHeight, StatusBarWidth + 150, height);// main status bar rectangle
+	pWind->DrawRectangle(StatusBarWidth + 135, height - StatusBarHeight, StatusBarWidth + 180, height);
 }
 void GUI::CreateStatusBarYellowPa() const
 {
-	pWind->SetPen(StatusBarYellowPa, 1);
 	pWind->SetBrush(StatusBarYellowPa);
-	pWind->DrawRectangle(StatusBarWidth + 150, height - StatusBarHeight, StatusBarWidth + 200, height);// main status bar rectangle
+	pWind->DrawRectangle(StatusBarWidth + 180, height - StatusBarHeight, StatusBarWidth + 225, height);
 }
 void GUI::CreateStatusBarGreenPa() const
 {
-	pWind->SetPen(StatusBarGreenPa, 1);
 	pWind->SetBrush(StatusBarGreenPa);
-	pWind->DrawRectangle(StatusBarWidth + 200, height - StatusBarHeight, width, height);// main status bar rectangle
+	pWind->DrawRectangle(StatusBarWidth + 225, height - StatusBarHeight, width, height);
 }
 
 
@@ -257,11 +269,13 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_Regularpolygon] = "images\\MenuIcons\\Menu_Regularpolygon.jpg";
 	MenuIconImages[ICON_IRRegularpolygon] = "images\\MenuIcons\\Menu_IRRegular.jpg";
 	MenuIconImages[ICON_SELECT] = "images\\MenuIcons\\Menu_Select.jpg";
+	MenuIconImages[ICON_BALETTE] = "images\\MenuIcons\\Menu_Palette.jpg";
 	MenuIconImages[ICON_PEN] = "images\\MenuIcons\\Menu_PEN.jpg";
 	MenuIconImages[ICON_Border] = "images\\MenuIcons\\Menu_Border.jpg";
 	MenuIconImages[ICON_Fill] = "images\\MenuIcons\\Menu_Fill.jpg";
 	MenuIconImages[ICON_Draw] = "images\\MenuIcons\\Menu_Draw.jpg";
-
+	MenuIconImages[ICON_SAVE] = "images\\MenuIcons\\Menu_Save.jpg";
+	MenuIconImages[ICON_LOAD] = "images\\MenuIcons\\Menu_Load.jpg";
 	//TODO: Prepare images for each menu icon and add it to the list
 	//Draw menu icon one image at a time
 	for (int i = 0; i < DRAW_ICON_COUNT; i++)

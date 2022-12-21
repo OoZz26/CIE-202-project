@@ -21,4 +21,18 @@ void Square::Draw(GUI* pUI) const
 {
 	//Call Output::DrawSquare to draw a square on the screen	
 	pUI->DrawSQU(Corner1, Lenght,ShpGfxInfo);
+}string Square::save(ofstream& savefile, string filename, string fcl, string drc, string pnw) {
+	if (ShpGfxInfo.isFilled = true) {
+		string x = colortostring(ShpGfxInfo.DrawClr);
+		string y = colortostring(ShpGfxInfo.FillClr);
+		string info = "Square " + to_string(Corner1.x) + " " + to_string(Corner1.y) + " " + to_string(Corner2.x) + " " + to_string(Corner2.y) + " " + to_string(Lenght) + " " + x + " " + y;
+		return info;
+	}
+	else
+	{
+		string x = colortostring(ShpGfxInfo.DrawClr);
+		string y = "NO_FILL";
+		string info = "Square " + to_string(Corner1.x) + " " + to_string(Corner1.y) + " " + to_string(Corner2.x) + " " + to_string(Corner2.y) + " " + to_string(Lenght) + " " + x + " " + y;
+		return info;
+	}
 }

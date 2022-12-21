@@ -32,3 +32,20 @@ void Triangle::Draw(GUI* pUI) const
 	//Call Output::DrawTri to draw a Triangle on the screen	
 	pUI->DrawTri(Corner1, Corner2,Corner3, ShpGfxInfo);
 }
+string Triangle::save(ofstream& savefile, string filename, string fcl, string drc, string pnw) {
+	if (ShpGfxInfo.isFilled = true) {
+		string x = colortostring(ShpGfxInfo.DrawClr);
+		string y = colortostring(ShpGfxInfo.FillClr);
+		string info = "Triangle " + to_string(Corner1.x) + " " + to_string(Corner1.y) + " " + to_string(Corner2.x) + " " + to_string(Corner2.y) + " " + to_string(Corner3.x) + " " + to_string(Corner3.y) + " " + x + " " + y;
+		return info;
+	}
+	else
+
+	{
+		string x = colortostring(ShpGfxInfo.DrawClr);
+		string y = "NO_FILL";
+		string info = "Triangle " + to_string(Corner1.x) + " " + to_string(Corner1.y) + " " + to_string(Corner2.x) + " " + to_string(Corner2.y) + " " + to_string(Corner3.x) + " " + to_string(Corner3.y) + " " + x + " " + y;
+		return info;
+	}
+}
+

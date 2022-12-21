@@ -52,11 +52,14 @@ private:
 		ICON_Regularpolygon,
 		ICON_IRRegularpolygon,
 		ICON_SELECT,
+		ICON_BALETTE,
 		ICON_PEN,
 		ICON_Border,
 		ICON_Fill,
 		ICON_Draw,
-		ICON_EXIT,		//Exit icon
+		ICON_SAVE,
+		ICON_LOAD,
+		ICON_EXIT,
 		DRAW_ICON_COUNT,		//no. of menu icons ==> This should be the last line in this enum
 
 	};
@@ -90,7 +93,8 @@ private:
 	color MsgColor;			//Messages color
 	color BkGrndColor;		//Background color
 	color StatusBarColor;	//Status bar color
-	color StatusBarRedPa;//colors of color palette displayed in the status bar
+	color StatusBarWhitePa;//colors of color palette displayed in the status bar
+	color StatusBarRedPa;
 	color StatusBarBluePa;
 	color StatusBarBlackPa;
 	color StatusBarYellowPa;
@@ -121,6 +125,7 @@ public:
 	void CreateStatusBar() const;	//create the status bar
 
 	color CreateColorPalette();
+	void CreateStatusBarWhitePa() const; //color displayed on status bar
 	void CreateStatusBarRedPa() const;	//color displayed on status bar
 	void CreateStatusBarBluePa() const;	//color displayed on status bar
 	void CreateStatusBarBlackPa() const;	//color displayed on status bar

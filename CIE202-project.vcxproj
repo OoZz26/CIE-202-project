@@ -183,9 +183,11 @@
     <ClCompile Include="operations\OpChangeColor.cpp" />
     <ClCompile Include="operations\opDrawColor.cpp" />
     <ClCompile Include="operations\opFillColor.cpp" />
+    <ClCompile Include="opLoad.cpp" />
     <ClCompile Include="opSelect.cpp" />
     <ClCompile Include="Oval.cpp" />
     <ClCompile Include="RegularPolygon.cpp" />
+    <ClCompile Include="Save.cpp" />
     <ClCompile Include="Shapes\Graph.cpp" />
     <ClCompile Include="Shapes\Shape.cpp" />
     <ClCompile Include="Shapes\Rect.cpp" />
@@ -234,6 +236,8 @@
     <ClInclude Include="operations\operation.h" />
     <ClInclude Include="opAddTriangle.h" />
     <ClInclude Include="operations\opFillColor.h" />
+    <ClInclude Include="opLoad.h" />
+    <ClInclude Include="opSave.h" />
     <ClInclude Include="opSelect.h" />
     <ClInclude Include="Oval.h" />
     <ClInclude Include="RegularPolygon.h" />

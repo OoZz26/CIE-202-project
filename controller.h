@@ -22,6 +22,8 @@ public:
 	//Reads the input command from the user and returns the corresponding operation type
 	operationType GetUseroperation() const;
 	operation* createOperation(operationType) ; //Creates an operation
+	string colortostring(color c); //Convert from Color Type to String Type
+	color stringtocolor(string s);
 	void Run();
 	
 	Graph* getGraph() const;

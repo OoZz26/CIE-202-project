@@ -21,14 +21,14 @@ public:
 	double tri_area(Point p1, Point p2, Point p3 );
 	void SetSelected(bool s);	//select/unselect the shape
 	bool IsSelected() const;	//check whether fig is selected
-
+	string colortostring(color c);
 	virtual void Draw(GUI* pUI) const  = 0 ;		//Draw the shape
 	
 	void ChngDrawClr(color Dclr);	//changes the shape's drawing color
 	void ChngFillClr(color Fclr);	//changes the shape's filling color
 	int ChngBorderWidth(int BoWi); //changes the shape's border width
 	virtual bool IsINSHAPE(Point test) = 0;
-
+	virtual string save(ofstream& savefile, string filename, string fcl, string drc, string pnw);
 	///The following functions should be supported by the shape class
 	///It should be overridden by each inherited shape
 

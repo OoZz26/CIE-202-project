@@ -186,6 +186,12 @@
     <ClCompile Include="operations\opFillColor.cpp">
       <Filter>Operations</Filter>
     </ClCompile>
+    <ClCompile Include="opLoad.cpp">
+      <Filter>Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="Save.cpp">
+      <Filter>Operations</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller.h" />
@@ -330,6 +336,12 @@
       <Filter>Operations</Filter>
     </ClInclude>
     <ClInclude Include="operations\opFillColor.h">
+      <Filter>Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="opSave.h">
+      <Filter>Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="opLoad.h">
       <Filter>Operations</Filter>
     </ClInclude>
   </ItemGroup>

@@ -61,4 +61,21 @@ void IrRegularPolygon::Draw(GUI* pUI) const
 	//Call Output::IrRegularPolygon to draw a IrRegularPolygon on the screen	
 	pUI->IrRegularPolygon(ArrX, ArrY, Vertices_num, ShpGfxInfo);
 }
-
+string IrRegularPolygon::save(ofstream& savefile, string filename, string fcl, string drc, string pnw)
+{/*Center = C;
+	P = p;
+	Vertices_num = x;
+	radius*/
+	if (ShpGfxInfo.isFilled = true) {
+		string x = colortostring(ShpGfxInfo.DrawClr);
+		string y = colortostring(ShpGfxInfo.FillClr);
+		string info = "IrRegularPolygon " + to_string(Point1->x) + " " + to_string(Point1->y) + " " + to_string(Vertices_num) + " " + x + " " + y;
+		return info;
+	}
+	else {
+		string x = colortostring(ShpGfxInfo.DrawClr);
+		string y = "NO_FILL";
+		string info = "IrRegularPolygon " + to_string(Point1->x) + " " + to_string(Point1->y) + " " + to_string(Vertices_num) + " " + x + " " + y;
+		return info;
+	}
+}

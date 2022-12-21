@@ -27,6 +27,7 @@ enum operationType //The operations supported (you can add more if needed)
 	LOAD,			//Load a graph from a file
 	EXIT,			//Exit the application
 
+	COLOR_PALETTE,
 	BORDER_WIDTH,
 	PEN_WIDTH,
 	FILL_COLOR,

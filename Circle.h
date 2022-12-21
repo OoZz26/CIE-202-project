@@ -15,4 +15,5 @@ public:
 	virtual ~Circle();
 	virtual void Draw(GUI* pUI) const;
 	bool IsINSHAPE(Point test);
+	string save(ofstream& savefile, string filename, string fcl, string drc, string pnw);
 };
