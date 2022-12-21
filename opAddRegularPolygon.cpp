@@ -24,7 +24,7 @@ void opAddRegularPolygon::Execute()
 	//Read number of vertices
 	Point Center;
 	string x = pUI->GetSrting();
-	Point* array = new Point[stoi(x)];
+	Point array ;
 	string msg = "Your vertices are (" + x + " )";
 	msg += " ... Click on your Centerx";
 	pUI->PrintMessage(msg);
@@ -33,7 +33,7 @@ void opAddRegularPolygon::Execute()
 	msg += " ... Click on your First Vertex";
 	pUI->PrintMessage(msg);
 	//Read Points
-	pUI->GetPointClicked(array[0].x, array[0].y);
+	pUI->GetPointClicked(array.x, array.y);
 
 	pUI->ClearStatusBar();
 

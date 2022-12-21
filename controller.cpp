@@ -96,7 +96,9 @@ operation* controller::createOperation(operationType OpType)
 		case STATUS:	//a click on the status bar ==> no operation
 			pOp = new OpChangeColor(this);
 			break;
-		 
+		case COLOR_PALETTE:	//a click on the status bar ==> no operation
+			pOp = new OpChangeColor(this);
+			break;
 
 
 			

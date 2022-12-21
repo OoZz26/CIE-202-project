@@ -7,9 +7,13 @@ class Square : public shape
 private:
 	Point Corner1;
 	Point Corner2;
+	int* ArrX = new int;
+	int* ArrY = new int;
+	int vertixx;
+	int vertixy;
 	int Lenght;
 public:
-	Square(Point p1, Point p2 ,GfxInfo shapeGfxInfo);
+	Square(Point, Point,  GfxInfo shapeGfxInfo);
 	virtual ~Square();
 	bool IsINSHAPE(Point test);
 	virtual void Draw(GUI* pUI) const;

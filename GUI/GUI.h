@@ -52,6 +52,7 @@ private:
 		ICON_Regularpolygon,
 		ICON_IRRegularpolygon,
 		ICON_SELECT,
+		ICON_BALETTE,
 		ICON_PEN,
 		ICON_Border,
 		ICON_Fill,
@@ -92,7 +93,8 @@ private:
 	color MsgColor;			//Messages color
 	color BkGrndColor;		//Background color
 	color StatusBarColor;	//Status bar color
-	color StatusBarRedPa;//colors of color palette displayed in the status bar
+	color StatusBarWhitePa;//colors of color palette displayed in the status bar
+	color StatusBarRedPa;
 	color StatusBarBluePa;
 	color StatusBarBlackPa;
 	color StatusBarYellowPa;
@@ -123,6 +125,7 @@ public:
 	void CreateStatusBar() const;	//create the status bar
 
 	color CreateColorPalette();
+	void CreateStatusBarWhitePa() const; //color displayed on status bar
 	void CreateStatusBarRedPa() const;	//color displayed on status bar
 	void CreateStatusBarBluePa() const;	//color displayed on status bar
 	void CreateStatusBarBlackPa() const;	//color displayed on status bar
@@ -136,7 +139,7 @@ public:
 	void DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const;  //Draw a rectangle
 	void DrawTri(Point P1, Point P2,Point P3, GfxInfo TriGfxInfo) const;  //Draw a Trinangle
 	void DrawL(Point P1, Point P2, GfxInfo LGfxInfo) const;  //Draw a Line
-	void DrawSQU(Point P1, int lenght ,GfxInfo SGfxInfo) const;  //Draw a Square
+	void DrawSQU(int* arrx, int* arrY, int nvertices, GfxInfo SQUGfxInfo) const;  //Draw a Square
 	void DrawOVAL(Point P1, Point P2, GfxInfo EGfxInfo) const;  //Draw a Ellipse
 	void DrawCircle(Point P1, int raduis, GfxInfo CGfxInfo) const;  //Draw a circle
 	void DrawRPolygon(int* arrx, int* arrY, int nvertices, GfxInfo RPolygonGfxInfo) const;  //Draw a Regular Polygon

@@ -1,12 +1,14 @@
 #include "RegularPolygon.h"
 #include <corecrt_math_defines.h>
 #include <cmath>
-RegularPolygon::RegularPolygon(Point C, Point * p, int x, GfxInfo shapeGfxInfo) :shape(shapeGfxInfo)
+RegularPolygon::RegularPolygon(Point C, Point  p, int x, GfxInfo shapeGfxInfo) :shape(shapeGfxInfo)
 {
 	Center = C;
 	P = p;
+
+	
 	Vertices_num = x;
-	radius = distance(Center.x, Center.y, P->x, P ->y);
+	radius = distance(Center.x, Center.y, P.x, P .y);
 
 	for (int i = 0; i < x; i++) {
 		vertixx = Center.x + radius * cos(i * 2 * M_PI / x);
@@ -68,13 +70,13 @@ string RegularPolygon::save(ofstream& savefile, string filename, string fcl, str
 	if (ShpGfxInfo.isFilled = true) {
 		string x = colortostring(ShpGfxInfo.DrawClr);
 		string y = colortostring(ShpGfxInfo.FillClr);
-		string info = "RegularPolygon " + to_string(Center.x) + " " + to_string(Center.y) + " " + to_string(P->x) + " " + to_string(P->y) + " " + to_string(Vertices_num)+ " " + to_string(radius) + " " + x + " " + y;
+		string info = "RegularPolygon " + to_string(Center.x) + " " + to_string(Center.y) + " " + to_string(P.x) + " " + to_string(P.y) + " " + to_string(Vertices_num)+ " " + to_string(radius) + " " + x + " " + y;
 		return info;
 	}
 	else {
 		string x = colortostring(ShpGfxInfo.DrawClr);
 		string y = "NO_FILL";
-		string info = "RegularPolygon " + to_string(Center.x) + " " + to_string(Center.y) + " " + to_string(P->x) + " " + to_string(P->y) + " " + to_string(Vertices_num) + " " + to_string(radius) + " " + x + " " + y;
+		string info = "RegularPolygon " + to_string(Center.x) + " " + to_string(Center.y) + " " + to_string(P.x) + " " + to_string(P.y) + " " + to_string(Vertices_num) + " " + to_string(radius) + " " + x + " " + y;
 		return info;
 	}
 }

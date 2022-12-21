@@ -5,7 +5,7 @@ class RegularPolygon :public shape
 {
 private:
 	Point Center;
-	Point* P;
+	Point P;
 	int radius;
 	int Vertices_num;
 	int* ArrX = new int;
@@ -13,7 +13,7 @@ private:
 	int vertixx;
 	int vertixy;
 public:
-	RegularPolygon(Point, Point*, int, GfxInfo shapeGfxInfo);
+	RegularPolygon(Point, Point, int, GfxInfo shapeGfxInfo);
 	virtual ~RegularPolygon();
 	void Draw(GUI* pUI) const;
 	bool IsINSHAPE(Point test);

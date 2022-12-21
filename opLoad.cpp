@@ -130,25 +130,25 @@ void opLoad::Execute() {
 			Graph* pGr = pControl->getGraph();
 			pGr->Addshape(shp);
 		}
-		else if (shpname == "Square") {
+		//else if (shpname == "Square") {
 
-			loadfile >> X.x >> X.y >> Y.x >> Y.y >> dis >> color1 >> color2;
-			color c1 = pControl->stringtocolor(color1);
-			Info.DrawClr = c1;
-			if (color2 != "NO_FILL") {
-				color c2 = pControl->stringtocolor(color2);
-				Info.FillClr = c2;
-				Info.isFilled = true;
-			}
-			else {
-				Info.isFilled = false;
-				Info.FillClr = NULL;
-			}
-			shp = new Square(X, Y, Info);
-			pUI->DrawSQU(X, dis, Info);
-			Graph* pGr = pControl->getGraph();
-			pGr->Addshape(shp);
-		}
+		//	loadfile >> X.x >> X.y >> Y.x >> Y.y >> dis >> color1 >> color2;
+		//	color c1 = pControl->stringtocolor(color1);
+		//	Info.DrawClr = c1;
+		//	if (color2 != "NO_FILL") {
+		//		color c2 = pControl->stringtocolor(color2);
+		//		Info.FillClr = c2;
+		//		Info.isFilled = true;
+		//	}
+		//	else {
+		//		Info.isFilled = false;
+		//		Info.FillClr = NULL;
+		//	}
+		//	shp = new Square(X, Y, Info);
+		//	pUI->DrawSQU(X, dis, Info);
+		//	Graph* pGr = pControl->getGraph();
+		//	pGr->Addshape(shp);
+		//}
 		else if (shpname == "Oval") {
 
 			loadfile >> X.x >> X.y >> Y.x >> Y.y >> color1 >> color2;
