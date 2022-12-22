@@ -15,7 +15,7 @@ GUI::GUI()
 	StatusBarHeight = 50;
 	StatusBarWidth = 1000;
 	ToolBarHeight = 50;
-	MenuIconWidth = 80;
+	MenuIconWidth = 60;
 
 	DrawColor = BLUE;	//default Drawing color
 	FillColor = SKYBLUE;	//default Filling color

@@ -15,6 +15,7 @@
 #include "operations/opDrawColor.h"
 #include "opSave.h"
 #include"opLoad.h"
+#include"opExit.h"
 #include"operations/operation.h"
 
 //Constructor
@@ -99,12 +100,8 @@ operation* controller::createOperation(operationType OpType)
 		case COLOR_PALETTE:	//a click on the status bar ==> no operation
 			pOp = new OpChangeColor(this);
 			break;
-
-
-			
-
 		case EXIT:
-			///create Exitoperation here
+			pOp = new opExit(this);
 			
 			break;
 		

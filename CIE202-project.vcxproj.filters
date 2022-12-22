@@ -192,6 +192,9 @@
     <ClCompile Include="Save.cpp">
       <Filter>Operations</Filter>
     </ClCompile>
+    <ClCompile Include="opExit.cpp">
+      <Filter>Operations</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller.h" />
@@ -342,6 +345,9 @@
       <Filter>Operations</Filter>
     </ClInclude>
     <ClInclude Include="opLoad.h">
+      <Filter>Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="opExit.h">
       <Filter>Operations</Filter>
     </ClInclude>
   </ItemGroup>

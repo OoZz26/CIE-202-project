@@ -183,6 +183,7 @@
     <ClCompile Include="operations\OpChangeColor.cpp" />
     <ClCompile Include="operations\opDrawColor.cpp" />
     <ClCompile Include="operations\opFillColor.cpp" />
+    <ClCompile Include="opExit.cpp" />
     <ClCompile Include="opLoad.cpp" />
     <ClCompile Include="opSelect.cpp" />
     <ClCompile Include="Oval.cpp" />
@@ -236,6 +237,7 @@
     <ClInclude Include="operations\operation.h" />
     <ClInclude Include="opAddTriangle.h" />
     <ClInclude Include="operations\opFillColor.h" />
+    <ClInclude Include="opExit.h" />
     <ClInclude Include="opLoad.h" />
     <ClInclude Include="opSave.h" />
     <ClInclude Include="opSelect.h" />
