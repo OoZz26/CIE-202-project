@@ -1,3 +1,45 @@
-﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+﻿cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  Graph.cpp
+  opDel.cpp
+  controller.cpp
   GUI.cpp
-  CIE202-project.vcxproj -> C:\Users\East-Sound\Desktop\ss\Debug\CIE202-project.exe
+  Generating Code...
+C:\Users\Infotech\Documents\GitHub\CIE-202-project\controller.cpp(175): warning C4715: 'controller::stringtocolor': not all control paths return a value
+  Compiling...
+  Save.cpp
+  opSelect.cpp
+  opLoad.cpp
+C:\Users\Infotech\Documents\GitHub\CIE-202-project\opLoad.cpp(195,16): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\Infotech\Documents\GitHub\CIE-202-project\opLoad.cpp(196,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\Infotech\Documents\GitHub\CIE-202-project\opLoad.cpp(197,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\Infotech\Documents\GitHub\CIE-202-project\opLoad.cpp(36,6): warning C4101: 'nvertices': unreferenced local variable
+C:\Users\Infotech\Documents\GitHub\CIE-202-project\opLoad.cpp(27,6): warning C4101: 'ID': unreferenced local variable
+  opExit.cpp
+C:\Users\Infotech\Documents\GitHub\CIE-202-project\opExit.cpp(39,3): warning C4551: function call missing argument list
+  opFillColor.cpp
+  opDrawColor.cpp
+  OpChangeColor.cpp
+  opBorderWidth.cpp
+  opAddTriangle.cpp
+  opAddRect.cpp
+  OpAddPen.cpp
+  opAddSquare.cpp
+  opAddRegularPolygon.cpp
+  opAddOval.cpp
+  opAddLine.cpp
+  opAddIrRegularPolygon.cpp
+  opAddCircle.cpp
+  Generating Code...
+  Skipping... (no relevant changes detected)
+  Triangle.cpp
+  Square.cpp
+  Rect.cpp
+  Shape.cpp
+  RegularPolygon.cpp
+  Oval.cpp
+  main.cpp
+  Line.cpp
+  IrRegularPolygon.cpp
+  Circle.cpp
+Circle.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
+  CIE202-project.vcxproj -> C:\Users\Infotech\Documents\GitHub\CIE-202-project\Debug\CIE202-project.exe

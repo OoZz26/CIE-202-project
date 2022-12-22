@@ -60,3 +60,16 @@ shape* Graph::Getshape(Point p) const
 		}
 	return nullptr;
 }
+void Graph::DeleteShape()
+{
+	int mycount = -1;
+	for (auto selected : shapesList)
+	{
+		mycount++;
+		if (selected->IsSelected())
+		{
+			shapesList.erase(shapesList.begin() + mycount);
+			mycount--;
+		}
+	}
+}

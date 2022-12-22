@@ -60,6 +60,7 @@ private:
 		ICON_SAVE,
 		ICON_LOAD,
 		ICON_EXIT,
+		ICON_DELETE,
 		DRAW_ICON_COUNT,		//no. of menu icons ==> This should be the last line in this enum
 
 	};

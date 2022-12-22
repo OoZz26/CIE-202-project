@@ -17,6 +17,7 @@
 #include"opLoad.h"
 #include"opExit.h"
 #include"operations/operation.h"
+#include"opDel.h"
 
 //Constructor
 controller::controller()
@@ -102,7 +103,9 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case EXIT:
 			pOp = new opExit(this);
-			
+			break;
+		case DEL:
+			pOp = new opDel(this);
 			break;
 		
 		//case STATUS:	//a click on the status bar ==> no operation

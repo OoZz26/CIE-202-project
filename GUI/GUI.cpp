@@ -120,6 +120,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_Draw: return DRAW_COLOR;
 			case ICON_SAVE: return SAVE;
 			case ICON_LOAD: return LOAD;
+			case ICON_DELETE:return DEL;
 
 			default: return EMPTY;	//A click on empty place in desgin toolbar
 			}
@@ -276,6 +277,7 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_Draw] = "images\\MenuIcons\\Menu_Draw.jpg";
 	MenuIconImages[ICON_SAVE] = "images\\MenuIcons\\Menu_Save.jpg";
 	MenuIconImages[ICON_LOAD] = "images\\MenuIcons\\Menu_Load.jpg";
+	MenuIconImages[ICON_DELETE] = "images\\MenuIcons\\Menu_Delete.jpg";
 	//TODO: Prepare images for each menu icon and add it to the list
 	//Draw menu icon one image at a time
 	for (int i = 0; i < DRAW_ICON_COUNT; i++)
