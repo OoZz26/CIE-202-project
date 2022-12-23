@@ -8,7 +8,7 @@ RegularPolygon::RegularPolygon(Point C, Point  p, int x, GfxInfo shapeGfxInfo) :
 
 	
 	Vertices_num = x;
-	radius = distance(Center.x, Center.y, P.x, P .y);
+	radius = distance(Center.x, Center.y, P.x, P.y);
 
 	for (int i = 0; i < x; i++) {
 		vertixx = Center.x + radius * cos(i * 2 * M_PI / x);

@@ -5,11 +5,13 @@
 #include "opLoad.h"
 #include "GUI/GUI.h"
 #include <fstream>
+#include"RegularPolygon.h"
 #include "Line.h"
 #include"Triangle.h"
 #include"Circle.h"
 #include"Square.h"
 #include"RegularPolygon.h"
+#include"IrRegularPolygon.h"
 #include <corecrt_math_defines.h>
 #include <cmath>
 double opLoad::distance(int x1, int y1, int x2, int y2) {
@@ -25,7 +27,7 @@ void opLoad::Execute() {
 	int Count;
 	shape* shp;
 	int ID, dis;
-	Point X, Y, Z ;
+	Point X, Y, Z ,O;
 	Point* P = new Point ;
 	string color1, color2;
 	GfxInfo Info;
@@ -33,6 +35,7 @@ void opLoad::Execute() {
 	int* arrY = new int;
 	int* arrz = new int;
 	int* arrm = new int;
+	double Lenght;
 	int nvertices; 
 	GUI* pUI = pControl->GetUI();
 	pUI->ClearDrawArea();
@@ -130,25 +133,6 @@ void opLoad::Execute() {
 			Graph* pGr = pControl->getGraph();
 			pGr->Addshape(shp);
 		}
-		//else if (shpname == "Square") {
-
-		//	loadfile >> X.x >> X.y >> Y.x >> Y.y >> dis >> color1 >> color2;
-		//	color c1 = pControl->stringtocolor(color1);
-		//	Info.DrawClr = c1;
-		//	if (color2 != "NO_FILL") {
-		//		color c2 = pControl->stringtocolor(color2);
-		//		Info.FillClr = c2;
-		//		Info.isFilled = true;
-		//	}
-		//	else {
-		//		Info.isFilled = false;
-		//		Info.FillClr = NULL;
-		//	}
-		//	shp = new Square(X, Y, Info);
-		//	pUI->DrawSQU(X, dis, Info);
-		//	Graph* pGr = pControl->getGraph();
-		//	pGr->Addshape(shp);
-		//}
 		else if (shpname == "Oval") {
 
 			loadfile >> X.x >> X.y >> Y.x >> Y.y >> color1 >> color2;
@@ -209,7 +193,36 @@ void opLoad::Execute() {
 				Info.isFilled = false;
 				Info.FillClr = NULL;
 			}
-		}	pUI->DrawRPolygon(arrx, arrY, dis, Info);
+			pUI->DrawRPolygon(arrx, arrY, dis, Info);
+		}
+		else if (shpname == "Square") {
 
+		loadfile >> X.x >> X.y >> O.x >> O.y >> dis >> color1 >> color2;
+		for (int i = 0; i < dis; i++) {
+			Lenght = distance(X.x, X.y, O.x, O.y);
+			arrx[0] = X.x;
+			arrY[0] = X.y;
+			arrx[1] = X.x + Lenght;
+			arrY[1] = X.y;
+			arrx[2] = X.x + Lenght;
+			arrY[2] = X.y + Lenght;
+			arrx[3] = X.x;
+			arrY[3] = X.y + Lenght;
+		}
+		}
+		color c1 = pControl->stringtocolor(color1);
+		Info.DrawClr = c1;
+		if (color2 != "NO_FILL") {
+			color c2 = pControl->stringtocolor(color2);
+			Info.FillClr = c2;
+			Info.isFilled = true;
+		}
+		else {
+			Info.isFilled = false;
+			Info.FillClr = NULL;
+		}
+		pUI->DrawRPolygon(arrx, arrY, 4, Info);
 	}
+
+	
 }
