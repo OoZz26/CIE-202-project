@@ -10,7 +10,7 @@ class shape
 protected:
 	int ID;		//Each shape has an ID
 	GfxInfo ShpGfxInfo;	//shape graphis info
-	
+	bool shapeCut;
 	/// Add more parameters if needed.
 
 public:
@@ -29,6 +29,11 @@ public:
 	int ChngBorderWidth(int BoWi); //changes the shape's border width
 	virtual bool IsINSHAPE(Point test) = 0;
 	virtual string save(ofstream& savefile, string filename, string fcl, string drc, string pnw);
+
+	void setShapeCut(bool cut);
+	bool IsCutOr() const;
+	bool isFilled() const;
+
 	///The following functions should be supported by the shape class
 	///It should be overridden by each inherited shape
 
@@ -36,7 +41,7 @@ public:
 
 
 	//virtual void Rotate() = 0;	//Rotate the shape
-	//virtual void Resize() = 0;	//Resize the shape
+	virtual void Resize(double factor) = 0;	//Resize the shape
 	//virtual void Move() = 0;		//Move the shape
 
 	//virtual void Save(ofstream &OutFile) = 0;	//Save the shape parameters to the file

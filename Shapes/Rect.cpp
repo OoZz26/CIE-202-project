@@ -21,3 +21,15 @@ void Rect::Draw(GUI* pUI) const
 	//Call Output::DrawRect to draw a rectangle on the screen	
 	pUI->DrawRect(Corner1, Corner2, ShpGfxInfo);
 }
+void Rect::Resize(double factor) {
+	Point center;
+	center.x = ((Corner1.x) + (Corner2.x) ) / 2;
+	center.y = ((Corner1.y) + (Corner2.y) ) / 2;
+
+	Corner1.x = factor * Corner1.x - factor * (center.x) + (center.x);
+	Corner1.y = factor * Corner1.y - factor * (center.y) + (center.y);
+	Corner2.x = factor * Corner2.x - factor * (center.x) + (center.x);
+	Corner2.y = factor * Corner2.y - factor * (center.y) + (center.y);
+
+
+}

@@ -18,7 +18,7 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -183,10 +183,12 @@
     <ClCompile Include="operations\opAddSelect.cpp" />
     <ClCompile Include="operations\opBorderWidth.cpp" />
     <ClCompile Include="operations\OpChangeColor.cpp" />
+    <ClCompile Include="operations\opCopy.cpp" />
     <ClCompile Include="operations\opDrawColor.cpp" />
     <ClCompile Include="operations\opFillColor.cpp" />
     <ClCompile Include="opExit.cpp" />
     <ClCompile Include="opLoad.cpp" />
+    <ClCompile Include="opResize.cpp" />
     <ClCompile Include="opSelect.cpp" />
     <ClCompile Include="Oval.cpp" />
     <ClCompile Include="RegularPolygon.cpp" />
@@ -236,12 +238,14 @@
     <ClInclude Include="operations\opAddSelect.h" />
     <ClInclude Include="operations\opBorderWidth.h" />
     <ClInclude Include="operations\OpChangeColor.h" />
+    <ClInclude Include="operations\opCopy.h" />
     <ClInclude Include="operations\opDrawColor.h" />
     <ClInclude Include="operations\operation.h" />
     <ClInclude Include="opAddTriangle.h" />
     <ClInclude Include="operations\opFillColor.h" />
     <ClInclude Include="opExit.h" />
     <ClInclude Include="opLoad.h" />
+    <ClInclude Include="opResize.h" />
     <ClInclude Include="opSave.h" />
     <ClInclude Include="opSelect.h" />
     <ClInclude Include="Oval.h" />

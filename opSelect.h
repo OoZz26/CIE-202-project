@@ -1,6 +1,9 @@
 #pragma once
 #include"Shapes/Rect.h"
 #include "line.h"
+#include"IrRegularPolygon.h"
+#include"RegularPolygon.h"
+#include"Shapes/Rect.h"
 #include "Square.h"
 #include "Oval.h"
 #include "Circle.h"

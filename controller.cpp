@@ -6,6 +6,7 @@
 #include"opAddCircle.h"
 #include"opAddOval.h"
 #include"opSelect.h"
+#include"opResize.h"
 #include"opAddIrRegularPolygon.h"
 #include"opAddRegularPolygon.h"
 #include "operations/OpAddPen.h"
@@ -18,12 +19,14 @@
 #include"opExit.h"
 #include"operations/operation.h"
 #include"opDel.h"
+#include "operations/opCopy.h"
 
 //Constructor
 controller::controller()
 {
 	pGraph = new Graph;
 	pGUI = new GUI;	//Create GUI object
+	copiedShape = nullptr;
 }
 
 //==================================================================================//
@@ -107,7 +110,12 @@ operation* controller::createOperation(operationType OpType)
 		case DEL:
 			pOp = new opDel(this);
 			break;
-		
+		case RESIZE:
+			pOp = new opResize(this);
+			break;
+		case COPY:
+			pOp = new opCopy(this);
+			break;
 		//case STATUS:	//a click on the status bar ==> no operation
 		//	break;
 	}
@@ -182,7 +190,24 @@ bool operator==(color c1, color c2)
 	else return false;
 }
 
+void controller::setShapeToCopy(shape* CoShape)
+{
+	copiedShape = CoShape;
+}
 
+shape* controller::getShapeToCopy()
+{
+	return copiedShape;
+}
+
+void controller::setUpdateCut(shape* cutt)
+{
+	updateCut = cutt;
+}
+shape* controller::getUpdateCut() const
+{
+	return updateCut;
+}
 
 //==================================================================================//
 //							Run function											//

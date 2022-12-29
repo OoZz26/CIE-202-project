@@ -50,3 +50,18 @@ string shape::colortostring(color c)
 string shape::save(ofstream& savefile, string filename, string fcl, string drc, string pnw) {
 	return ",";
 }
+
+void shape::setShapeCut(bool cut)
+{
+	shapeCut = cut;
+}
+
+bool shape::IsCutOr() const
+{
+	return shapeCut;
+}
+
+bool shape::isFilled() const
+{
+	return ShpGfxInfo.isFilled;
+}

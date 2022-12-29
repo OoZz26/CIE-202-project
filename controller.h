@@ -12,7 +12,8 @@ class controller
 
 	Graph* pGraph;	//pointe to the grapg
 	GUI* pGUI;		//Pointer to UI class
-	
+	shape* copiedShape;
+	shape* updateCut;
 
 public:	
 	controller(); 
@@ -28,6 +29,11 @@ public:
 	
 	Graph* getGraph() const;
 	
+	void setShapeToCopy(shape* CoShape);
+	shape* getShapeToCopy();
+	void setUpdateCut(shape* cutt);
+	shape* getUpdateCut() const;
+
 	// -- Interface Management Functions
 	GUI *GetUI() const; //Return pointer to the UI
 	void UpdateInterface() const;	//Redraws all the drawing window	

@@ -79,3 +79,24 @@ string IrRegularPolygon::save(ofstream& savefile, string filename, string fcl, s
 		return info;
 	}
 }
+void IrRegularPolygon::Resize(double factor) {
+	int tempx, tempy;
+	Point Center ;
+	Center.x = 0;    Center.y = 0;
+
+	for (int i = 0; i < Vertices_num; i++) {
+		tempx = ArrX[i];    tempy = ArrY[i];
+		(Center.x) = tempx+ Center.x;    (Center.y) = tempy+ Center.y;
+		
+	}
+
+	(Center.x) = (Center.x)/ Vertices_num;    (Center.y) = (Center.y) / Vertices_num;
+
+
+	for (int i = 0; i < Vertices_num; i++) {
+		tempx = ArrX[i];    tempy = ArrY[i];
+
+		ArrX[i] = factor * tempx - factor * (Center.x) + (Center.x);
+		ArrY[i] = factor * tempy - factor * (Center.y) + (Center.y);
+	}
+}

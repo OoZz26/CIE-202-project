@@ -198,6 +198,10 @@
     <ClCompile Include="opDel.cpp">
       <Filter>Operations</Filter>
     </ClCompile>
+    <ClCompile Include="opResize.cpp" />
+    <ClCompile Include="operations\opCopy.cpp">
+      <Filter>Operations</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="controller.h" />
@@ -354,6 +358,10 @@
       <Filter>Operations</Filter>
     </ClInclude>
     <ClInclude Include="opDel.h">
+      <Filter>Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="opResize.h" />
+    <ClInclude Include="operations\opCopy.h">
       <Filter>Operations</Filter>
     </ClInclude>
   </ItemGroup>

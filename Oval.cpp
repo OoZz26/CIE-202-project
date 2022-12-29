@@ -45,3 +45,16 @@ string Oval::save(ofstream& savefile, string filename, string fcl, string drc, s
 		return info;
 	}
 }
+void Oval:: Resize(double factor) {
+
+	Point center;
+	center.x = ((P1.x) + (P2.x)) / 2;
+	center.y = ((P1.y) + (P2.y)) / 2;
+
+	P1.x = factor * P1.x - factor * (center.x) + (center.x);
+	P1.y = factor * P1.y - factor * (center.y) + (center.y);
+	P2.x = factor * P2.x - factor * (center.x) + (center.x);
+	P2.y = factor * P2.y - factor * (center.y) + (center.y);
+
+
+}

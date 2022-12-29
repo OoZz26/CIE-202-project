@@ -9,6 +9,7 @@ private:
 	int* ArrY = new int;
 public:
 	IrRegularPolygon(Point* p, int x, GfxInfo shapeGfxInfo);
+	virtual void Resize(double factor);	//Resize the shape
 	virtual ~IrRegularPolygon();
 	bool IsINSHAPE(Point test);
 	virtual void Draw(GUI* pUI) const;

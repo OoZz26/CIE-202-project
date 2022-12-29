@@ -5,7 +5,12 @@
 #include "controller.h"
 #include"GUI/GUI.h"
 opAddLine::opAddLine(controller* pCont) :operation(pCont)
-{}
+{
+
+
+
+
+}
 opAddLine::~opAddLine()
 {}
 
