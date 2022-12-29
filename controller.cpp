@@ -6,6 +6,7 @@
 #include"opAddCircle.h"
 #include"opAddOval.h"
 #include"opSelect.h"
+#include"opResize.h"
 #include"opAddIrRegularPolygon.h"
 #include"opAddRegularPolygon.h"
 #include "operations/OpAddPen.h"
@@ -106,6 +107,9 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case DEL:
 			pOp = new opDel(this);
+			break;
+		case RESIZE:
+			pOp = new opResize(this);
 			break;
 		
 		//case STATUS:	//a click on the status bar ==> no operation

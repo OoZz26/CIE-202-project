@@ -187,6 +187,7 @@
     <ClCompile Include="operations\opFillColor.cpp" />
     <ClCompile Include="opExit.cpp" />
     <ClCompile Include="opLoad.cpp" />
+    <ClCompile Include="opResize.cpp" />
     <ClCompile Include="opSelect.cpp" />
     <ClCompile Include="Oval.cpp" />
     <ClCompile Include="RegularPolygon.cpp" />
@@ -242,6 +243,7 @@
     <ClInclude Include="operations\opFillColor.h" />
     <ClInclude Include="opExit.h" />
     <ClInclude Include="opLoad.h" />
+    <ClInclude Include="opResize.h" />
     <ClInclude Include="opSave.h" />
     <ClInclude Include="opSelect.h" />
     <ClInclude Include="Oval.h" />

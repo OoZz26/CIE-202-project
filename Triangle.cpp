@@ -32,6 +32,19 @@ void Triangle::Draw(GUI* pUI) const
 	//Call Output::DrawTri to draw a Triangle on the screen	
 	pUI->DrawTri(Corner1, Corner2,Corner3, ShpGfxInfo);
 }
+void Triangle::Resize(double factor) {
+	Point center;
+	center.x = ((Corner1.x) + (Corner2.x) + (Corner3.x)) / 3;
+	center.y = ((Corner1.y) + (Corner2.y) + (Corner3.y)) / 3;
+	Corner1.x = factor * Corner1.x - factor * (center.x) + (center.x);
+	Corner1.y = factor * Corner1.y- factor * (center.y) + (center.y);
+
+	Corner2.x = factor * Corner2.x - factor * (center.x) + (center.x);
+	Corner2.y = factor * Corner2.y - factor * (center.y) + (center.y);
+
+	Corner3.x = factor * Corner3.x - factor * (center.x) + (center.x);
+	Corner3.y = factor * Corner3.y - factor * (center.y) + (center.y);
+}
 string Triangle::save(ofstream& savefile, string filename, string fcl, string drc, string pnw) {
 	if (ShpGfxInfo.isFilled = true) {
 		string x = colortostring(ShpGfxInfo.DrawClr);

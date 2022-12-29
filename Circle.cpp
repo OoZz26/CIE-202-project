@@ -25,6 +25,10 @@ bool Circle::IsINSHAPE(Point test) {
 		return false;
 	}
 }	
+void Circle::Resize(double factor) {
+	double temp = Distance;
+	Distance = factor * temp;
+}
 string Circle::save(ofstream& savefile, string filename, string fcl, string drc, string pnw) {
 	if (ShpGfxInfo.isFilled = true) {
 		string x = colortostring(ShpGfxInfo.DrawClr);

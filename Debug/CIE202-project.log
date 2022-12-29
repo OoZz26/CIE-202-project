@@ -1,12 +1,42 @@
 ﻿cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
-  opLoad.cpp
-C:\Users\East-Sound\Documents\GitHub\cs-project\opLoad.cpp(179,16): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\East-Sound\Documents\GitHub\cs-project\opLoad.cpp(180,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\East-Sound\Documents\GitHub\cs-project\opLoad.cpp(181,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\East-Sound\Documents\GitHub\cs-project\opLoad.cpp(205,18): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\East-Sound\Documents\GitHub\cs-project\opLoad.cpp(207,18): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\East-Sound\Documents\GitHub\cs-project\opLoad.cpp(208,18): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\East-Sound\Documents\GitHub\cs-project\opLoad.cpp(210,18): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\East-Sound\Documents\GitHub\cs-project\opLoad.cpp(39,6): warning C4101: 'nvertices': unreferenced local variable
-C:\Users\East-Sound\Documents\GitHub\cs-project\opLoad.cpp(29,6): warning C4101: 'ID': unreferenced local variable
+  opAddSelect.cpp
+cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  jutils.c
+  jquant2.c
+  jquant1.c
+  jmemnobs.c
+  jmemmgr.c
+C:\Users\East-Sound\Documents\GitHub\cs-project\CMUgraphicsLib\jpeg\jmemmgr.c(1103,19): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\East-Sound\Documents\GitHub\cs-project\CMUgraphicsLib\jpeg\jmemmgr.c(1106,11): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  jidctred.c
+  jidctint.c
+  jidctfst.c
+  jidctflt.c
+  jerror.c
+C:\Users\East-Sound\Documents\GitHub\cs-project\CMUgraphicsLib\jpeg\jerror.c(169,5): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\East-Sound\Documents\GitHub\cs-project\CMUgraphicsLib\jpeg\jerror.c(171,5): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  jdtrans.c
+  jdsample.c
+  jdpostct.c
+  jdphuff.c
+  jdmerge.c
+  jdmaster.c
+  jdmarker.c
+  jdmainct.c
+  jdinput.c
+  jdhuff.c
+  Generating Code...
+  Compiling...
+  jddctmgr.c
+  jdcolor.c
+  jdcoefct.c
+  jdatasrc.c
+  jdapistd.c
+  jdapimin.c
+  jcparam.c
+  jcomapi.c
+  jpegload.c
+C:\Users\East-Sound\Documents\GitHub\cs-project\CMUgraphicsLib\jpegload.c(23,12): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Generating Code...
+Circle.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
   CIE202-project.vcxproj -> C:\Users\East-Sound\Documents\GitHub\cs-project\Debug\CIE202-project.exe

@@ -36,7 +36,7 @@ public:
 
 
 	//virtual void Rotate() = 0;	//Rotate the shape
-	//virtual void Resize() = 0;	//Resize the shape
+	virtual void Resize(double factor) = 0;	//Resize the shape
 	//virtual void Move() = 0;		//Move the shape
 
 	//virtual void Save(ofstream &OutFile) = 0;	//Save the shape parameters to the file

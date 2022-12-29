@@ -72,3 +72,15 @@ void Square::Draw(GUI* pUI) const
 		return info;
 	}
 }
+
+
+void Square::Resize(double factor) {
+	Point center;
+	center.x = ((Corner1.x) +( (Corner1.x)+Lenght ))/ 2;
+	center.y = ((Corner1.y) + ((Corner1.y) + Lenght)) / 2;
+
+	for (int i = 0; i < 4; i++) {
+		ArrX[i] = factor * ArrX[i] - factor * (center.x) + (center.x);
+		ArrY[i] = factor * ArrY[i] - factor * (center.y) + (center.y);
+	}
+}

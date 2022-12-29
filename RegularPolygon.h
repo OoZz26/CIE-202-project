@@ -14,6 +14,7 @@ private:
 	int vertixy;
 public:
 	RegularPolygon(Point, Point, int, GfxInfo shapeGfxInfo);
+	virtual void Resize(double factor);	//Resize the shape
 	virtual ~RegularPolygon();
 	void Draw(GUI* pUI) const;
 	bool IsINSHAPE(Point test);

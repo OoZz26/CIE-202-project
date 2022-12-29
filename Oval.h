@@ -8,6 +8,7 @@ private:
 	Point P2;
 public:
 	Oval(Point, Point, GfxInfo shapeGfxInfo);
+	virtual void Resize(double factor);	//Resize the shape
 	virtual ~Oval();
 	bool IsINSHAPE(Point test);
 	virtual void Draw(GUI* pUI) const;

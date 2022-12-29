@@ -8,6 +8,7 @@ private:
 	Point start;
 	Point end;
 public:
+	virtual void Resize(double factor) ;	//Resize the shape
 	Line(Point, Point, GfxInfo shapeGfxInfo);
 	virtual ~Line();
 	virtual void Draw(GUI* pUI) const;

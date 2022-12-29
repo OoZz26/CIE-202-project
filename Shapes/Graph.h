@@ -26,5 +26,6 @@ public:
 	//void load(ifstream& inputfile);
 	//Load all shapes from a file
 	void DeleteShape();
+	
 
 };

@@ -1,4 +1,4 @@
-//#include"DEL.h"
+
 #include "./controller.h"
 #include"./opDel.h"
 #include "./GUI/GUI.h"

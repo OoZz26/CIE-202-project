@@ -45,3 +45,17 @@ string Line::save(ofstream& savefile, string filename, string fcl, string drc, s
 
 	}
 }
+void Line::Resize(double factor) {
+	Point Center;
+
+	Center.x = (start.x + end.x) / 2;
+	Center.y = (start.y + end.y) / 2;
+
+	start.x = factor * start.x - factor * (Center.x) + (Center.x);
+	start.y = factor * start.y - factor * (Center.y) + (Center.y);
+
+	end.x = factor * end.x - factor * (Center.x) + (Center.x);
+	end.y = factor * end.y - factor * (Center.y) + (Center.y);
+	
+
+}
