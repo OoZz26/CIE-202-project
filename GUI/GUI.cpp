@@ -32,6 +32,22 @@ GUI::GUI()
 	CreateDrawToolBar();
 	//CreatePlayToolBar();
 	CreateStatusBar();
+
+
+	/*InterfaceMode = MODE_PLAY;
+
+	StatusBarHeight = 50;
+	ToolBarHeight = 50;
+	MenuIconWidth = 80;
+
+
+	CreatePlayToolBar();
+	CreateStatusBar();*/
+
+
+
+
+
 }
 
 
@@ -93,6 +109,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_PLAY: return TO_PLAY;
 			case ICON_EXIT: return EXIT;
 			case ICON_DELETE :return DEL;
+			case ICON_STICK: return stick;
 			/*case DRAW_ICON_COUNT: return TO_DRAW;*/
 			
 
@@ -125,7 +142,7 @@ operationType GUI::GetUseroperation() const
 			switch (ClickedIconOrder)
 			{
 			case ICON_DRAW: return TO_DRAW;
-				/*case DRAW_ICON_COUNT: return TO_DRAW;*/
+				case DRAW_ICON_COUNT: return TO_DRAW;
 
 
 			default: return EMPTY;	//A click on empty place in desgin toolbar
@@ -167,6 +184,7 @@ void GUI::exit(string a)
 	if (a == "y")
 
 		return;
+
 }
 
 
@@ -188,6 +206,9 @@ void GUI::ClearStatusBar() const
 //////////////////////////////////////////////////////////////////////////////////////////
 void GUI::CreateDrawToolBar() 
 {
+	pWind->SetPen(BkGrndColor, 1);
+	pWind->SetBrush(BkGrndColor);
+	pWind->DrawRectangle(0, 0, width, ToolBarHeight);
 	InterfaceMode = MODE_DRAW;
 
 	//You can draw the tool bar icons in any way you want.
@@ -202,9 +223,11 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_CIRC] = "images\\MenuIcons\\Menu_Circ.jpg";
 	MenuIconImages[ICON_EXIT] = "images\\MenuIcons\\Menu_Exit.jpg";
 	MenuIconImages[ICON_DELETE] = "images\\MenuIcons\\Menu_Delete.jpg";
+	MenuIconImages[ICON_STICK] = "images\\MenuIcons\\Menu_stick.jpg";
+
 	MenuIconImages[ICON_PLAY] = "images\\MenuIcons\\menu_Play_Mode.jpg";
 	
-
+	
 	//TODO: Prepare images for each menu icon and add it to the list
 
 	//Draw menu icon one image at a time
@@ -222,6 +245,9 @@ void GUI::CreateDrawToolBar()
 
 void GUI::CreatePlayToolBar() 
 {
+	pWind->SetPen(BkGrndColor, 1);
+	pWind->SetBrush(BkGrndColor);
+	pWind->DrawRectangle(0, 0, width, ToolBarHeight);
 	InterfaceMode = MODE_PLAY;
 	
 	string PLAYMenuIconImages[PLAY_ICON_COUNT];
@@ -297,6 +323,13 @@ void GUI::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const
 	pWind->DrawRectangle(P1.x, P1.y, P2.x, P2.y, style);
 
 }
+
+void GUI::stickImage(string sticki , Point P1, Point P2) const
+{
+	pWind->DrawImage(sticki, P1.x, P1.y, P2.x-P1.x, P2.y-P1.y);
+}
+
+
 
 
 //////////////////////////////////////////////////////////////////////////////////////////

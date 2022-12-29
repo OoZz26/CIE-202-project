@@ -4,6 +4,10 @@ shape::shape(GfxInfo shapeGfxInfo)
 { 
 	ShpGfxInfo = shapeGfxInfo;	//Default status is non-filled.
 }
+shape::shape()
+{
+	
+}
  
 void shape::SetSelected(bool s)
 {	ShpGfxInfo.isSelected = s; }

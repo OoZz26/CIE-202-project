@@ -20,6 +20,22 @@ void Graph::Addshape(shape* pShp)
 	//Add a new shape to the shapes vector
 	shapesList.push_back(pShp);	
 }
+void Graph::DeleteShape()
+{
+	int mycount = -1;
+	for (auto selected : shapesList)
+	{
+		mycount++;
+		if (selected->IsSelected())
+		{
+			shapesList.erase(shapesList.begin() + mycount);
+				mycount--;
+		}
+	}
+}
+
+
+
 
 ////////////////////////////////////////////////////////////////////////////////////
 
@@ -41,6 +57,9 @@ void Graph::Draw(GUI* pUI) const
 shape* Graph::getSelected() {
 	return selectedShape;
 }
+
+
+/// /////////////////////////////////////////////////////////////////////////////////
 
 shape* Graph::Getshape(int x, int y) const
 {

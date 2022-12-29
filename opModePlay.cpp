@@ -11,5 +11,5 @@ opModePlay::~opModePlay()
 void opModePlay::Execute() {
 	GUI* pUI = pControl->GetUI();
 	pUI->CreatePlayToolBar();
-	
+
 }

@@ -132,11 +132,14 @@
     <ClCompile Include="opModePlay.cpp">
       <Filter>opearations</Filter>
     </ClCompile>
-    <ClCompile Include="opstick.cpp">
+    <ClCompile Include="opStick.cpp">
       <Filter>opearations</Filter>
     </ClCompile>
     <ClCompile Include="opModeDraw.cpp">
       <Filter>opearations</Filter>
+    </ClCompile>
+    <ClCompile Include="Stick.cpp">
+      <Filter>Shapes&amp;Graph</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -235,6 +238,9 @@
     </ClInclude>
     <ClInclude Include="opStick.h">
       <Filter>opearations</Filter>
+    </ClInclude>
+    <ClInclude Include="Stick.h">
+      <Filter>Shapes&amp;Graph</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

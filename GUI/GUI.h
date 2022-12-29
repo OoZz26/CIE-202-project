@@ -41,6 +41,8 @@ class GUI
 		ICON_CIRC,		//Circle icon in menu
 		ICON_DELETE,
 		ICON_PLAY,
+		ICON_STICK,
+
 		//ICON_DRAW,
 		//TODO: Add more icons names here
 
@@ -102,6 +104,7 @@ public:
 	void exit(string);
 	void ClearStatusBar() const;	//Clears the status bar
 	void ClearDrawArea() const;	//Clears the drawing area
+	void stickImage(string sticki, Point P1, Point P2) const;
 
 	// -- shapes Drawing functions
 	void DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const;  //Draw a rectangle

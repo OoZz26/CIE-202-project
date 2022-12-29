@@ -4,6 +4,7 @@
 #include "operations\opModePlay.h"
 #include"operations\opModeDraw.h"
 #include"operations\opDel.h"
+#include "opStick.h"
 
 //Constructor
 controller::controller()
@@ -32,12 +33,12 @@ operation* controller::createOperation(operationType OpType)
 
 	    case TO_DRAW:
 			pOp = new opModeDraw(this);
-			
 			break;
 			
 		case TO_PLAY:
 			pOp = new opModePlay(this);
 			break;
+
 		case DRAW_RECT:
 			pOp = new opAddRect(this);
 			break;
@@ -50,6 +51,9 @@ operation* controller::createOperation(operationType OpType)
 		case EXIT:
 			///create Exitoperation here
 			pOp = new opExit(this); 
+			break;
+		case stick:
+			pOp = new opStick(this);
 			break;
 		
 		case DEL:

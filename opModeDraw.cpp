@@ -11,10 +11,12 @@ opModeDraw::~opModeDraw()
 //Execute the operation
 void opModeDraw::Execute() {
 	GUI* pUI = pControl->GetUI();
-
-	pUI -> CreateDrawToolBar();
-
+	
 	pUI->ClearStatusBar();
+	pUI -> CreateDrawToolBar();
+	
+
+	
 
 
 }

@@ -8,6 +8,5 @@ public:
 	opModeDraw(controller* pCont);
 	virtual ~opModeDraw();
 	void opModeDraw::Execute();
-	
 
 };
