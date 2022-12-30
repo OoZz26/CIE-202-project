@@ -1,6 +1,153 @@
-﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+﻿cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  Triangle.cpp
+E:\ay haga\github destop\Triangle.cpp(15,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\ay haga\github destop\Triangle.cpp(16,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\ay haga\github destop\Triangle.cpp(17,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\ay haga\github destop\Triangle.cpp(18,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\ay haga\github destop\Triangle.cpp(39,55): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\ay haga\github destop\Triangle.cpp(40,54): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\ay haga\github destop\Triangle.cpp(42,55): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\ay haga\github destop\Triangle.cpp(43,55): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\ay haga\github destop\Triangle.cpp(45,55): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\ay haga\github destop\Triangle.cpp(46,55): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Square.cpp
+E:\ay haga\github destop\Square.cpp(7,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\ay haga\github destop\Square.cpp(33,24): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\ay haga\github destop\Square.cpp(37,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\ay haga\github destop\Square.cpp(45,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\ay haga\github destop\Square.cpp(83,52): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\ay haga\github destop\Square.cpp(84,52): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Rect.cpp
+E:\ay haga\github destop\Shapes\Rect.cpp(29,55): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\ay haga\github destop\Shapes\Rect.cpp(30,55): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\ay haga\github destop\Shapes\Rect.cpp(31,55): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\ay haga\github destop\Shapes\Rect.cpp(32,55): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Shape.cpp
+  Graph.cpp
+  Save.cpp
+  RegularPolygon.cpp
+E:\ay haga\github destop\RegularPolygon.cpp(11,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\ay haga\github destop\RegularPolygon.cpp(14,22): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\ay haga\github destop\RegularPolygon.cpp(15,22): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\ay haga\github destop\RegularPolygon.cpp(35,23): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\ay haga\github destop\RegularPolygon.cpp(39,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\ay haga\github destop\RegularPolygon.cpp(47,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\ay haga\github destop\RegularPolygon.cpp(87,52): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\ay haga\github destop\RegularPolygon.cpp(88,52): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Oval.cpp
+E:\ay haga\github destop\Oval.cpp(54,45): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\ay haga\github destop\Oval.cpp(55,45): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\ay haga\github destop\Oval.cpp(56,45): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\ay haga\github destop\Oval.cpp(57,45): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  opSelect.cpp
+  opResize.cpp
+  opModePlay.cpp
+  opModeDraw.cpp
+  opLoad.cpp
+E:\ay haga\github destop\opLoad.cpp(179,16): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+E:\ay haga\github destop\opLoad.cpp(180,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+E:\ay haga\github destop\opLoad.cpp(181,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+E:\ay haga\github destop\opLoad.cpp(205,18): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\ay haga\github destop\opLoad.cpp(207,18): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\ay haga\github destop\opLoad.cpp(208,18): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\ay haga\github destop\opLoad.cpp(210,18): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\ay haga\github destop\opLoad.cpp(39,6): warning C4101: 'nvertices': unreferenced local variable
+E:\ay haga\github destop\opLoad.cpp(29,6): warning C4101: 'ID': unreferenced local variable
+  opExit.cpp
+E:\ay haga\github destop\opExit.cpp(39,3): warning C4551: function call missing argument list
+  opFillColor.cpp
+  opDrawColor.cpp
+  opCopy.cpp
+  OpChangeColor.cpp
+  opBorderWidth.cpp
+  opAddSelect.cpp
+  Generating Code...
+  Compiling...
+  opAddTriangle.cpp
+  opAddRect.cpp
+  OpAddPen.cpp
+  opDel.cpp
+  opAddSquare.cpp
+  opAddRegularPolygon.cpp
+  opAddOval.cpp
+  opAddLine.cpp
+  opAddIrRegularPolygon.cpp
+  opAddCircle.cpp
+  main.cpp
+  Line.cpp
+E:\ay haga\github destop\Line.cpp(16,12): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\ay haga\github destop\Line.cpp(54,51): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\ay haga\github destop\Line.cpp(55,51): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\ay haga\github destop\Line.cpp(57,47): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\ay haga\github destop\Line.cpp(58,47): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  IrRegularPolygon.cpp
+E:\ay haga\github destop\IrRegularPolygon.cpp(31,24): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\ay haga\github destop\IrRegularPolygon.cpp(35,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\ay haga\github destop\IrRegularPolygon.cpp(43,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\ay haga\github destop\IrRegularPolygon.cpp(99,50): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\ay haga\github destop\IrRegularPolygon.cpp(100,50): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
   controller.cpp
   GUI.cpp
+  windowinput.cpp
+  mousequeue.cpp
+  keyqueue.cpp
+  image.cpp
+E:\ay haga\github destop\CMUgraphicsLib\image.cpp(115,29): warning C4018: '<': signed/unsigned mismatch
+  CMUgraphics.cpp
+E:\ay haga\github destop\CMUgraphicsLib\CMUgraphics.cpp(257,9): warning C4101: 'iX': unreferenced local variable
+E:\ay haga\github destop\CMUgraphicsLib\CMUgraphics.cpp(257,13): warning C4101: 'iY': unreferenced local variable
+E:\ay haga\github destop\CMUgraphicsLib\CMUgraphics.cpp(751,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\ay haga\github destop\CMUgraphicsLib\CMUgraphics.cpp(1164,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\ay haga\github destop\CMUgraphicsLib\CMUgraphics.cpp(1171,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\ay haga\github destop\CMUgraphicsLib\CMUgraphics.cpp(1202,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\ay haga\github destop\CMUgraphicsLib\CMUgraphics.cpp(1210,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\ay haga\github destop\CMUgraphicsLib\CMUgraphics.cpp(1357,23): warning C4018: '>': signed/unsigned mismatch
   Generating Code...
-E:\Zewail academic years\C++ project git hub\CIE-202-project\controller.cpp(184): warning C4715: 'controller::stringtocolor': not all control paths return a value
-  CIE202-project.vcxproj -> E:\Zewail academic years\C++ project git hub\CIE-202-project\Debug\CIE202-project.exe
+E:\ay haga\github destop\controller.cpp(192): warning C4715: 'controller::stringtocolor': not all control paths return a value
+  Compiling...
+  auxil.cpp
+  Circle.cpp
+E:\ay haga\github destop\Circle.cpp(7,21): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\ay haga\github destop\Circle.cpp(19,8): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+E:\ay haga\github destop\Circle.cpp(30,20): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Generating Code...
+cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  jutils.c
+  jquant2.c
+  jquant1.c
+  jmemnobs.c
+  jmemmgr.c
+E:\ay haga\github destop\CMUgraphicsLib\jpeg\jmemmgr.c(1103,19): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\ay haga\github destop\CMUgraphicsLib\jpeg\jmemmgr.c(1106,11): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  jidctred.c
+  jidctint.c
+  jidctfst.c
+  jidctflt.c
+  jerror.c
+E:\ay haga\github destop\CMUgraphicsLib\jpeg\jerror.c(169,5): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+E:\ay haga\github destop\CMUgraphicsLib\jpeg\jerror.c(171,5): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  jdtrans.c
+  jdsample.c
+  jdpostct.c
+  jdphuff.c
+  jdmerge.c
+  jdmaster.c
+  jdmarker.c
+  jdmainct.c
+  jdinput.c
+  jdhuff.c
+  Generating Code...
+  Compiling...
+  jddctmgr.c
+  jdcolor.c
+  jdcoefct.c
+  jdatasrc.c
+  jdapistd.c
+  jdapimin.c
+  jcparam.c
+  jcomapi.c
+  jpegload.c
+E:\ay haga\github destop\CMUgraphicsLib\jpegload.c(23,12): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Generating Code...
+Circle.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
+  CIE202-project.vcxproj -> E:\ay haga\github destop\Debug\CIE202-project.exe

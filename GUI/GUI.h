@@ -63,6 +63,7 @@ private:
 		ICON_EXIT,
 		ICON_DELETE,
 		ICON_RESIZE,
+		ICON_PLAY,
 		DRAW_ICON_COUNT,		//no. of menu icons ==> This should be the last line in this enum
 
 	};
@@ -73,7 +74,7 @@ private:
 		//If you want to change the menu icons order, change the order here
 
 		//TODO: Add more icons names here
-
+		ICON_DRAW,
 		PLAY_ICON_COUNT		//no. of menu icons ==> This should be the last line in this enum
 
 	};

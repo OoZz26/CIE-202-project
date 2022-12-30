@@ -20,7 +20,8 @@
 #include"operations/operation.h"
 #include"opDel.h"
 #include "operations/opCopy.h"
-
+#include "opModePlay.h"
+#include"opModeDraw.h"
 //Constructor
 controller::controller()
 {
@@ -46,6 +47,13 @@ operation* controller::createOperation(operationType OpType)
 	//According to operation Type, create the corresponding operation object
 	switch (OpType)
 	{
+		case TO_DRAW:
+			pOp = new opModeDraw(this);
+			break;
+
+		case TO_PLAY:
+			pOp = new opModePlay(this);
+			break;
 		case DRAW_RECT:
 			pOp = new opAddRect(this);
 			break;
