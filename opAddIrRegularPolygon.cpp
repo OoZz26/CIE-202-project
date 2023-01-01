@@ -46,6 +46,8 @@ void opAddIrRegularPolygon::Execute()
 		IrRegularPolygonGfxInfo.isFilled = false;
 	}
 
+	IrRegularPolygonGfxInfo.isSelected = false;	//defualt is not selected
+
 	//Create an irregularPolygon with the above parameters
 	IrRegularPolygon* R = new IrRegularPolygon(array,stoi(x), IrRegularPolygonGfxInfo);
 

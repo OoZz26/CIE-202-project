@@ -1,6 +1,7 @@
 #include "Graph.h"
 #include "../GUI/GUI.h"
 #include"Shape.h"
+#include <algorithm>
 
 void Graph::Save(ofstream& savefile, string filename, string fcl, string drc, string pnw) {
 
@@ -35,6 +36,11 @@ void Graph::Addshape(shape* pShp)
 	//Add a new shape to the shapes vector
 	shapesList.push_back(pShp);	
 }
+void Graph::Addselectedshape(shape* pShp)
+{
+	//Add a new shape to the shapes vector
+	selectedshapes.push_back(pShp);
+}
 ////////////////////////////////////////////////////////////////////////////////////
 //Draw all shapes on the user interface
 void Graph::Draw(GUI* pUI) const
@@ -50,6 +56,7 @@ shape* Graph::GetSelected() {
 }
 
 void Graph::SetSelected(shape* sh) {
+	Addselectedshape(sh);
 	selectedShape = sh;
 }
 shape* Graph::Getshape(Point p) const
@@ -63,7 +70,7 @@ shape* Graph::Getshape(Point p) const
 void Graph::DeleteShape()
 {
 	int mycount = -1;
-	for (auto selected : shapesList)
+	for (auto selected : selectedshapes)
 	{
 		mycount++;
 		if (selected->IsSelected())

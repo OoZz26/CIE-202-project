@@ -81,7 +81,7 @@ string RegularPolygon::save(ofstream& savefile, string filename, string fcl, str
 	}
 }
 void RegularPolygon::Resize(double factor) {
-
+	 
 	for (int i = 0; i < Vertices_num; i++) {
 
 		ArrX[i] = factor * ArrX[i] - factor * (Center.x) + (Center.x);

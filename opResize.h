@@ -10,10 +10,11 @@
 #include "Triangle.h"
 #include"controller.h"
 #include"GUI/GUI.h"
+#include"Shapes/Graph.h"
 #include "operations/operation.h"
 
 //Add select operation class
-class opResize : public operation
+class opResize : public operation,public Graph
 {
 public:
 	opResize(controller* pCont);
