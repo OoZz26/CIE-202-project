@@ -18,7 +18,7 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -188,6 +188,8 @@
     <ClCompile Include="operations\opFillColor.cpp" />
     <ClCompile Include="opExit.cpp" />
     <ClCompile Include="opLoad.cpp" />
+    <ClCompile Include="opModeDraw.cpp" />
+    <ClCompile Include="opModePlay.cpp" />
     <ClCompile Include="opResize.cpp" />
     <ClCompile Include="opSelect.cpp" />
     <ClCompile Include="Oval.cpp" />
@@ -245,6 +247,8 @@
     <ClInclude Include="operations\opFillColor.h" />
     <ClInclude Include="opExit.h" />
     <ClInclude Include="opLoad.h" />
+    <ClInclude Include="opModeDraw.h" />
+    <ClInclude Include="opModePlay.h" />
     <ClInclude Include="opResize.h" />
     <ClInclude Include="opSave.h" />
     <ClInclude Include="opSelect.h" />

@@ -15,7 +15,7 @@ GUI::GUI()
 	StatusBarHeight = 50;
 	StatusBarWidth = 1000;
 	ToolBarHeight = 50;
-	MenuIconWidth = 60;
+	MenuIconWidth = 50;
 
 	DrawColor = BLUE;	//default Drawing color
 	FillColor = SKYBLUE;	//default Filling color
@@ -123,7 +123,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_LOAD: return LOAD;
 			case ICON_DELETE:return DEL;
 			case ICON_RESIZE:return RESIZE;
-
+			case ICON_PLAY: return TO_PLAY;
 			default: return EMPTY;	//A click on empty place in desgin toolbar
 			}
 		}
@@ -139,9 +139,26 @@ operationType GUI::GetUseroperation() const
 	}
 	else	//GUI is in PLAY mode
 	{
-		///TODO:
-		//perform checks similar to Draw mode checks above
-		//and return the correspoding operation
+
+		if (y >= 0 && y < ToolBarHeight)
+		{
+
+			int ClickedIconOrder = (x / MenuIconWidth);
+
+
+			switch (ClickedIconOrder)
+			{
+			case ICON_DRAW: return TO_DRAW;
+			case DRAW_ICON_COUNT: return TO_DRAW;
+
+
+			default: return EMPTY;	//A click on empty place in desgin toolbar
+			}
+		}
+		if (y >= ToolBarHeight && y < height - StatusBarHeight)
+		{
+			return DRAWING_AREA;
+		}
 		return TO_PLAY;	//just for now. This should be updated
 	}
 
@@ -251,8 +268,11 @@ void GUI::ClearStatusBar() const
 	pWind->DrawRectangle(0, height - StatusBarHeight, StatusBarWidth, height);
 }
 //////////////////////////////////////////////////////////////////////////////////////////
-void GUI::CreateDrawToolBar() 
-{
+void GUI::CreateDrawToolBar() {
+
+pWind->SetPen(BkGrndColor, 1);
+pWind->SetBrush(BkGrndColor);
+pWind->DrawRectangle(0, 0, width, ToolBarHeight); 
 	InterfaceMode = MODE_DRAW;
 
 	//You can draw the tool bar icons in any way you want.
@@ -282,6 +302,7 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_DELETE] = "images\\MenuIcons\\Menu_Delete.jpg";
 	MenuIconImages[ICON_RESIZE] = "images\\MenuIcons\\Menu_Resize.jpg";
 	MenuIconImages[ICON_Copy] = "images\\MenuIcons\\Menu_Copy.jpg";
+	MenuIconImages[ICON_PLAY] = "images\\MenuIcons\\menu_Play_Mode.jpg";
 	//TODO: Prepare images for each menu icon and add it to the list
 	//Draw menu icon one image at a time
 	for (int i = 0; i < DRAW_ICON_COUNT; i++)
@@ -296,9 +317,19 @@ void GUI::CreateDrawToolBar()
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-void GUI::CreatePlayToolBar() 
+
+void GUI::CreatePlayToolBar()
 {
+	pWind->SetPen(BkGrndColor, 1);
+	pWind->SetBrush(BkGrndColor);
+	pWind->DrawRectangle(0, 0, width, ToolBarHeight);
 	InterfaceMode = MODE_PLAY;
+
+	string PLAYMenuIconImages[PLAY_ICON_COUNT];
+	PLAYMenuIconImages[ICON_DRAW] = "images\\MenuIcons\\menu_draw_Mode.jpg";
+	for (int i = 0; i < PLAY_ICON_COUNT; i++)
+		pWind->DrawImage(PLAYMenuIconImages[i], i * MenuIconWidth, 0, MenuIconWidth, ToolBarHeight);
+
 	///TODO: write code to create Play mode menu
 }
 //////////////////////////////////////////////////////////////////////////////////////////
