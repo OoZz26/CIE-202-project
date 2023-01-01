@@ -1,29 +1,24 @@
 #include "Graph.h"
 #include "../GUI/GUI.h"
-// AHMED ABDELSTAR WORK.....
+#include"Shape.h"
 
+void Graph::Save(ofstream& savefile, string filename, string fcl, string drc, string pnw) {
+
+	filename = filename + ".txt";
+	savefile.open(filename);
+	savefile << fcl << " " << drc << " " << pnw << endl;
+	savefile << to_string(shapesList.size()) << endl;
+	for (auto shapepp : shapesList) {
+
+		savefile << shapepp->save(savefile, filename, fcl, drc, pnw) << endl;
+	}
+
+
+	savefile.close();
+}
 Graph::Graph()
 {
 	selectedShape = nullptr;
-}
-void Graph::Save(ofstream& savefile) {
-
-	/*GUI* pUI = ;
-
-	pUI->PrintMessage("Enter the file name: ");
-
-	string filename = pUI->GetSrting();*/
-
-	string filename = "filename.txt";
-
-	savefile.open(filename);
-
-	for ( auto shapepointer : shapesList ) {
-		savefile << shapepointer->save(savefile);
-	}
-	
-
-	savefile.close();
 }
 
 Graph::~Graph()
@@ -48,15 +43,63 @@ void Graph::Draw(GUI* pUI) const
 	for (auto shapePointer : shapesList)
 		shapePointer->Draw(pUI);
 }
+vector <shape*> Graph::GetHiddenlist() {
+	return Hiddenshapes;
+}
+vector <shape*> Graph::Getshapeslist() {
+	return shapesList;
+}
+void Graph::SetHiddenList(vector <shape*> shapeshidden, vector <color> colorhidden) {
+	Hiddenshapes = shapeshidden;
+	colorhiddens = colorhidden;
+}
+vector <color> Graph::Getcolorlist() {
+	return colorhiddens;
+}
 
 
-shape* Graph::Getshape(int x, int y) const
+void Graph::GetHidden(vector <shape*> Hiddenshapes, GUI* pUI) {
+	for (auto Hidden : Hiddenshapes)
+	{
+		cout << "hi";
+		Hidden->Draw(pUI);
+	}
+}
+
+shape* Graph::GetSelected() {
+	return selectedShape; 
+}
+
+void Graph::SetSelected(shape* sh) {
+	selectedShape = sh;
+}
+shape* Graph::Getshape(Point p) const
 {
-	//If a shape is found return a pointer to it.
-	//if this point (x,y) does not belong to any shape return NULL
-
-
-	///Add your code here to search for a shape given a point x,y	
-
+	for (auto shapePointer : shapesList)
+		if (shapePointer->IsINSHAPE(p)) {
+			return shapePointer;
+		}
 	return nullptr;
 }
+void Graph::DeleteShape()
+{
+	int mycount = -1;
+	for (auto selected : shapesList)
+	{
+		mycount++;
+		if (selected->IsSelected())
+		{
+			shapesList.erase(shapesList.begin() + mycount);
+			mycount--;
+		}
+	}
+}
+void Graph::Duplicatee(GUI* pUI)
+{
+	pUI->ClearDrawArea();
+	for (auto shapepp : shapesList) {
+		pUI->ClearDrawArea();
+	//	shapepp->Duplicate(pUI);
+	}
+}
+

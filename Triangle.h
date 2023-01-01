@@ -10,8 +10,10 @@ private:
 	Point Corner3;
 public:
 	Triangle(Point, Point,Point, GfxInfo shapeGfxInfo);
+	virtual void Resize(double factor);	//Resize the shape
 	virtual ~Triangle();
+	bool IsINSHAPE(Point test);
 	virtual void Draw(GUI* pUI) const;
-	virtual string save(ofstream& savefile);
+	string save(ofstream& savefile, string filename, string fcl, string drc, string pnw);
 };
 

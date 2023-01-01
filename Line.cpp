@@ -8,13 +8,54 @@ Line::Line(Point P1, Point P2, GfxInfo shapeGfxInfo) : shape(shapeGfxInfo)
 
 Line::~Line()
 {}
+bool Line::IsINSHAPE(Point test) {
+	double slope;
+	int diff;
+	
+	slope = (((start.y) - (end.y))*1.0) / ((start.x) - (end.x));
+	diff = abs(slope * ((test.x) - (start.x)) - ((test.y) - (start.y)));
+	if (diff<=1 && test.x <= max((end.x), (start.x))
+		&& test.x >= min((end.x), (start.x))) {
+		return true;
+	}
+	else
+		return false;
+
+
+
+}
 
 void Line::Draw(GUI* pUI) const
 {
 	//Call Output::DrawL to draw a line on the screen	
-	pUI->DrawL(start, end, ShpGfxInfo);
+	pUI->DrawL(start, end, ShpGfxInfo, Hidden, unhidden, duplicated);
 }
-string Line::save(ofstream& savefile) {
-	string info = to_string (start.x) + "," + to_string(start.y) + "," + to_string(end.x) + "," + to_string(end.y) + "," + to_string(ShpGfxInfo.BorderWdth) + "," + to_string(ShpGfxInfo.DrawClr.ucBlue) + "," + to_string(ShpGfxInfo.FillClr.ucBlue) + "," + to_string(ShpGfxInfo.isFilled) + "," + to_string(ShpGfxInfo.isSelected) + ",";
-	return info;
+string Line::save(ofstream& savefile, string filename, string fcl, string drc, string pnw) {
+	if (ShpGfxInfo.isFilled = true) {
+		string x = colortostring(ShpGfxInfo.DrawClr);
+		string y = colortostring(ShpGfxInfo.FillClr);
+		string info = "Line " + to_string(start.x) + " " + to_string(start.y) + " " + to_string(end.x) + " " + to_string(end.y) + " " + x + " " + y;
+		return info;
+	}
+	else {
+		string x = colortostring(ShpGfxInfo.DrawClr);
+		string y = "NO_FILL";
+		string info = "Line " + to_string(start.x) + " " + to_string(start.y) + " " + to_string(end.x) + " " + to_string(end.y) + " " + x + " " + y;
+		return info;
+
+	}
+}
+void Line::Resize(double factor) {
+	Point Center;
+
+	Center.x = (start.x + end.x) / 2;
+	Center.y = (start.y + end.y) / 2;
+
+	start.x = factor * start.x - factor * (Center.x) + (Center.x);
+	start.y = factor * start.y - factor * (Center.y) + (Center.y);
+
+	end.x = factor * end.x - factor * (Center.x) + (Center.x);
+	end.y = factor * end.y - factor * (Center.y) + (Center.y);
+	
+
 }

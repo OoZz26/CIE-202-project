@@ -5,11 +5,18 @@
 class Square : public shape
 {
 private:
-	Point Point1;
-	Point Point2;
+	Point Corner1;
+	Point Corner2;
+	int* ArrX = new int;
+	int* ArrY = new int;
+	int vertixx;
+	int vertixy;
+	int Lenght;
 public:
-	Square(Point, Point, GfxInfo shapeGfxInfo);
+	Square(Point, Point,  GfxInfo shapeGfxInfo);
+	virtual void Resize(double factor);	//Resize the shape
 	virtual ~Square();
+	bool IsINSHAPE(Point test);
 	virtual void Draw(GUI* pUI) const;
-	virtual string save(ofstream& savefile);
+	string save(ofstream& savefile, string filename, string fcl, string drc, string pnw);
 };

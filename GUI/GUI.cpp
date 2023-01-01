@@ -1,27 +1,37 @@
 #include "GUI.h"
 
+
 GUI::GUI()
 {
 	//Initialize user interface parameters
 	InterfaceMode = MODE_DRAW;
 
 	width = 1300;
-	height = 700;
+	height = 650;
 	wx = 5;
 	wy = 5;
 
 
 	StatusBarHeight = 50;
+	StatusBarWidth = 1000;
 	ToolBarHeight = 50;
-	MenuIconWidth = 80;
+	MenuIconWidth = 60;
 
 	DrawColor = BLUE;	//default Drawing color
-	FillColor = GREEN;	//default Filling color
-	MsgColor = BLACK;		//Messages color
+	FillColor = SKYBLUE;	//default Filling color
+	MsgColor = WHITE;		//Messages color
 	BkGrndColor = WHITE;	//Background color
 	HighlightColor = MAGENTA;	//This color should NOT be used to draw shapes. use if for highlight only
-	StatusBarColor = LIGHTSEAGREEN;
+	StatusBarColor = BLACK;
+	StatusBarWhitePa = WHITE; //colors of color palette displayed in the status bar
+	StatusBarRedPa = RED; 
+	StatusBarBluePa = BLUE;
+	StatusBarBlackPa = BLACK;
+	StatusBarYellowPa = YELLOW;
+	StatusBarGreenPa = GREEN;
 	PenWidth = 3;	//default width of the shapes frames
+	message = "COLOR PALETTE";
+	Isfilled = false;
 
 
 	//Create the output window
@@ -31,6 +41,12 @@ GUI::GUI()
 
 	CreateDrawToolBar();
 	CreateStatusBar();
+	CreateStatusBarWhitePa();
+	CreateStatusBarRedPa();
+	CreateStatusBarBluePa();
+	CreateStatusBarBlackPa();
+	CreateStatusBarYellowPa();
+	CreateStatusBarGreenPa();
 }
 
 
@@ -90,10 +106,25 @@ operationType GUI::GetUseroperation() const
 			case ICON_RECT: return DRAW_RECT;
 			case ICON_CIRC: return DRAW_CIRC;
 			case ICON_EXIT: return EXIT;
-			case ICON_Tri: return DRAW_TRI;
+			case ICON_Tri: return DRAW_TRI; 
 			case ICON_Line: return DRAW_LINE;
 			case ICON_SQU: return DRAW_SQU;
+			case ICON_OVAL: return DRAW_OVAL;
+			case ICON_IRRegularpolygon: return DRAW_IRRPOLYGON;
+			case ICON_Regularpolygon: return DRAW_RPOLYGON;
+			case ICON_PEN: return PEN_WIDTH;
+			case ICON_Border: return BORDER_WIDTH;
+			case ICON_BALETTE: return COLOR_PALETTE;
+			case ICON_SELECT: return SELECT;
+			case ICON_Fill: return FILL_COLOR;
+			case ICON_Draw: return DRAW_COLOR;
 			case ICON_SAVE: return SAVE;
+			case ICON_LOAD: return LOAD;
+			case ICON_DELETE:return DEL;
+			case ICON_RESIZE:return RESIZE;
+			case ICON_UNHIDE:return UNHIDE;
+			case ICON_HIDE :return HIDE; 
+			case ICON_DUPLICATE:return DUPL;
 
 			default: return EMPTY;	//A click on empty place in desgin toolbar
 			}
@@ -138,15 +169,88 @@ void GUI::CreateStatusBar() const
 {
 	pWind->SetPen(StatusBarColor, 1);
 	pWind->SetBrush(StatusBarColor);
-	pWind->DrawRectangle(0, height - StatusBarHeight, width, height);
+	pWind->DrawRectangle(0, height - StatusBarHeight, StatusBarWidth, height);// main status bar rectangle
+
 }
+
+
+color GUI::CreateColorPalette()
+{
+	color COL;
+	int x, y;
+	pWind->WaitMouseClick(x, y);
+	if ((y > height - StatusBarHeight) && (y < height))
+	{
+		if ((x > StatusBarWidth) && (x < StatusBarWidth + 45))
+		{
+			COL = WHITE;
+		}
+		else if ((x > StatusBarWidth+45) && (x < StatusBarWidth + 90))
+		{
+			COL = RED;
+		}
+		else if ((x > StatusBarWidth + 90) && (x < StatusBarWidth + 135))
+		{
+			COL = BLUE;
+		}
+		else if ((x > StatusBarWidth + 135) && (x < StatusBarWidth + 180))
+		{
+			COL = BLACK;
+		}
+		else if ((x > StatusBarWidth + 180) && (x < StatusBarWidth + 225))
+		{
+			COL = YELLOW;
+		}
+		else if ((x > StatusBarWidth + 225) && (x < width))
+		{
+			COL = GREEN;
+		}
+	}
+	return COL;
+}
+
+void GUI::CreateStatusBarWhitePa() const
+{
+	pWind->SetPen(BLACK, 1);
+	pWind->SetBrush(StatusBarWhitePa);
+	pWind->DrawRectangle(StatusBarWidth, height - StatusBarHeight, StatusBarWidth + 45, height);
+	pWind->DrawLine(0, StatusBarHeight, width, StatusBarHeight);
+}
+
+void GUI::CreateStatusBarRedPa() const
+{
+	pWind->SetBrush(StatusBarRedPa);
+	pWind->DrawRectangle(StatusBarWidth + 45, height - StatusBarHeight, StatusBarWidth + 90, height);
+}
+void GUI::CreateStatusBarBluePa() const
+{
+	pWind->SetBrush(StatusBarBluePa);
+	pWind->DrawRectangle(StatusBarWidth + 90, height - StatusBarHeight, StatusBarWidth + 135, height);
+}
+void GUI::CreateStatusBarBlackPa() const
+{
+	pWind->SetBrush(StatusBarBlackPa);
+	pWind->DrawRectangle(StatusBarWidth + 135, height - StatusBarHeight, StatusBarWidth + 180, height);
+}
+void GUI::CreateStatusBarYellowPa() const
+{
+	pWind->SetBrush(StatusBarYellowPa);
+	pWind->DrawRectangle(StatusBarWidth + 180, height - StatusBarHeight, StatusBarWidth + 225, height);
+}
+void GUI::CreateStatusBarGreenPa() const
+{
+	pWind->SetBrush(StatusBarGreenPa);
+	pWind->DrawRectangle(StatusBarWidth + 225, height - StatusBarHeight, width, height);
+}
+
+
 //////////////////////////////////////////////////////////////////////////////////////////
 void GUI::ClearStatusBar() const
 {
 	//Clear Status bar by drawing a filled white rectangle
 	pWind->SetPen(StatusBarColor, 1);
 	pWind->SetBrush(StatusBarColor);
-	pWind->DrawRectangle(0, height - StatusBarHeight, width, height);
+	pWind->DrawRectangle(0, height - StatusBarHeight, StatusBarWidth, height);
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 void GUI::CreateDrawToolBar() 
@@ -166,9 +270,23 @@ void GUI::CreateDrawToolBar()
 	MenuIconImages[ICON_Tri] = "images\\MenuIcons\\Menu_Tri.jpg";
 	MenuIconImages[ICON_Line] = "images\\MenuIcons\\Menu_Line.jpg";
 	MenuIconImages[ICON_SQU] = "images\\MenuIcons\\Menu_Square.jpg";
+	MenuIconImages[ICON_OVAL] = "images\\MenuIcons\\Menu_OVAL.jpg";
+	MenuIconImages[ICON_Regularpolygon] = "images\\MenuIcons\\Menu_Regularpolygon.jpg";
+	MenuIconImages[ICON_IRRegularpolygon] = "images\\MenuIcons\\Menu_IRRegular.jpg";
+	MenuIconImages[ICON_SELECT] = "images\\MenuIcons\\Menu_Select.jpg";
+	MenuIconImages[ICON_BALETTE] = "images\\MenuIcons\\Menu_Palette.jpg";
+	MenuIconImages[ICON_PEN] = "images\\MenuIcons\\Menu_PEN.jpg";
+	MenuIconImages[ICON_Border] = "images\\MenuIcons\\Menu_Border.jpg";
+	MenuIconImages[ICON_Fill] = "images\\MenuIcons\\Menu_Fill.jpg";
+	MenuIconImages[ICON_Draw] = "images\\MenuIcons\\Menu_Draw.jpg";
 	MenuIconImages[ICON_SAVE] = "images\\MenuIcons\\Menu_Save.jpg";
+	MenuIconImages[ICON_LOAD] = "images\\MenuIcons\\Menu_Load.jpg";
+	MenuIconImages[ICON_DELETE] = "images\\MenuIcons\\Menu_Delete.jpg";
+	MenuIconImages[ICON_RESIZE] = "images\\MenuIcons\\Menu_Resize.jpg";
+	MenuIconImages[ICON_HIDE] = "images\\MenuIcons\\Menu_Hide.jpg";
+	MenuIconImages[ICON_UNHIDE]= "images\\MenuIcons\\Menu_Unhide.jpg";
+	MenuIconImages[ICON_DUPLICATE]= "images\\MenuIcons\\Menu_Duplicate.jpg";
 	//TODO: Prepare images for each menu icon and add it to the list
-
 	//Draw menu icon one image at a time
 	for (int i = 0; i < DRAW_ICON_COUNT; i++)
 		pWind->DrawImage(MenuIconImages[i], i * MenuIconWidth, 0, MenuIconWidth, ToolBarHeight);
@@ -208,28 +326,55 @@ void GUI::PrintMessage(string msg) const	//Prints a message on status bar
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
-color GUI::getCrntDrawColor() const	//get current drwawing color
+color GUI::getCrntDrawColor() 	//get current drwawing color
 {
 	return DrawColor;
 }
 //////////////////////////////////////////////////////////////////////////////////////////
 
+color GUI::setGeneralDrawColor(color col) // set a drawing color
+{
+	DrawColor = col;
+	return 0;
+}
+
 color GUI::getCrntFillColor() const	//get current filling color
 {
 	return FillColor;
 }
-//////////////////////////////////////////////////////////////////////////////////////////
 
+color GUI::setGeneralFillColor(color col) // set a filling color
+{
+	//Isfilled = true;
+	FillColor = col;
+	return 	FillColor;
+
+}
+//////////////////////////////////////////////////////////////////////////////////////////
+bool GUI::getIsFilled()
+{
+	Isfilled = true;
+	return Isfilled;
+}
 int GUI::getCrntPenWidth() const		//get current pen width
 {
 	return PenWidth;
 }
+void GUI::setCrntPenWidth(int Pen)
+{
+	PenWidth = Pen;
+}
+bool GUI::getFillSt()const
+{
+	return Isfilled;
+}
+
 
 //======================================================================================//
 //								shapes Drawing Functions								//
 //======================================================================================//
 
-void GUI::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const
+void GUI::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo, bool Hidden,bool unhidden , bool duplicated ) const
 {
 	color DrawingClr;
 	if (RectGfxInfo.isSelected)	//shape is selected
@@ -249,16 +394,69 @@ void GUI::DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo) const
 		style = FRAME;
 
 	pWind->DrawRectangle(P1.x, P1.y, P2.x, P2.y, style);
+	if (Hidden)
+	{
+		RectGfxInfo.FillClr = WHITE;
+		DrawingClr = WHITE;
+		pWind->SetPen(DrawingClr, RectGfxInfo.BorderWdth); //Set Drawing color & width
 
+		drawstyle style;
+		if (RectGfxInfo.isFilled)
+		{
+			style = FILLED;
+			pWind->SetBrush(WHITE);
+		}
+		else
+			style = FRAME;
+
+
+		pWind->DrawRectangle(P1.x, P1.y, P2.x, P2.y, style);
+	}
+	else if (unhidden) {
+
+		pWind->SetPen(DrawingClr, RectGfxInfo.BorderWdth); //Set Drawing color & width
+
+		drawstyle style;
+		if (RectGfxInfo.isFilled)
+		{
+			style = FILLED;
+			pWind->SetBrush(RectGfxInfo.FillClr);
+		}
+		else
+			style = FRAME;
+
+
+		pWind->DrawRectangle(P1.x, P1.y, P2.x, P2.y, style);
+	}
+	else if (duplicated) {
+		color DrawingClr;
+		if (RectGfxInfo.isSelected)	//shape is selected
+			DrawingClr = HighlightColor; //shape should be drawn highlighted
+		else
+			DrawingClr = RectGfxInfo.DrawClr;
+
+		pWind->SetPen(DrawingClr, RectGfxInfo.BorderWdth);	//Set Drawing color & width
+
+		drawstyle style;
+		if (RectGfxInfo.isFilled)
+		{
+			style = FILLED;
+			pWind->SetBrush(RectGfxInfo.FillClr);
+		}
+		else
+			style = FRAME;
+
+		pWind->DrawRectangle(P1.x + 150, P1.y+150, P2.x+150, P2.y+150, style);
+	}
 }
-void GUI::DrawTri(Point P1, Point P2,Point P3, GfxInfo TriGfxInfo) const
+void GUI::DrawTri(Point P1, Point P2,Point P3, GfxInfo TriGfxInfo, bool Hidden, bool unhidden, bool duplicated) const
 {
 	color DrawingClr;
 	if (TriGfxInfo.isSelected)	//shape is selected
 		DrawingClr = HighlightColor; //shape should be drawn highlighted
 	else
 		DrawingClr = TriGfxInfo.DrawClr;
-
+ 
 	pWind->SetPen(DrawingClr, TriGfxInfo.BorderWdth);	//Set Drawing color & width
 
 	drawstyle style;
@@ -271,11 +469,64 @@ void GUI::DrawTri(Point P1, Point P2,Point P3, GfxInfo TriGfxInfo) const
 		style = FRAME;
 
 	pWind->DrawTriangle(P1.x, P1.y, P2.x, P2.y,P3.x,P3.y, style);
+	if (Hidden)
+	{
+		TriGfxInfo.FillClr = WHITE;
+		DrawingClr = WHITE;
+		pWind->SetPen(DrawingClr, TriGfxInfo.BorderWdth); //Set Drawing color & width
 
+		drawstyle style;
+		if (TriGfxInfo.isFilled)
+		{
+			style = FILLED;
+			pWind->SetBrush(WHITE);
+		}
+		else
+			style = FRAME;
+
+
+		pWind->DrawTriangle(P1.x, P1.y, P2.x, P2.y, P3.x, P3.y, style);
+	}
+	else if (unhidden) {
+
+		pWind->SetPen(DrawingClr, TriGfxInfo.BorderWdth); //Set Drawing color & width
+
+		drawstyle style;
+		if (TriGfxInfo.isFilled)
+		{
+			style = FILLED;
+			pWind->SetBrush(TriGfxInfo.FillClr);
+		}
+		else
+			style = FRAME;
+
+
+		pWind->DrawTriangle(P1.x, P1.y, P2.x, P2.y, P3.x, P3.y, style);
+	}
+	else if (duplicated) {
+		color DrawingClr;
+		if (TriGfxInfo.isSelected)	//shape is selected
+			DrawingClr = HighlightColor; //shape should be drawn highlighted
+		else
+			DrawingClr = TriGfxInfo.DrawClr;
+
+		pWind->SetPen(DrawingClr, TriGfxInfo.BorderWdth);	//Set Drawing color & width
+
+		drawstyle style;
+		if (TriGfxInfo.isFilled)
+		{
+			style = FILLED;
+			pWind->SetBrush(TriGfxInfo.FillClr);
+		}
+		else
+			style = FRAME;
+
+		pWind->DrawTriangle(P1.x+150, P1.y+150, P2.x+150, P2.y+150, P3.x+150, P3.y+150, style);
+	}
 }
 
 
-void GUI::DrawL(Point P1, Point P2,GfxInfo LGfxInfo) const
+void GUI::DrawL(Point P1, Point P2,GfxInfo LGfxInfo, bool Hidden, bool unhidden, bool duplicated) const
 {
 	color DrawingClr;
 	if (LGfxInfo.isSelected)	//shape is selected
@@ -295,52 +546,418 @@ void GUI::DrawL(Point P1, Point P2,GfxInfo LGfxInfo) const
 		style = FRAME;
 
 	pWind->DrawLine(P1.x, P1.y, P2.x, P2.y, style);
+	if (Hidden)
+	{
+		LGfxInfo.FillClr = WHITE;
+		DrawingClr = WHITE;
+		pWind->SetPen(DrawingClr, LGfxInfo.BorderWdth); //Set Drawing color & width
 
+		drawstyle style;
+		if (LGfxInfo.isFilled)
+		{
+			style = FILLED;
+			pWind->SetBrush(WHITE);
+		}
+		else
+			style = FRAME;
+
+
+		pWind->DrawLine(P1.x, P1.y, P2.x, P2.y, style);
+	}
+	else if (unhidden) {
+
+		pWind->SetPen(DrawingClr, LGfxInfo.BorderWdth); //Set Drawing color & width
+
+		drawstyle style;
+		if (LGfxInfo.isFilled)
+		{
+			style = FILLED;
+			pWind->SetBrush(LGfxInfo.FillClr);
+		}
+		else
+			style = FRAME;
+
+
+		pWind->DrawLine(P1.x, P1.y, P2.x, P2.y, style);
+	}
+	else if (duplicated) {
+		drawstyle style;
+		if (LGfxInfo.isFilled)
+		{
+			style = FILLED;
+			pWind->SetBrush(LGfxInfo.FillClr);
+		}
+		else
+			style = FRAME;
+
+		pWind->DrawLine(P1.x + 150, P1.y + 150, P2.x + 150, P2.y+150, style);
+	}
 }
-void GUI::DrawSQU(Point P1, Point P2, GfxInfo SGfxInfo) const
+void GUI::DrawSQU(int* arrx, int* arrY, int nvertices, GfxInfo SQUGfxInfo,bool Hidden, bool unhidden, bool duplicated)  const
+{
+
+		color DrawingClr;
+		if (SQUGfxInfo.isSelected)	//shape is selected
+			DrawingClr = HighlightColor; //shape should be drawn highlighted
+		else
+			DrawingClr = SQUGfxInfo.DrawClr;
+
+		pWind->SetPen(DrawingClr, SQUGfxInfo.BorderWdth);	//Set Drawing color & width
+
+		drawstyle style;
+		if (SQUGfxInfo.isFilled)
+		{
+			style = FILLED;
+			pWind->SetBrush(SQUGfxInfo.FillClr);
+		}
+		else
+			style = FRAME;
+
+		pWind->DrawPolygon(arrx, arrY, nvertices, style);
+		if (Hidden)
+		{
+			SQUGfxInfo.FillClr = WHITE;
+			DrawingClr = WHITE;
+			pWind->SetPen(DrawingClr, SQUGfxInfo.BorderWdth); //Set Drawing color & width
+
+			drawstyle style;
+			if (SQUGfxInfo.isFilled)
+			{
+				style = FILLED;
+				pWind->SetBrush(WHITE);
+			}
+			else
+				style = FRAME;
+
+
+			pWind->DrawPolygon(arrx, arrY, nvertices, style);
+		}
+		else if (unhidden) {
+
+			pWind->SetPen(DrawingClr, SQUGfxInfo.BorderWdth); //Set Drawing color & width
+
+			drawstyle style;
+			if (SQUGfxInfo.isFilled)
+			{
+				style = FILLED;
+				pWind->SetBrush(SQUGfxInfo.FillClr);
+			}
+			else
+				style = FRAME;
+
+
+			pWind->DrawPolygon(arrx, arrY, nvertices, style);
+		}
+		else if (duplicated) {
+			pWind->SetPen(DrawingClr, SQUGfxInfo.BorderWdth); //Set Drawing color & width
+
+			drawstyle style;
+			if (SQUGfxInfo.isFilled)
+			{
+				style = FILLED;
+				pWind->SetBrush(SQUGfxInfo.FillClr);
+			}
+			else
+				style = FRAME;
+			for (int i = 0; i < sizeof(arrx); i++) {
+				arrx[i] = arrx[i] + 20;
+				arrY[i] = arrY[i] + 20;
+
+			}
+
+			pWind->DrawPolygon(arrx, arrY, nvertices, style);
+		}
+	
+}
+void GUI::DrawOVAL(Point P1, Point P2, GfxInfo OVALGfxInfo, bool Hidden, bool unhidden, bool duplicated) const
 {
 	color DrawingClr;
-	if (SGfxInfo.isSelected)	//shape is selected
+	if (OVALGfxInfo.isSelected)	//shape is selected
 		DrawingClr = HighlightColor; //shape should be drawn highlighted
 	else
-		DrawingClr = SGfxInfo.DrawClr;
+		DrawingClr = OVALGfxInfo.DrawClr;
 
-	pWind->SetPen(DrawingClr, SGfxInfo.BorderWdth);	//Set Drawing color & width
+	pWind->SetPen(DrawingClr, OVALGfxInfo.BorderWdth);	//Set Drawing color & width
 
 	drawstyle style;
-	if (SGfxInfo.isFilled)
+	if (OVALGfxInfo.isFilled)
 	{
 		style = FILLED;
-		pWind->SetBrush(SGfxInfo.FillClr);
+		pWind->SetBrush(OVALGfxInfo.FillClr);
 	}
 	else
 		style = FRAME;
-	//erorr no drawsquare in smugraphics
-	pWind->DrawLine(P1.x, P1.y, P2.x, P2.y, style);
+	//erorr no Draw Oval in smugraphics
+	pWind->DrawEllipse(P1.x, P1.y, P2.x, P2.y, style);
+	if (Hidden)
+	{
+		OVALGfxInfo.FillClr = WHITE;
+		DrawingClr = WHITE;
+		pWind->SetPen(DrawingClr, OVALGfxInfo.BorderWdth); //Set Drawing color & width
+
+		drawstyle style;
+		if (OVALGfxInfo.isFilled)
+		{
+			style = FILLED;
+			pWind->SetBrush(WHITE);
+		}
+		else
+			style = FRAME;
 
 
+		pWind->DrawEllipse(P1.x, P1.y, P2.x, P2.y, style);
+	}
+	else if (unhidden) {
+
+		pWind->SetPen(DrawingClr, OVALGfxInfo.BorderWdth); //Set Drawing color & width
+
+		drawstyle style;
+		if (OVALGfxInfo.isFilled)
+		{
+			style = FILLED;
+			pWind->SetBrush(OVALGfxInfo.FillClr);
+		}
+		else
+			style = FRAME;
+
+
+		pWind->DrawEllipse(P1.x, P1.y, P2.x, P2.y, style);
+	}
+	else if (duplicated) {
+		pWind->SetPen(DrawingClr, OVALGfxInfo.BorderWdth); //Set Drawing color & width
+
+		drawstyle style;
+		if (OVALGfxInfo.isFilled)
+		{
+			style = FILLED;
+			pWind->SetBrush(OVALGfxInfo.FillClr);
+		}
+		else
+			style = FRAME;
+
+
+		pWind->DrawEllipse(P1.x+150, P1.y+150, P2.x+150, P2.y+150, style);
+	}
 }
 
-//void GUI::DrawELL(Point P1, Point P2, GfxInfo EGfxInfo) const
-//{
-//	color DrawingClr;
-//	if (EGfxInfo.isSelected)	//shape is selected
-//		DrawingClr = HighlightColor; //shape should be drawn highlighted
-//	else
-//		DrawingClr = EGfxInfo.DrawClr;
-//
-//	pWind->SetPen(DrawingClr, EGfxInfo.BorderWdth);	//Set Drawing color & width
-//
-//	drawstyle style;
-//	if (EGfxInfo.isFilled)
-//	{
-//		style = FILLED;
-//		pWind->SetBrush(EGfxInfo.FillClr);
-//	}
-//	else
-//		style = FRAME;
-//	//erorr no drawsquare in smugraphics
-//	pWind->DrawEllipse(P1.x, P1.y, P2.x, P2.y, style);
+void GUI::DrawCircle(Point P1, int  raduis, GfxInfo CGfxInfo, bool Hidden, bool unhidden, bool duplicated) const
+{
+	color DrawingClr;
+	if (CGfxInfo.isSelected)	//shape is selected
+		DrawingClr = HighlightColor; //shape should be drawn highlighted
+	else
+		DrawingClr = CGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, CGfxInfo.BorderWdth);	//Set Drawing color & width
+
+	drawstyle style;
+	if (CGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(CGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+
+	pWind->DrawCircle(P1.x, P1.y,raduis ,style);
+	if (Hidden)
+	{
+		CGfxInfo.FillClr = WHITE;
+		DrawingClr = WHITE;
+		pWind->SetPen(DrawingClr, CGfxInfo.BorderWdth); //Set Drawing color & width
+
+		drawstyle style;
+		if (CGfxInfo.isFilled)
+		{
+			style = FILLED;
+			pWind->SetBrush(WHITE);
+		}
+		else
+			style = FRAME;
+
+
+		pWind->DrawCircle(P1.x, P1.y, raduis, style);
+	}
+	else if (unhidden) {
+
+		pWind->SetPen(DrawingClr, CGfxInfo.BorderWdth); //Set Drawing color & width
+
+		drawstyle style;
+		if (CGfxInfo.isFilled)
+		{
+			style = FILLED;
+			pWind->SetBrush(CGfxInfo.FillClr);
+		}
+		else
+			style = FRAME;
+
+
+		pWind->DrawCircle(P1.x, P1.y, raduis, style);
+	}
+	else if (duplicated) {
+		pWind->SetPen(DrawingClr, CGfxInfo.BorderWdth); //Set Drawing color & width
+
+		drawstyle style;
+		if (CGfxInfo.isFilled)
+		{
+			style = FILLED;
+			pWind->SetBrush(CGfxInfo.FillClr);
+		}
+		else
+			style = FRAME;
+
+
+		pWind->DrawCircle(P1.x+150, P1.y+150, raduis, style);
+	}
+}
+
+
+void GUI::DrawRPolygon(int* arrx, int* arrY, int nvertices, GfxInfo RPolygonGfxInfo, bool Hidden, bool unhidden, bool duplicated) const
+{
+	color DrawingClr;
+	if (RPolygonGfxInfo.isSelected)	//shape is selected
+		DrawingClr = HighlightColor; //shape should be drawn highlighted
+	else
+		DrawingClr = RPolygonGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, RPolygonGfxInfo.BorderWdth);	//Set Drawing color & width
+
+	drawstyle style;
+	if (RPolygonGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(RPolygonGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+
+	pWind->DrawPolygon(arrx, arrY, nvertices, style);
+	if (Hidden)
+	{
+		RPolygonGfxInfo.FillClr = WHITE;
+		DrawingClr = WHITE;
+		pWind->SetPen(DrawingClr, RPolygonGfxInfo.BorderWdth); //Set Drawing color & width
+
+		drawstyle style;
+		if (RPolygonGfxInfo.isFilled)
+		{
+			style = FILLED;
+			pWind->SetBrush(WHITE);
+		}
+		else
+			style = FRAME;
+
+
+		pWind->DrawPolygon(arrx, arrY, nvertices, style);
+	}
+	else if (unhidden) {
+
+		pWind->SetPen(DrawingClr, RPolygonGfxInfo.BorderWdth); //Set Drawing color & width
+
+		drawstyle style;
+		if (RPolygonGfxInfo.isFilled)
+		{
+			style = FILLED;
+			pWind->SetBrush(RPolygonGfxInfo.FillClr);
+		}
+		else
+			style = FRAME;
+
+
+		pWind->DrawPolygon(arrx, arrY, nvertices, style);
+	}
+	else if (duplicated) {
+		pWind->SetPen(DrawingClr, RPolygonGfxInfo.BorderWdth); //Set Drawing color & width
+
+		drawstyle style;
+		if (RPolygonGfxInfo.isFilled)
+		{
+			style = FILLED;
+			pWind->SetBrush(RPolygonGfxInfo.FillClr);
+		}
+		else
+			style = FRAME;
+
+		for (int i = 0; i < sizeof(arrx); i++) {
+			arrx[i] = arrx[i] + 150;
+			arrY[i] = arrY[i] + 150;
+		}
+		pWind->DrawPolygon(arrx, arrY, nvertices, style);
+	}
+}
+void GUI::IrRegularPolygon(int* arrx, int* arry, int nvertices, GfxInfo IrRPolygonGfxInfo, bool Hidden, bool unhidden, bool duplicated) const
+{
+	color DrawingClr;
+	if (IrRPolygonGfxInfo.isSelected)	//shape is selected
+		DrawingClr = HighlightColor; //shape should be drawn highlighted
+	else
+		DrawingClr = IrRPolygonGfxInfo.DrawClr;
+
+	pWind->SetPen(DrawingClr, IrRPolygonGfxInfo.BorderWdth);	//Set Drawing color & width
+
+	drawstyle style;
+	if (IrRPolygonGfxInfo.isFilled)
+	{
+		style = FILLED;
+		pWind->SetBrush(IrRPolygonGfxInfo.FillClr);
+	}
+	else
+		style = FRAME;
+
+	pWind->DrawPolygon(arrx, arry, nvertices, style);
+	if (Hidden)
+	{
+		IrRPolygonGfxInfo.FillClr = WHITE;
+		DrawingClr = WHITE;
+		pWind->SetPen(DrawingClr, IrRPolygonGfxInfo.BorderWdth); //Set Drawing color & width
+
+		drawstyle style;
+		if (IrRPolygonGfxInfo.isFilled)
+		{
+			style = FILLED;
+			pWind->SetBrush(WHITE);
+		}
+		else
+			style = FRAME;
+
+
+		pWind->DrawPolygon(arrx, arry, nvertices, style);
+	}
+	else if (unhidden) {
+
+		pWind->SetPen(DrawingClr, IrRPolygonGfxInfo.BorderWdth); //Set Drawing color & width
+
+		drawstyle style;
+		if (IrRPolygonGfxInfo.isFilled)
+		{
+			style = FILLED;
+			pWind->SetBrush(IrRPolygonGfxInfo.FillClr);
+		}
+		else
+			style = FRAME;
+
+
+		pWind->DrawPolygon(arrx, arry, nvertices, style);
+	}
+	else if (duplicated) {
+		pWind->SetPen(DrawingClr, IrRPolygonGfxInfo.BorderWdth); //Set Drawing color & width
+
+		drawstyle style;
+		if (IrRPolygonGfxInfo.isFilled)
+		{
+			style = FILLED;
+			pWind->SetBrush(IrRPolygonGfxInfo.FillClr);
+		}
+		else
+			style = FRAME;
+
+		for (int i = 0; i < sizeof(arrx); i++) {
+			arrx[i] = arrx[i] + 150;
+			arry[i] = arry[i] + 150;
+		}
+		pWind->DrawPolygon(arrx, arry, nvertices, style);
+	}
+}
 
 //////////////////////////////////////////////////////////////////////////////////////////
 GUI::~GUI()

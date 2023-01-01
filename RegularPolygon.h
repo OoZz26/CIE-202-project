@@ -1,15 +1,22 @@
 #pragma once
 #include"Shapes/Shape.h"
 
-class RegularPolygon : public shape
+class RegularPolygon :public shape
 {
 private:
-
-	Point start;
-	Point end;
+	Point Center;
+	Point P;
+	int radius;
+	int Vertices_num;
+	int* ArrX = new int;
+	int* ArrY = new int;
+	int vertixx;
+	int vertixy;
 public:
-	RegularPolygon(Point, Point, GfxInfo shapeGfxInfo);
+	RegularPolygon(Point, Point, int, GfxInfo shapeGfxInfo);
+	virtual void Resize(double factor);	//Resize the shape
 	virtual ~RegularPolygon();
-	virtual void Draw(GUI* pUI) const;
+	void Draw(GUI* pUI) const;
+	bool IsINSHAPE(Point test);
+	string save(ofstream& savefile, string filename, string fcl, string drc, string pnw);
 };
-

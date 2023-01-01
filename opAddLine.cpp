@@ -5,7 +5,12 @@
 #include "controller.h"
 #include"GUI/GUI.h"
 opAddLine::opAddLine(controller* pCont) :operation(pCont)
-{}
+{
+
+
+
+
+}
 opAddLine::~opAddLine()
 {}
 
@@ -36,8 +41,7 @@ void opAddLine::Execute()
 	LGfxInfo.FillClr = pUI->getCrntFillColor();
 	LGfxInfo.BorderWdth = pUI->getCrntPenWidth();
 
-
-	LGfxInfo.isFilled = false;	//default is not filled
+	LGfxInfo.isFilled = false;
 	LGfxInfo.isSelected = false;	//defualt is not selected
 
 

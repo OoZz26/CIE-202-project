@@ -1,19 +1,145 @@
 ﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
-  opAddRect.cpp
-  opAddTriangle.cpp
-  opAddSquare.cpp
-  opAddLine.cpp
-  main.cpp
-  controller.cpp
+  Unhide.cpp
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\Unhide.cpp(17,20): warning C4018: '<': signed/unsigned mismatch
   Triangle.cpp
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\Triangle.cpp(15,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\Triangle.cpp(16,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\Triangle.cpp(17,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\Triangle.cpp(18,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\Triangle.cpp(44,55): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\Triangle.cpp(45,54): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\Triangle.cpp(47,55): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\Triangle.cpp(48,55): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\Triangle.cpp(50,55): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\Triangle.cpp(51,55): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
   Square.cpp
-  Shape.cpp
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\Square.cpp(7,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\Square.cpp(33,24): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\Square.cpp(37,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\Square.cpp(45,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\Square.cpp(83,52): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\Square.cpp(84,52): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
   Rect.cpp
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\Shapes\Rect.cpp(29,55): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\Shapes\Rect.cpp(30,55): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\Shapes\Rect.cpp(31,55): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\Shapes\Rect.cpp(32,55): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Shape.cpp
   Graph.cpp
   Save.cpp
   RegularPolygon.cpp
-  Load.cpp
-  Line.cpp
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\RegularPolygon.cpp(11,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\RegularPolygon.cpp(14,22): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\RegularPolygon.cpp(15,22): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\RegularPolygon.cpp(35,23): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\RegularPolygon.cpp(39,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\RegularPolygon.cpp(47,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\RegularPolygon.cpp(87,52): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\RegularPolygon.cpp(88,52): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Oval.cpp
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\Oval.cpp(54,45): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\Oval.cpp(55,45): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\Oval.cpp(56,45): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\Oval.cpp(57,45): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  opSelect.cpp
+  opResize.cpp
+  opLoad.cpp
+  opExit.cpp
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\opExit.cpp(39,3): warning C4551: function call missing argument list
+  opFillColor.cpp
+  opDrawColor.cpp
+  OpChangeColor.cpp
+  opBorderWidth.cpp
+  opAddSelect.cpp
+  opAddTriangle.cpp
+  opAddRect.cpp
   Generating Code...
-auxil.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
-  CIE202-project.vcxproj -> C:\Users\MBR\OneDrive\Desktop\CIE-202-project\Debug\CIE202-project.exe
+  Compiling...
+  OpAddPen.cpp
+  opDel.cpp
+  opAddSquare.cpp
+  opAddRegularPolygon.cpp
+  opAddOval.cpp
+  opAddLine.cpp
+  opAddIrRegularPolygon.cpp
+  opAddCircle.cpp
+  main.cpp
+  Line.cpp
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\Line.cpp(16,12): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\Line.cpp(54,51): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\Line.cpp(55,51): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\Line.cpp(57,47): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\Line.cpp(58,47): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  IrRegularPolygon.cpp
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\IrRegularPolygon.cpp(31,24): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\IrRegularPolygon.cpp(35,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\IrRegularPolygon.cpp(43,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\IrRegularPolygon.cpp(99,50): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\IrRegularPolygon.cpp(100,50): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Hide.cpp
+  controller.cpp
+  GUI.cpp
+  Duplicate.cpp
+  windowinput.cpp
+  mousequeue.cpp
+  keyqueue.cpp
+  image.cpp
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\CMUgraphicsLib\image.cpp(115,29): warning C4018: '<': signed/unsigned mismatch
+  CMUgraphics.cpp
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\CMUgraphicsLib\CMUgraphics.cpp(257,9): warning C4101: 'iX': unreferenced local variable
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\CMUgraphicsLib\CMUgraphics.cpp(257,13): warning C4101: 'iY': unreferenced local variable
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\CMUgraphicsLib\CMUgraphics.cpp(751,3): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\CMUgraphicsLib\CMUgraphics.cpp(1164,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\CMUgraphicsLib\CMUgraphics.cpp(1171,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\CMUgraphicsLib\CMUgraphics.cpp(1202,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\CMUgraphicsLib\CMUgraphics.cpp(1210,2): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\CMUgraphicsLib\CMUgraphics.cpp(1357,23): warning C4018: '>': signed/unsigned mismatch
+  Generating Code...
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\controller.cpp(193): warning C4715: 'controller::stringtocolor': not all control paths return a value
+  Compiling...
+  auxil.cpp
+  Circle.cpp
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\Circle.cpp(7,21): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\Circle.cpp(19,8): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\Circle.cpp(30,20): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Generating Code...
+cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  jutils.c
+  jquant2.c
+  jquant1.c
+  jmemnobs.c
+  jmemmgr.c
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\CMUgraphicsLib\jpeg\jmemmgr.c(1103,19): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\CMUgraphicsLib\jpeg\jmemmgr.c(1106,11): warning C4996: 'sscanf': This function or variable may be unsafe. Consider using sscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  jidctred.c
+  jidctint.c
+  jidctfst.c
+  jidctflt.c
+  jerror.c
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\CMUgraphicsLib\jpeg\jerror.c(169,5): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\CMUgraphicsLib\jpeg\jerror.c(171,5): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  jdtrans.c
+  jdsample.c
+  jdpostct.c
+  jdphuff.c
+  jdmerge.c
+  jdmaster.c
+  jdmarker.c
+  jdmainct.c
+  jdinput.c
+  jdhuff.c
+  Generating Code...
+  Compiling...
+  jddctmgr.c
+  jdcolor.c
+  jdcoefct.c
+  jdatasrc.c
+  jdapistd.c
+  jdapimin.c
+  jcparam.c
+  jcomapi.c
+  jpegload.c
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\CMUgraphicsLib\jpegload.c(23,12): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  Generating Code...
+Circle.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
+  CIE202-project.vcxproj -> C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\Debug\CIE202-project.exe

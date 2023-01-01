@@ -1,2 +1,1 @@
-C:\Users\East-Sound\Documents\GitHub\cs-project\Debug\CIE202-project.exe
-C:\Users\MBR\OneDrive\Desktop\CIE-202-project\Debug\CIE202-project.exe
+C:\Users\MBR\OneDrive\Documents\GitHub\CIE-202-project\Debug\CIE202-project.exe
