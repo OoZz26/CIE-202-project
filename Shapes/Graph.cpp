@@ -54,7 +54,10 @@ void Graph::Draw(GUI* pUI) const
 shape* Graph::GetSelected() {
 	return selectedShape; 
 }
+vector<shape*> Graph:: GETSELECTED() {
+	return selectedshapes ;
 
+}
 void Graph::SetSelected(shape* sh) {
 	Addselectedshape(sh);
 	selectedShape = sh;

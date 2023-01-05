@@ -21,7 +21,9 @@ public:
 	void Addselectedshape(shape* pFig); //Adds a new shape to the shapesList
 	void Draw(GUI* pUI) const;			//Draw the graph (draw all shapes)
 	shape* Getshape(Point p) const; //Search for a shape given a point inside the shape
+
 	shape* GetSelected();
+	vector <shape*> GETSELECTED();
 	void SetSelected(shape* sh);
 	bool setFilled(bool state);
 	virtual void Save(ofstream& savefile, string filename, string fcl, string drc, string pnw);		//Save all shapes to a file
