@@ -43,3 +43,6 @@ string Circle::save(ofstream& savefile, string filename, string fcl, string drc,
 		return info;
 	}
 }
+void Circle::Rotate() {
+
+}

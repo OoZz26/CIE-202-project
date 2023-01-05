@@ -70,7 +70,7 @@ shape* Graph::Getshape(Point p) const
 void Graph::DeleteShape()
 {
 	int mycount = -1;
-	for (auto selected : selectedshapes)
+	for (auto selected : shapesList)
 	{
 		mycount++;
 		if (selected->IsSelected())

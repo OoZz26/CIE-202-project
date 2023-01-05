@@ -13,6 +13,7 @@ public:
 
 	Circle(Point, Point, GfxInfo shapeGfxInfo);
 	virtual void Resize(double factor);	//Resize the shape
+	virtual void Rotate();
 	virtual ~Circle();
 	virtual void Draw(GUI* pUI) const;
 	virtual bool IsINSHAPE(Point test);

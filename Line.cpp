@@ -59,3 +59,19 @@ void Line::Resize(double factor) {
 	
 
 }
+void Line:: Rotate(){
+	Point center;
+	center.x = ((start.x) + (end.x)) / 2;
+	center.y = ((start.y) + (end.y)) / 2;
+
+	int Temp1x = start.x;
+	int Temp1y = start.y;
+	int Temp2x = end.x;
+	int Temp2y = end.y;
+
+	start.x = -Temp1y + center.x + center.y;
+	start.y = Temp1x - center.x + center.y;
+	end.x = -Temp2y + center.x + center.y;
+	end.y = Temp2x - center.x + center.y;
+
+}

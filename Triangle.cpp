@@ -45,6 +45,27 @@ void Triangle::Resize(double factor) {
 	Corner3.x = factor * Corner3.x - factor * (center.x) + (center.x);
 	Corner3.y = factor * Corner3.y - factor * (center.y) + (center.y);
 }
+void Triangle::Rotate() {
+	Point center;
+	center.x = ((Corner1.x) + (Corner2.x) + (Corner3.x)) / 3;
+	center.y = ((Corner1.y) + (Corner2.y) + (Corner3.y)) / 3;
+	int Temp1x = Corner1.x;
+	int Temp1y = Corner1.y;
+	int Temp2x = Corner2.x;
+	int Temp2y = Corner2.y;
+	int Temp3x = Corner3.x;
+	int Temp3y = Corner3.y;
+	Corner1.x = -Temp1y + center.x + center.y;
+	Corner1.y = Temp1x - center.x + center.y;
+	Corner2.x = -Temp2y + center.x + center.y;
+	Corner2.y = Temp2x - center.x + center.y;
+	Corner3.x = -Temp3y + center.x + center.y;
+	Corner3.y = Temp3x - center.x + center.y;
+	
+
+}
+
+
 string Triangle::save(ofstream& savefile, string filename, string fcl, string drc, string pnw) {
 	if (ShpGfxInfo.isFilled = true) {
 		string x = colortostring(ShpGfxInfo.DrawClr);

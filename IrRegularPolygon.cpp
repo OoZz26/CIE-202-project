@@ -100,3 +100,25 @@ void IrRegularPolygon::Resize(double factor) {
 		ArrY[i] = factor * tempy - factor * (Center.y) + (Center.y);
 	}
 }
+void IrRegularPolygon:: Rotate() {
+	int tempx, tempy;
+	Point Center;
+	Center.x = 0;    Center.y = 0;
+
+	for (int i = 0; i < Vertices_num; i++) {
+		tempx = ArrX[i];    tempy = ArrY[i];
+		(Center.x) = tempx + Center.x;    (Center.y) = tempy + Center.y;
+
+	}
+
+	(Center.x) = (Center.x) / Vertices_num;    (Center.y) = (Center.y) / Vertices_num;
+
+	for (int i = 0; i < Vertices_num; i++) {
+
+		int Temp1x = ArrX[i];
+		int Temp1y = ArrY[i];
+		ArrX[i] = -Temp1y + Center.x + Center.y;
+		ArrY[i] = Temp1x - Center.x + Center.y;
+
+	}
+}

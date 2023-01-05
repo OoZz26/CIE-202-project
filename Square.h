@@ -15,6 +15,7 @@ private:
 public:
 	Square(Point, Point,  GfxInfo shapeGfxInfo);
 	virtual void Resize(double factor);	//Resize the shape
+	virtual void Rotate();
 	virtual ~Square();
 	bool IsINSHAPE(Point test);
 	virtual void Draw(GUI* pUI) const;

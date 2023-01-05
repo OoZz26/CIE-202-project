@@ -58,3 +58,18 @@ void Oval:: Resize(double factor) {
 
 
 }
+void Oval:: Rotate(){
+	Point center;
+	center.x = ((P1.x) + (P2.x)) / 2;
+	center.y = ((P1.y) + (P2.y)) / 2;
+
+	int Temp1x = P1.x;
+	int Temp1y = P1.y;
+	int Temp2x = P2.x;
+	int Temp2y = P2.y;
+
+	P1.x = -Temp1y + center.x + center.y;
+	P1.y = Temp1x - center.x + center.y;
+	P2.x = -Temp2y + center.x + center.y;
+	P2.y = Temp2x - center.x + center.y;
+}

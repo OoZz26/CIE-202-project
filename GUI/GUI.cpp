@@ -123,6 +123,7 @@ operationType GUI::GetUseroperation() const
 			case ICON_LOAD: return LOAD;
 			case ICON_DELETE:return DEL;
 			case ICON_RESIZE:return RESIZE;
+			case ICON_ROTATE: return ROTATE;
 			case ICON_PLAY: return TO_PLAY;
 			default: return EMPTY;	//A click on empty place in desgin toolbar
 			}
@@ -301,6 +302,7 @@ pWind->DrawRectangle(0, 0, width, ToolBarHeight);
 	MenuIconImages[ICON_LOAD] = "images\\MenuIcons\\Menu_Load.jpg";
 	MenuIconImages[ICON_DELETE] = "images\\MenuIcons\\Menu_Delete.jpg";
 	MenuIconImages[ICON_RESIZE] = "images\\MenuIcons\\Menu_Resize.jpg";
+	MenuIconImages[ICON_ROTATE] = "images\\MenuIcons\\Menu_Rotate.jpg";
 	MenuIconImages[ICON_Copy] = "images\\MenuIcons\\Menu_Copy.jpg";
 	MenuIconImages[ICON_PLAY] = "images\\MenuIcons\\menu_Play_Mode.jpg";
 	//TODO: Prepare images for each menu icon and add it to the list

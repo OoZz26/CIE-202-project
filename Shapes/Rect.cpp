@@ -33,3 +33,19 @@ void Rect::Resize(double factor) {
 
 
 }
+void Rect::Rotate() {
+	Point center;
+	center.x = ((Corner1.x) + (Corner2.x)) / 2;
+	center.y = ((Corner1.y) + (Corner2.y)) / 2;
+
+	int Temp1x = Corner1.x;
+	int Temp1y = Corner1.y;
+	int Temp2x = Corner2.x;
+	int Temp2y = Corner2.y;
+
+	Corner1.x = -Temp1y + center.x + center.y;
+	Corner1.y = Temp1x - center.x + center.y;
+	Corner2.x = -Temp2y + center.x + center.y;
+	Corner2.y = Temp2x - center.x + center.y;
+
+}

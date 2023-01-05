@@ -84,3 +84,6 @@ void Square::Resize(double factor) {
 		ArrY[i] = factor * ArrY[i] - factor * (center.y) + (center.y);
 	}
 }
+void Square::Rotate() {
+
+}

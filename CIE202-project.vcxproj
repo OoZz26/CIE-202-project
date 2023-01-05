@@ -191,6 +191,7 @@
     <ClCompile Include="opModeDraw.cpp" />
     <ClCompile Include="opModePlay.cpp" />
     <ClCompile Include="opResize.cpp" />
+    <ClCompile Include="opRotate.cpp" />
     <ClCompile Include="opSelect.cpp" />
     <ClCompile Include="Oval.cpp" />
     <ClCompile Include="RegularPolygon.cpp" />
@@ -250,6 +251,7 @@
     <ClInclude Include="opModeDraw.h" />
     <ClInclude Include="opModePlay.h" />
     <ClInclude Include="opResize.h" />
+    <ClInclude Include="opRotate.h" />
     <ClInclude Include="opSave.h" />
     <ClInclude Include="opSelect.h" />
     <ClInclude Include="Oval.h" />

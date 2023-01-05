@@ -15,6 +15,7 @@ private:
 public:
 	RegularPolygon(Point, Point, int, GfxInfo shapeGfxInfo);
 	virtual void Resize(double factor);	//Resize the shape
+	virtual void Rotate();
 	virtual ~RegularPolygon();
 	void Draw(GUI* pUI) const;
 	bool IsINSHAPE(Point test);

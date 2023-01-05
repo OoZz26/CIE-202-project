@@ -88,3 +88,18 @@ void RegularPolygon::Resize(double factor) {
 		ArrY[i] = factor * ArrY[i] - factor * (Center.y) + (Center.y);
 	}
 }
+void RegularPolygon::Rotate() {
+
+
+
+	//for (int i = 0; i < Vertices_num; i++) {
+
+	//	int Temp1x = ArrX[i];
+	//	int Temp1y = ArrY[i];
+	//	ArrX[i] = -Temp1y + Center.x + Center.y;
+	//	ArrY[i] = Temp1x - Center.x + Center.y;
+	//
+	//
+	//}
+
+}

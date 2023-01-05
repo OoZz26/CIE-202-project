@@ -19,6 +19,7 @@
 #include"opExit.h"
 #include"operations/operation.h"
 #include"opDel.h"
+#include"opRotate.h"
 #include "operations/opCopy.h"
 #include "opModePlay.h"
 #include"opModeDraw.h"
@@ -120,6 +121,9 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case RESIZE:
 			pOp = new opResize(this);
+			break;
+		case ROTATE:
+			pOp = new opRotate(this);
 			break;
 		case COPY:
 			pOp = new opCopy(this);
