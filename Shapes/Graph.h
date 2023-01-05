@@ -13,6 +13,7 @@ class Graph
 private:
 	vector <shape*> shapesList; //a container to hold all shapes	
 	vector <shape*> selectedshapes;
+	vector <shape*> CopiedV;
 	shape* selectedShape;	//pointer to the currently selected shape
 public:										
 	Graph();
@@ -30,6 +31,7 @@ public:
 	//void load(ifstream& inputfile);
 	//Load all shapes from a file
 	void DeleteShape();
-	
+	void setCutShape();
+	void setCopiedShape();
 
 };

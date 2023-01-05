@@ -83,3 +83,35 @@ void Graph::DeleteShape()
 		}
 	}
 }
+
+
+void Graph::setCopiedShape()
+{
+	//int shapeCount = -1;
+	for (auto selectedSh : shapesList)
+	{
+		//shapeCount++;
+		if (selectedSh->IsSelected())
+		{
+			CopiedV.push_back(selectedSh);
+		}
+	}
+}
+
+void Graph::setCutShape()
+{
+	setCopiedShape();
+	//int shapeCount = -1;
+	//for (auto selected : selectedshapes)
+	//{
+	for (auto selected : shapesList)
+	{
+		//shapeCount++;
+		if (selected->IsSelected())
+		{
+			shapesList.pop_back();
+
+		}
+	}
+	//}
+}

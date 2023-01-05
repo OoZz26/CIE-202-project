@@ -21,6 +21,8 @@
 #include"opDel.h"
 #include"opRotate.h"
 #include "operations/opCopy.h"
+#include "operations/opCut.h"
+#include "operations/opPaste.h"
 #include "opModePlay.h"
 #include"opModeDraw.h"
 //Constructor
@@ -127,6 +129,12 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case COPY:
 			pOp = new opCopy(this);
+			break;
+		case CUT:
+			pOp = new opCut(this);
+			break;
+		case PASTE:
+			pOp = new opPaste(this);
 			break;
 
 		//case STATUS:	//a click on the status bar ==> no operation

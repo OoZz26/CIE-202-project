@@ -33,6 +33,8 @@ enum operationType //The operations supported (you can add more if needed)
 	FILL_COLOR,
 	DRAW_COLOR,
 	COPY,
+	CUT,
+	PASTE,
 
 	DRAWING_AREA,	//A click on the drawing area
 	STATUS,			//A click on the status bar

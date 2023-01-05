@@ -119,6 +119,8 @@ operationType GUI::GetUseroperation() const
 			case ICON_Fill: return FILL_COLOR;
 			case ICON_Draw: return DRAW_COLOR;
 			case ICON_Copy: return COPY;
+			case ICON_Cut: return CUT;
+			case ICON_Paste: return PASTE;
 			case ICON_SAVE: return SAVE;
 			case ICON_LOAD: return LOAD;
 			case ICON_DELETE:return DEL;
@@ -305,6 +307,8 @@ pWind->DrawRectangle(0, 0, width, ToolBarHeight);
 	MenuIconImages[ICON_ROTATE] = "images\\MenuIcons\\Menu_Rotate.jpg";
 	MenuIconImages[ICON_Copy] = "images\\MenuIcons\\Menu_Copy.jpg";
 	MenuIconImages[ICON_PLAY] = "images\\MenuIcons\\menu_Play_Mode.jpg";
+	MenuIconImages[ICON_Cut] = "images\\MenuIcons\\Menu_Cut.jpg";
+	MenuIconImages[ICON_Paste] = "images\\MenuIcons\\Menu_Paste.jpg";
 	//TODO: Prepare images for each menu icon and add it to the list
 	//Draw menu icon one image at a time
 	for (int i = 0; i < DRAW_ICON_COUNT; i++)

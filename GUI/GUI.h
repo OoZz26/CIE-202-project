@@ -58,6 +58,8 @@ private:
 		ICON_Fill,
 		ICON_Draw,
 		ICON_Copy,
+		ICON_Cut,
+		ICON_Paste,
 		ICON_SAVE,
 		ICON_LOAD,
 		ICON_EXIT,
