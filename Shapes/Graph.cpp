@@ -98,6 +98,11 @@ void Graph::setCopiedShape()
 	}
 }
 
+vector<shape*> Graph::GetCopied() {
+	return CopiedV;
+
+}
+
 void Graph::setCutShape()
 {
 	setCopiedShape();

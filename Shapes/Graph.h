@@ -13,7 +13,7 @@ class Graph
 private:
 	vector <shape*> shapesList; //a container to hold all shapes	
 	vector <shape*> selectedshapes;
-	vector <shape*> CopiedV;
+
 	shape* selectedShape;	//pointer to the currently selected shape
 public:										
 	Graph();
@@ -25,6 +25,7 @@ public:
 
 	shape* GetSelected();
 	vector <shape*> GETSELECTED();
+	vector <shape*> GetCopied();
 	void SetSelected(shape* sh);
 	bool setFilled(bool state);
 	virtual void Save(ofstream& savefile, string filename, string fcl, string drc, string pnw);		//Save all shapes to a file
@@ -33,5 +34,6 @@ public:
 	void DeleteShape();
 	void setCutShape();
 	void setCopiedShape();
+	vector <shape*> CopiedV;
 
 };

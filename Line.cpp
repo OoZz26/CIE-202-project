@@ -75,3 +75,12 @@ void Line:: Rotate(){
 	end.y = Temp2x - center.x + center.y;
 
 }
+
+Point Line::GetStart()
+{
+	return start;
+}
+Point Line :: GetEnd()
+{
+	return end;
+}

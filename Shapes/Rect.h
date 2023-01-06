@@ -14,5 +14,7 @@ public:
 	virtual ~Rect();
 	bool IsINSHAPE(Point test);
 	virtual void Draw(GUI* pUI) const;
+	Point getP1();
+	Point getP2();
 };
 

@@ -4,6 +4,7 @@ Oval:: Oval (Point p1, Point p2, GfxInfo shapeGfxInfo) :  shape(shapeGfxInfo)
 {
 	P1 = p1;
 	P2 = p2;
+	Distance = distance(p1.x, p1.y, p2.x, p2.y);
 }
 
 Oval::~Oval()
@@ -72,4 +73,17 @@ void Oval:: Rotate(){
 	P1.y = Temp1x - center.x + center.y;
 	P2.x = -Temp2y + center.x + center.y;
 	P2.y = Temp2x - center.x + center.y;
+}
+
+Point Oval::getP1()
+{
+	return P1;
+}
+Point Oval::getP2()
+{
+	return P2;
+}
+int Oval::GetDistance()
+{
+	return Distance;
 }

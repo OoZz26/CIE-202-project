@@ -7,7 +7,7 @@ class opPaste : public operation
 	//shape* shapePaste;
 	//GfxInfo PastingShapeInfo;
 private:
-	Point refPoint, P;
+	//Point refPoint, P;
 public:
 
 

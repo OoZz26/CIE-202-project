@@ -46,3 +46,16 @@ string Circle::save(ofstream& savefile, string filename, string fcl, string drc,
 void Circle::Rotate() {
 
 }
+
+Point Circle :: GetCenter()
+{
+	return Center;
+}
+Point Circle ::  GetRadius() 
+{
+	return Raduis;
+}
+int Circle::GetDistance()
+{
+	return Distance ;
+}

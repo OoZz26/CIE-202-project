@@ -65,3 +65,8 @@ bool shape::isFilled() const
 {
 	return ShpGfxInfo.isFilled;
 }
+
+GfxInfo shape::GetGfxInfo()
+{
+	return ShpGfxInfo;
+}

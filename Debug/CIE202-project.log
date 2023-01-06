@@ -1,13 +1,3 @@
-﻿cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
-  Graph.cpp
-  RegularPolygon.cpp
-C:\Users\East-Sound\Documents\GitHub\cs-project\RegularPolygon.cpp(11,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\East-Sound\Documents\GitHub\cs-project\RegularPolygon.cpp(14,22): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\East-Sound\Documents\GitHub\cs-project\RegularPolygon.cpp(15,22): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\East-Sound\Documents\GitHub\cs-project\RegularPolygon.cpp(35,23): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\East-Sound\Documents\GitHub\cs-project\RegularPolygon.cpp(39,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\East-Sound\Documents\GitHub\cs-project\RegularPolygon.cpp(47,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\East-Sound\Documents\GitHub\cs-project\RegularPolygon.cpp(87,52): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\East-Sound\Documents\GitHub\cs-project\RegularPolygon.cpp(88,52): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-  Generating Code...
-  CIE202-project.vcxproj -> C:\Users\East-Sound\Documents\GitHub\cs-project\Debug\CIE202-project.exe
+﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  opPaste.cpp
+  CIE202-project.vcxproj -> E:\Zewail academic years\C++ project git hub\CIE-202-project\Debug\CIE202-project.exe

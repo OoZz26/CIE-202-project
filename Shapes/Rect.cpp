@@ -49,3 +49,12 @@ void Rect::Rotate() {
 	Corner2.y = Temp2x - center.x + center.y;
 
 }
+
+Point Rect::getP1()
+{
+	return Corner1;
+}
+Point Rect::getP2()
+{
+	return Corner2;
+}

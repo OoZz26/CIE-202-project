@@ -87,3 +87,12 @@ void Square::Resize(double factor) {
 void Square::Rotate() {
 
 }
+
+Point Square::getP1()
+{
+	return Corner1;
+}
+Point Square::getP2()
+{
+	return Corner2;
+}

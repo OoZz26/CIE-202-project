@@ -34,6 +34,7 @@ public:
 	bool IsCutOr() const;
 	bool isFilled() const;
 
+	GfxInfo GetGfxInfo();
 	///The following functions should be supported by the shape class
 	///It should be overridden by each inherited shape
 

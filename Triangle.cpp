@@ -83,3 +83,17 @@ string Triangle::save(ofstream& savefile, string filename, string fcl, string dr
 	}
 }
 
+
+Point Triangle::GetCorner1()
+{
+	return Corner1;
+}
+Point Triangle::GetCorner2()
+{
+	return Corner2;
+}
+
+Point Triangle::GetCorner3()
+{
+	return Corner3;
+}
