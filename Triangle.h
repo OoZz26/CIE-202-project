@@ -19,5 +19,6 @@ public:
 	Point GetCorner1();
 	Point GetCorner2();
 	Point GetCorner3();
+	void zoom(double s);
 };
 

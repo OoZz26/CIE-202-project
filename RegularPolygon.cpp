@@ -103,3 +103,9 @@ void RegularPolygon::Rotate() {
 	//}
 
 }
+void RegularPolygon::zoom(double s) {
+	for (int i = 0; i < Vertices_num; i++) {
+		ArrX[i] = s * ArrX[i];
+		ArrY[i] = s * ArrY[i];
+	}
+}

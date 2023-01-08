@@ -18,7 +18,7 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -195,6 +195,8 @@
     <ClCompile Include="opResize.cpp" />
     <ClCompile Include="opRotate.cpp" />
     <ClCompile Include="opSelect.cpp" />
+    <ClCompile Include="opZoomIN.cpp" />
+    <ClCompile Include="opZoomOUT.cpp" />
     <ClCompile Include="Oval.cpp" />
     <ClCompile Include="RegularPolygon.cpp" />
     <ClCompile Include="Save.cpp" />
@@ -258,6 +260,8 @@
     <ClInclude Include="opRotate.h" />
     <ClInclude Include="opSave.h" />
     <ClInclude Include="opSelect.h" />
+    <ClInclude Include="opZoomIN.h" />
+    <ClInclude Include="opZoomOUT.h" />
     <ClInclude Include="Oval.h" />
     <ClInclude Include="RegularPolygon.h" />
     <ClInclude Include="resource.h" />

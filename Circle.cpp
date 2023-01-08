@@ -59,3 +59,7 @@ int Circle::GetDistance()
 {
 	return Distance ;
 }
+void Circle::zoom(double s) {
+	double z = Distance;
+	Distance = s * z;
+}

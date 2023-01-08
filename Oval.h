@@ -18,6 +18,8 @@ public:
 	Point getP1();
 	Point getP2();
 	int GetDistance();
+
+	void zoom(double s);
 	
 };
 

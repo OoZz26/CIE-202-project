@@ -22,5 +22,7 @@ public:
 	string save(ofstream& savefile, string filename, string fcl, string drc, string pnw);
 	Point getP1();
 	Point getP2();
+
+	void zoom(double s);
 	
 };

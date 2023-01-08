@@ -21,8 +21,6 @@ bool Line::IsINSHAPE(Point test) {
 	else
 		return false;
 
-
-
 }
 
 void Line::Draw(GUI* pUI) const
@@ -83,4 +81,12 @@ Point Line::GetStart()
 Point Line :: GetEnd()
 {
 	return end;
+}
+
+void Line::zoom(double s) {
+	start.x = start.x * s;
+	start.y = start.y * s;
+
+	end.x = end.x * s;
+	end.y = end.y * s;
 }

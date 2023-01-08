@@ -66,6 +66,8 @@ private:
 		ICON_DELETE,
 		ICON_RESIZE,
 		ICON_ROTATE,
+		ICON_Zoom_in,
+		ICON_Zoom_out,
 		ICON_PLAY,
 		DRAW_ICON_COUNT,		//no. of menu icons ==> This should be the last line in this enum
 

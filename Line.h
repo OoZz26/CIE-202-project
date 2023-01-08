@@ -18,5 +18,7 @@ public:
 	Point GetStart();
 	Point GetEnd();
 
+	void zoom(double s);
+
 };
 

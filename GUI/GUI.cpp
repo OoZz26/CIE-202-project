@@ -127,6 +127,9 @@ operationType GUI::GetUseroperation() const
 			case ICON_RESIZE:return RESIZE;
 			case ICON_ROTATE: return ROTATE;
 			case ICON_PLAY: return TO_PLAY;
+			case ICON_Zoom_in:return ZOOMIN;
+			case ICON_Zoom_out:return ZOOMOUT;
+
 			default: return EMPTY;	//A click on empty place in desgin toolbar
 			}
 		}
@@ -309,6 +312,8 @@ pWind->DrawRectangle(0, 0, width, ToolBarHeight);
 	MenuIconImages[ICON_PLAY] = "images\\MenuIcons\\menu_Play_Mode.jpg";
 	MenuIconImages[ICON_Cut] = "images\\MenuIcons\\Menu_Cut.jpg";
 	MenuIconImages[ICON_Paste] = "images\\MenuIcons\\Menu_Paste.jpg";
+	MenuIconImages[ICON_Zoom_in] = "images\\MenuIcons\\Menu_Zoom_in.jpg";
+	MenuIconImages[ICON_Zoom_out] = "images\\MenuIcons\\Menu_Zoom_out.jpg";
 	//TODO: Prepare images for each menu icon and add it to the list
 	//Draw menu icon one image at a time
 	for (int i = 0; i < DRAW_ICON_COUNT; i++)

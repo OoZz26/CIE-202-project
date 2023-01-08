@@ -11,6 +11,7 @@ public:
 	IrRegularPolygon(Point* p, int x, GfxInfo shapeGfxInfo);
 	virtual void Resize(double factor);	//Resize the shape
 	virtual void Rotate();
+	void zoom(double s);
 	virtual ~IrRegularPolygon();
 	bool IsINSHAPE(Point test);
 	virtual void Draw(GUI* pUI) const;

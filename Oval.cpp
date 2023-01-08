@@ -87,3 +87,11 @@ int Oval::GetDistance()
 {
 	return Distance;
 }
+void Oval::zoom(double s) {
+
+	P1.x = s * P1.x;
+	P1.y = s * P1.y;
+	P2.x = s * P2.x;
+	P2.y = s * P2.y;
+
+}

@@ -33,6 +33,7 @@ public:
 	//Load all shapes from a file
 	void DeleteShape();
 	void setCutShape();
+	void ZoomOpration(double zoomvalue);
 	void setCopiedShape();
 	vector <shape*> CopiedV;
 
