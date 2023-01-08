@@ -16,6 +16,9 @@ IrRegularPolygon::IrRegularPolygon(Point* P1, int x, GfxInfo shapeGfxInfo) :shap
 
 IrRegularPolygon::~IrRegularPolygon()
 {}
+void IrRegularPolygon::Duplicate(GUI* pUI) {
+
+}
 bool IrRegularPolygon::IsINSHAPE(Point test) {
 	Point p1, p2, p3, pr, pf;
 	pf.x = ArrX[Vertices_num - 1];
@@ -59,7 +62,10 @@ void IrRegularPolygon::Draw(GUI* pUI) const
 {
 
 	//Call Output::IrRegularPolygon to draw a IrRegularPolygon on the screen	
-	pUI->IrRegularPolygon(ArrX, ArrY, Vertices_num, ShpGfxInfo, Hidden, unhidden, duplicated);
+	pUI->IrRegularPolygon(ArrX, ArrY, Vertices_num, ShpGfxInfo);
+}
+void IrRegularPolygon::Move(int& e, int& s)
+{
 }
 string IrRegularPolygon::save(ofstream& savefile, string filename, string fcl, string drc, string pnw)
 {/*Center = C;
@@ -99,4 +105,31 @@ void IrRegularPolygon::Resize(double factor) {
 		ArrX[i] = factor * tempx - factor * (Center.x) + (Center.x);
 		ArrY[i] = factor * tempy - factor * (Center.y) + (Center.y);
 	}
+}
+void IrRegularPolygon:: Rotate() {
+	int tempx, tempy;
+	Point Center;
+	Center.x = 0;    Center.y = 0;
+
+	for (int i = 0; i < Vertices_num; i++) {
+		tempx = ArrX[i];    tempy = ArrY[i];
+		(Center.x) = tempx + Center.x;    (Center.y) = tempy + Center.y;
+
+	}
+
+	(Center.x) = (Center.x) / Vertices_num;    (Center.y) = (Center.y) / Vertices_num;
+
+	for (int i = 0; i < Vertices_num; i++) {
+
+		int Temp1x = ArrX[i];
+		int Temp1y = ArrY[i];
+		ArrX[i] = -Temp1y + Center.x + Center.y;
+		ArrY[i] = Temp1x - Center.x + Center.y;
+
+	}
+}
+
+int* IrRegularPolygon::Getshapeparameters()
+{
+	return nullptr;
 }

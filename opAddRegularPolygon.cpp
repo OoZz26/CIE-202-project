@@ -66,7 +66,7 @@ void opAddRegularPolygon::Execute()
 
 	//Add the regularpolygon to the list of shapes
 	pGr->Addshape(R);
-
+	pGr->Addshape2(R);
 
 
 }

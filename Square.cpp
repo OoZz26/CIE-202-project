@@ -56,7 +56,7 @@ bool Square::IsINSHAPE(Point test) {
 void Square::Draw(GUI* pUI) const
 {
 	//Call Output::DrawSquare to draw a square on the screen	
-	pUI->DrawSQU(ArrX, ArrY, 4, ShpGfxInfo, Hidden, unhidden, duplicated);
+	pUI->DrawSQU(ArrX, ArrY, 4, ShpGfxInfo,scrambled,duplicated);
 }string Square::save(ofstream& savefile, string filename, string fcl, string drc, string pnw) {
 	if (ShpGfxInfo.isFilled = true) {
 		string x = colortostring(ShpGfxInfo.DrawClr);
@@ -82,5 +82,50 @@ void Square::Resize(double factor) {
 	for (int i = 0; i < 4; i++) {
 		ArrX[i] = factor * ArrX[i] - factor * (center.x) + (center.x);
 		ArrY[i] = factor * ArrY[i] - factor * (center.y) + (center.y);
+	}
+}
+void Square::Rotate() {
+
+}
+int* Square::Getshapeparameters() {
+	int listofparameters[4];
+	listofparameters[0] = ArrX[0] - 10;
+	listofparameters[1] = ArrY[0] - 10;
+	listofparameters[2] = abs(ArrX[0] - ArrX[1]) + 15;
+	listofparameters[3] = abs(ArrY[0] - ArrY[2]) + 15;
+	return listofparameters;
+}
+void Square::Move(int& e, int& s)
+{
+	Point center;
+	center.x = ((ArrX[0]) + (ArrX[2])) / 2;
+	center.y = ((ArrY[0]) + (ArrY[2])) / 2;
+	int dx, dy;
+	dx = center.x - e;
+	dy = center.y - s;
+	//Corner1.x = Corner1.x - dx;
+	//ArrX[1] = Corner2.x - dx;
+	//Corner1.y = Corner1.y - dy;
+	//Corner2.y = Corner2.y - dy;
+	for (int i = 0; i < 4; i++) {
+		ArrX[i] = ArrX[i] - dx;
+		ArrY[i] = ArrY[i] - dy;
+	}
+
+
+	/*srand(time(0));
+	double dist1y = (Corner1.y - Corner2.y);
+	double dist1x = (Corner1.x - Corner2.x);
+	Corner1.x = (rand() % 1000);
+	Corner1.y = (rand() % 500);
+	Corner2.x = Corner1.x - dist1x;
+	Corner2.y = Corner1.y - dist1y;*/
+
+
+}
+void Square::Duplicate(GUI* pUI) {
+	for (int i = 0; i < sizeof(ArrX); i++) {
+		ArrX[i] = ArrX[i] + 50;
+		ArrY[i] = ArrY[i] + 50;
 	}
 }

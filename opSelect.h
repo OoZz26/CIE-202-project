@@ -15,10 +15,11 @@
 //Add select operation class
 class opSelect : public operation
 {
+	vector <shape*> nshapeslist;
 public:
 	opSelect(controller* pCont);
 	virtual ~opSelect();
-
+	void setshapeslist(vector <shape*> shapeslist);
 	//Add select to the controller
 	virtual void Execute();
 

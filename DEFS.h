@@ -26,20 +26,22 @@ enum operationType //The operations supported (you can add more if needed)
 	SAVE,			//Save the whole graph to a file
 	LOAD,			//Load a graph from a file
 	EXIT,			//Exit the application
-	HIDE,
-	UNHIDE,
-	DUPL,
+
 	COLOR_PALETTE,
 	BORDER_WIDTH,
 	PEN_WIDTH,
 	FILL_COLOR,
 	DRAW_COLOR,
-
+	COPY,
+	SCRAMBLE,
+	DUPL,
 	DRAWING_AREA,	//A click on the drawing area
 	STATUS,			//A click on the status bar
-	EMPTY,			//A click on empty place in the toolbar
+	EMPTY,
+	HIDE,
+	UNHIDE,//A click on empty place in the toolbar
 	TO_DRAW,		//Switch interface to Draw mode
-	TO_PLAY			//Switch interface to Play mode
+	TO_PLAY,//Switch interface to Play mode
 
 	///TODO: Add more operation types (if needed)
 };

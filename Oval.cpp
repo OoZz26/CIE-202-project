@@ -28,7 +28,7 @@ bool Oval::IsINSHAPE(Point test) {
 void Oval::Draw(GUI* pUI) const
 {
 	//Call Output::DrawOVAL to draw a oval on the screen	
-	pUI->DrawOVAL(P1, P2, ShpGfxInfo, Hidden, unhidden, duplicated);
+	pUI->DrawOVAL(P1, P2, ShpGfxInfo,scrambled,duplicated);
 }
 string Oval::save(ofstream& savefile, string filename, string fcl, string drc, string pnw)
 {
@@ -57,4 +57,83 @@ void Oval:: Resize(double factor) {
 	P2.y = factor * P2.y - factor * (center.y) + (center.y);
 
 
+}
+void Oval:: Rotate(){
+	Point center;
+	center.x = ((P1.x) + (P2.x)) / 2;
+	center.y = ((P1.y) + (P2.y)) / 2;
+
+	int Temp1x = P1.x;
+	int Temp1y = P1.y;
+	int Temp2x = P2.x;
+	int Temp2y = P2.y;
+
+	P1.x = -Temp1y + center.x + center.y;
+	P1.y = Temp1x - center.x + center.y;
+	P2.x = -Temp2y + center.x + center.y;
+	P2.y = Temp2x - center.x + center.y;
+}
+int* Oval::Getshapeparameters()
+{
+	int dis = distance(P1.x, P1.y, P2.x, P2.y);
+	int list[4];
+	if (P1.x < P2.x && P1.y < P2.y) {
+		list[0] = P1.x - 10;
+		list[1] = P1.y - 10;
+		list[2] = dis+20 ;
+		list[3] = dis ;
+		return list;
+	}
+	else if (P1.x > P2.x && P1.y < P2.y) {
+		list[0] = P2.x - 10;
+		list[1] = P1.y - 10;
+		list[2] = dis+20 ;
+		list[3] = dis ;
+		return list;
+	}
+	else if (P1.x > P2.x && P1.y > P2.y) {
+		list[0] = P2.x - 10;
+		list[1] = P2.y - 10;
+		list[2] = dis+20 ;
+		list[3] = dis ;
+		return list;
+	}
+	else if (P1.x < P2.x && P1.y > P2.y) {
+		list[0] = P1.x - 10;
+		list[1] = P2.y - 10;
+		list[2] = dis+20 ;
+		list[3] = dis ;
+		return list;
+	}
+}
+void Oval::Move(int& e, int& s)
+{
+	Point center;
+	center.x = ((P1.x) + (P2.x)) / 2;
+	center.y = ((P1.y) + (P2.y)) / 2;
+	int dx, dy;
+	dx = center.x - e;
+	dy = center.y - s;
+	P1.x = P1.x - dx;
+	P2.x = P2.x - dx;
+	P1.y = P1.y - dy;
+	P2.y = P2.y - dy;
+
+	/*srand(time(0));
+	double dist1y = (Corner1.y - Corner2.y);
+	double dist1x = (Corner1.x - Corner2.x);
+	Corner1.x = (rand() % 1000);
+	Corner1.y = (rand() % 500);
+	Corner2.x = Corner1.x - dist1x;
+	Corner2.y = Corner1.y - dist1y;*/
+
+
+}
+void Oval::Duplicate(GUI* pUI) {
+	P1.x = P1.x + 10;
+	P2.x = P2.x + 10;
+	P1.y = P1.y + 10;
+	P2.y = P2.y + 10;
+
+	//pUI->DuplicateRect(Corner1, Corner2, ShpGfxInfo);
 }

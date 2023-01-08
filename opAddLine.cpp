@@ -46,13 +46,13 @@ void opAddLine::Execute()
 
 
 	//Create a line with the above parameters
-	Line* R = new Line(P1, P2, LGfxInfo);
-
+	Line* R = new Line (P1, P2, LGfxInfo);
 	//Get a pointer to the graph
 	Graph* pGr = pControl->getGraph();
 
 	//Add the Line to the list of shapes
 	pGr->Addshape(R);
+	pGr->Addshape2(R);
 
 }
 

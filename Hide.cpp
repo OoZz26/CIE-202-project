@@ -1,46 +1,33 @@
-#include "Hide.h"
 #include "operations/opAddRect.h"
 #include "Shapes/Rect.h"
 #include "controller.h"
+#include "hide.h"
 #include "GUI/GUI.h"
-#include"Shapes/Graph.h"
-#include "Oval.h"
-#include "Circle.h"
-#include "Triangle.h"
-#include"controller.h"
-#include"operations/operation.h"
-#include"GUI/GUI.h"
-#include"Shapes/Shape.h"
-void opHide::Addhiddenshape(shape* hshape,color n)
-{
-	Hiddenshapes.push_back(hshape);
-	//colorhidden.push_back(n);
-}
+#include <fstream>
 opHide::opHide(controller* pCont) : operation(pCont) {}
 opHide :: ~opHide() {}
-
-void opHide::Execute()
+/*void opHide::DrawDuplicates(vector<shape*> duplicate, GUI* pUI, Graph* pGraph)
 {
+	//cout << duplicate.size()<< endl;
+	//dupl->ChngDrawClr(YELLOW);
+	//dupl->Duplicate(pUI);
+	//pUI->ClearDrawArea();
+	pGraph = pControl->getGraph();
+	cout << duplicate.size() << endl;
+	for (auto shapePointer : duplicate) {
+		shapePointer->setduplicate();
+		shapePointer->Draw(pUI);
+		pGraph->Addshape(shapePointer);
+	}
+
+}*/
+
+void opHide::Execute() {
 	GUI* pUI = pControl->GetUI();
 	Graph* pGraph = pControl->getGraph();
-
-	if (pGraph->GetSelected() != nullptr)
-	{
-		pUI->PrintMessage("Choose the shape you want to HIDE");
-		Addhiddenshape(pGraph->GetSelected(),BLUE);
-		//for (int i = 0; i < Hiddenshapes.size(); i++) {
-			//cout << Hiddenshapes[i]->ID << endl;
-		//}
-		pGraph->SetHiddenList(Hiddenshapes, colorhidden);
-		pGraph->GetSelected()->disappear();
-		pUI->PrintMessage("Shapes Hidden");
-	}
-
-	else if (pGraph->GetSelected() == nullptr)
-	{
-		pUI->PrintMessage("YOU DID NOT SELECT A SHAPE ");
-
-
-	}
+	//shapelist = pGraph->getshapeslist();
+	//DrawDuplicates(shapelist, pUI, pGraph);
+	pGraph->Hide(pUI);
+	pUI->PrintMessage("Shapes Hidden");
 
 }

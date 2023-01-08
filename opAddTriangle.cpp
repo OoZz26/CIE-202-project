@@ -58,5 +58,5 @@ void opAddTriangle::Execute()
 
 	//Add the Triangle to the list of shapes
 	pGr->Addshape(T);
-
+	pGr->Addshape2(T);
 }

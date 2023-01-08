@@ -53,7 +53,7 @@ void opAddCircle::Execute()
 
 	//Add the Circle to the list of shapes
 	pGr->Addshape(R);
-
+	//pGr->Addshape2(R);
 }
 
 

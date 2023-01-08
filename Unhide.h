@@ -1,14 +1,15 @@
 #pragma once
 #include "operations/operation.h"
-#include"Shapes/Shape.h"
 #include<vector>
+#include"Shapes/Shape.h"
+#include"Shapes/Graph.h"
 class opUnhide : public operation
 {
-	vector <shape*> Hiddenshapes2;
-	vector <color> colorhidden2;
+	vector <shape*> shapelist;
+
 public:
-	void DrawHidden(vector <shape*> hidden, vector <color> colorhiddenn, GUI* pUI);
 	opUnhide(controller* pCont);
 	virtual ~opUnhide();
+	//void DrawDuplicates(vector<shape*> duplicate, GUI* pUI, Graph* pGraph);
 	virtual void Execute();
 };

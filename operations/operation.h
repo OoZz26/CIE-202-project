@@ -11,6 +11,7 @@ class operation
 protected:
 	controller *pControl;	//operations needs control to do their job
 
+
 public:
 
 	operation(controller *pCont) { pControl = pCont; }	//constructor

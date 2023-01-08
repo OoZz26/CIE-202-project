@@ -55,5 +55,6 @@ void opAddOval::Execute()
 
 	//Add the Oval to the list of shapes
 	pGr->Addshape(R);
+	pGr->Addshape2(R);
 
 }

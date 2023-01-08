@@ -19,15 +19,21 @@
 #include"opExit.h"
 #include"operations/operation.h"
 #include"opDel.h"
-#include"Hide.h"
-#include"Unhide.h"
+#include"opRotate.h"
+#include "operations/opCopy.h"
+#include "opModePlay.h"
+#include"opModeDraw.h"
+#include"Scramble.h"
 #include"Duplicate.h"
-
+#include"Move.h"
+#include"Sendtoback.h"
+#include"hide.h"
 //Constructor
 controller::controller()
 {
 	pGraph = new Graph;
 	pGUI = new GUI;	//Create GUI object
+	copiedShape = nullptr;
 }
 
 //==================================================================================//
@@ -47,6 +53,13 @@ operation* controller::createOperation(operationType OpType)
 	//According to operation Type, create the corresponding operation object
 	switch (OpType)
 	{
+		case TO_DRAW:
+			pOp = new opModeDraw(this);
+			break;
+
+		case TO_PLAY:
+			pOp = new opModePlay(this);
+			break;
 		case DRAW_RECT:
 			pOp = new opAddRect(this);
 			break;
@@ -95,9 +108,9 @@ operation* controller::createOperation(operationType OpType)
 			pOp = new opSave(this);
 			break;
 
-		/*case LOAD:
+		//case LOAD:
 			//pOp = new opLoad(this);
-			break;*/
+			//break;
 
 		case STATUS:	//a click on the status bar ==> no operation
 			pOp = new OpChangeColor(this);
@@ -114,18 +127,27 @@ operation* controller::createOperation(operationType OpType)
 		case RESIZE:
 			pOp = new opResize(this);
 			break;
-		case HIDE:
-			pOp = new opHide(this);
+		case ROTATE:
+			pOp = new opRotate(this);
 			break;
-
-        case UNHIDE:
-			pOp = new opUnhide(this);
+		case COPY:
+			pOp = new opCopy(this);
 			break;
-
+		case SCRAMBLE:
+			pOp = new opScramble(this);
+			break;
 		case DUPL:
 			pOp = new opDuplicate(this);
 			break;
-
+		case MOVE :
+			pOp= new opMove(this);
+				break;
+		case SEND_BACK:
+			pOp = new opSendtoback(this);
+			break;
+		case HIDE:
+			pOp = new opHide(this);
+			break;
 		//case STATUS:	//a click on the status bar ==> no operation
 		//	break;
 	}
@@ -200,8 +222,24 @@ bool operator==(color c1, color c2)
 	else return false;
 }
 
+void controller::setShapeToCopy(shape* CoShape)
+{
+	copiedShape = CoShape;
+}
 
+shape* controller::getShapeToCopy()
+{
+	return copiedShape;
+}
 
+void controller::setUpdateCut(shape* cutt)
+{
+	updateCut = cutt;
+}
+shape* controller::getUpdateCut() const
+{
+	return updateCut;
+}
 
 //==================================================================================//
 //							Run function											//

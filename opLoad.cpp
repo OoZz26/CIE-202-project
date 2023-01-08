@@ -8,7 +8,7 @@
 #include"RegularPolygon.h"
 #include "Line.h"
 #include"Triangle.h"
-#include"Circle.h"
+/*#include"Circle.h"
 #include"Square.h"
 #include"RegularPolygon.h"
 #include"IrRegularPolygon.h"

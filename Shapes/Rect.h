@@ -8,11 +8,15 @@ private:
 	Point Corner1;	
 	Point Corner2;
 public:
-	Rect(Point , Point, GfxInfo shapeGfxInfo);
+	Rect(Point , Point, GfxInfo shapeGfxInfo );
 	virtual void Resize(double factor);	//Resize the shape
-	//virtual void Duplicate(GUI* pUI) const;
+	virtual void Rotate();
+	void Duplicate(GUI* pui);
+	int* Getshapeparameters();
 	virtual ~Rect();
 	bool IsINSHAPE(Point test);
 	virtual void Draw(GUI* pUI) const;
+	void Move(int& e, int&s);
+	void scramble();
 };
 

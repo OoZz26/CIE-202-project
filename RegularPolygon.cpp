@@ -17,7 +17,20 @@ RegularPolygon::RegularPolygon(Point C, Point  p, int x, GfxInfo shapeGfxInfo) :
 		ArrY[i] = vertixy;
 	}
 }
-
+void RegularPolygon::Move(int& e, int& s)
+{
+	Point center;
+	int n = sizeof(ArrX);
+	center.x = ((ArrX[0]) + (ArrX[n-2])) / 2;
+	center.y = ((ArrY[0]) + (ArrY[n-2])) / 2;
+	int dx, dy;
+	dx = center.x - e;
+	dy = center.y - s;
+	for (int i = 0; i < n; i++) {
+		ArrX[i] = ArrX[i] - e;
+		ArrY[i] = ArrY[i] - s;
+	}
+}
 RegularPolygon::~RegularPolygon()
 {}
 bool RegularPolygon::IsINSHAPE(Point test) {
@@ -60,7 +73,7 @@ bool RegularPolygon::IsINSHAPE(Point test) {
 void RegularPolygon::Draw(GUI* pUI) const
 {
 	//Call Output::DrawRegularPolygon to draw a regularPolygon on the screen	
-	pUI->DrawRPolygon(ArrX, ArrY, Vertices_num, ShpGfxInfo, Hidden, unhidden, duplicated);
+	pUI->DrawRPolygon(ArrX, ArrY, Vertices_num, ShpGfxInfo,scrambled,duplicated);
 }
 string RegularPolygon::save(ofstream& savefile, string filename, string fcl, string drc, string pnw)
 {/*Center = C;
@@ -81,10 +94,39 @@ string RegularPolygon::save(ofstream& savefile, string filename, string fcl, str
 	}
 }
 void RegularPolygon::Resize(double factor) {
-
+	 
 	for (int i = 0; i < Vertices_num; i++) {
 
 		ArrX[i] = factor * ArrX[i] - factor * (Center.x) + (Center.x);
 		ArrY[i] = factor * ArrY[i] - factor * (Center.y) + (Center.y);
+	}
+}
+void RegularPolygon::Rotate() {
+
+
+
+	//for (int i = 0; i < Vertices_num; i++) {
+
+	//	int Temp1x = ArrX[i];
+	//	int Temp1y = ArrY[i];
+	//	ArrX[i] = -Temp1y + Center.x + Center.y;
+	//	ArrY[i] = Temp1x - Center.x + Center.y;
+	//
+	//
+	//}
+
+}int* RegularPolygon::Getshapeparameters() {
+	int listofparameters[4];
+	int n = sizeof(ArrX);
+		listofparameters[0] = ArrX[n-1] - 40;
+		listofparameters[1] = ArrY[n-1] - 50;
+		listofparameters[2] = abs(ArrX[n-1] - ArrX[1]) + 120;
+		listofparameters[3] = abs(ArrY[n-1] - ArrY[1]) + 120;
+		return listofparameters;
+}
+void RegularPolygon::Duplicate(GUI* pUI) {
+	for (int i = 0; i < sizeof(ArrX); i++) {
+		ArrX[i] = ArrX[i] +50;
+		ArrY[i] = ArrY[i] + 50;
 	}
 }

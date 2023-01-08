@@ -1,7 +1,9 @@
 #include "Graph.h"
 #include "../GUI/GUI.h"
 #include"Shape.h"
-
+#include <algorithm>
+#include<cstdlib>
+#include<ctime>
 void Graph::Save(ofstream& savefile, string filename, string fcl, string drc, string pnw) {
 
 	filename = filename + ".txt";
@@ -34,43 +36,45 @@ void Graph::Addshape(shape* pShp)
 {
 	//Add a new shape to the shapes vector
 	shapesList.push_back(pShp);	
+	//shapesList2.push_back(pShp);
+	//shapesList2.push_back(pShp);
+}
+void Graph::Addshape2(shape* pShp)
+{
+	//Add a new shape to the shapes vector
+	//shapesList2.push_back(pShp);
+	//shapesList2.push_back(pShp);
+	//shapesList2.push_back(pShp);
+}
+
+
+void Graph::Addselectedshape(shape* pShp)
+{
+	//Add a new shape to the shapes vector
+	selectedshapes.push_back(pShp);
 }
 ////////////////////////////////////////////////////////////////////////////////////
 //Draw all shapes on the user interface
 void Graph::Draw(GUI* pUI) const
 {
-	pUI->ClearDrawArea();
+	//pUI->ClearDrawArea();
 	for (auto shapePointer : shapesList)
 		shapePointer->Draw(pUI);
 }
-vector <shape*> Graph::GetHiddenlist() {
-	return Hiddenshapes;
+vector <shape*> Graph::getselectedshapes() {
+	return selectedshapes;
 }
-vector <shape*> Graph::Getshapeslist() {
+vector <shape*> Graph::getlistshapes() {
 	return shapesList;
 }
-void Graph::SetHiddenList(vector <shape*> shapeshidden, vector <color> colorhidden) {
-	Hiddenshapes = shapeshidden;
-	colorhiddens = colorhidden;
-}
-vector <color> Graph::Getcolorlist() {
-	return colorhiddens;
-}
 
-
-void Graph::GetHidden(vector <shape*> Hiddenshapes, GUI* pUI) {
-	for (auto Hidden : Hiddenshapes)
-	{
-		cout << "hi";
-		Hidden->Draw(pUI);
-	}
-}
 
 shape* Graph::GetSelected() {
 	return selectedShape; 
 }
 
 void Graph::SetSelected(shape* sh) {
+	Addselectedshape(sh);
 	selectedShape = sh;
 }
 shape* Graph::Getshape(Point p) const
@@ -94,12 +98,96 @@ void Graph::DeleteShape()
 		}
 	}
 }
-void Graph::Duplicatee(GUI* pUI)
+
+void Graph::scramble(GUI*pUI)
 {
-	pUI->ClearDrawArea();
-	for (auto shapepp : shapesList) {
+	srand(time(0));
+	int dist1y = (rand() % 500);
+	int dist1x = (rand() % 1000);
+	for (int i = 0; i < shapesList.size(); i++) {
 		pUI->ClearDrawArea();
-	//	shapepp->Duplicate(pUI);
+		shapesList[i]->Move(dist1x,dist1y);
+		
+	}
+
+}
+
+void Graph::Duplicate(GUI* pUI)
+{
+	//cout << "Dupl";
+	{
+		//pUI->ClearDrawArea();
+		/*for (auto shapePointer : shapesList)
+		{
+			shapePointer->Draw(pUI); 
+		}*/
+
+		for (int i = 0; i < shapesList2.size();i++) {
+			//shapesList[j]->Draw(pUI);
+			//shapesList2[i]->Duplicate(pUI);
+			cout << "nnnn";
+			Addshape(shapesList[i]);
+
+		}
+		
+	}
+	cout << shapesList.size();
+}
+
+void Graph::Sendtoback(GUI* pUI)
+{
+	if (GetSelected() == nullptr) {
+		pUI->PrintMessage("CHOOSE a shape first ");
+	}
+	else if (GetSelected() != nullptr)
+	{
+		pUI->PrintMessage("CHOOSE the shape to send back : ");
+		shape* temp = shapesList[0];
+		shapesList[0] = GetSelected();
+		for (int i = 0; i < shapesList.size(); i++) {
+			if (shapesList[i] == GetSelected()) {
+				shapesList[0] = GetSelected();
+				shapesList[i] = temp;
+				cout << "did we get here";
+			}
+
+		}
+		for (auto shapePointer : shapesList) {
+			shapePointer->Draw(pUI);
+			cout << "hnnnnaaa";
+		}
+		
+		pUI->ClearStatusBar();
+	}
+
+	else if (GetSelected() == nullptr)
+	{
+		pUI->PrintMessage("YOU DID NOT SELECT A SHAPE ");
+		color col = pUI->getCrntFillColor();
+
+
 	}
 }
 
+void Graph::Hide(GUI* pUI) {
+
+	for (int i = 0; i < shapesList.size(); i++) {
+		int x = shapesList[i]->Getshapeparameters()[0];
+		int y = shapesList[i]->Getshapeparameters()[1];
+		int width = shapesList[i]->Getshapeparameters()[2];
+		int height = shapesList[i]->Getshapeparameters()[3];
+		window* pWind = pUI->GetpWind();//point-(height,width
+		shapesList[i]->ChngDrawClr(BLACK);
+		pWind->DrawImage("images\\MenuIcons\\Menu_Card.jpg", x , y , width, height);
+		cout << shapesList.size();
+		//point-height,width
+
+	}
+}
+void Graph::UnHide(GUI* pUI) {
+	for (int i = 0; i < shapesList.size(); i++) {
+		window* pWind = pUI->GetpWind();
+		pUI->ClearDrawArea();
+		shapesList[i]->Draw(pUI);
+	}
+}

@@ -57,14 +57,19 @@ private:
 		ICON_Border,
 		ICON_Fill,
 		ICON_Draw,
+		ICON_Copy,
 		ICON_SAVE,
 		ICON_LOAD,
 		ICON_EXIT,
 		ICON_DELETE,
 		ICON_RESIZE,
-		ICON_UNHIDE,
-		ICON_HIDE,
+		ICON_ROTATE,
+		ICON_PLAY,
+		ICON_SCRAMBLE,
 		ICON_DUPLICATE,
+		ICON_MOVE,
+		ICON_SEND,
+		
 		DRAW_ICON_COUNT,		//no. of menu icons ==> This should be the last line in this enum
 
 	};
@@ -73,10 +78,14 @@ private:
 	{
 		//Note: Icons are ordered here as they appear in menu
 		//If you want to change the menu icons order, change the order here
-
+		ICON_HIDE,
+		//ICON_UNHIDE,
+		//ICON_HIDE,
 		//TODO: Add more icons names here
+		ICON_DRAW,
 
-		PLAY_ICON_COUNT		//no. of menu icons ==> This should be the last line in this enum
+		
+		PLAY_ICON_COUNT,		//no. of menu icons ==> This should be the last line in this enum
 
 	};
 
@@ -119,10 +128,13 @@ public:
 	GUI();
 
 	// Input Functions  ---------------------------
-	void GetPointClicked(int& x, int& y) const;//Get coordinate where user clicks
+	void GetPointClicked(int& x, int& y) const;
+	double distance(int x1, int y1, int x2, int y2)const;
+	//Get coordinate where user clicks
 	string GetSrting() const;	 //Returns a string entered by the user
 	operationType GetUseroperation() const; //Read the user click and map to an operation
-
+	window* GetpWind() const;
+	//window* GetMouseCoordinates()const;
 	// Output Functions  ---------------------------
 	window* CreateWind(int, int, int, int) const; //creates the application window
 	void CreateDrawToolBar();	//creates Draw mode toolbar & menu
@@ -141,15 +153,17 @@ public:
 	void ClearDrawArea() const;	//Clears the drawing area
 
 	// -- shapes Drawing functions
-	void DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo,bool Hidden,bool unhidden, bool duplicated) const;  //Draw a rectangle
-	void DrawTri(Point P1, Point P2,Point P3, GfxInfo TriGfxInfo, bool Hidden, bool unhidden, bool duplicated) const;  //Draw a Trinangle
-	void DrawL(Point P1, Point P2, GfxInfo LGfxInfo, bool Hidden, bool unhidden, bool duplicated) const;  //Draw a Line
-	void DrawSQU(int* arrx, int* arrY, int nvertices, GfxInfo SQUGfxInfo, bool Hidden, bool unhidden, bool duplicated) const;  //Draw a Square
-	void DrawOVAL(Point P1, Point P2, GfxInfo EGfxInfo, bool Hidden, bool unhidden, bool duplicated) const;  //Draw a Ellipse
-	void DrawCircle(Point P1, int raduis, GfxInfo CGfxInfo, bool Hidden, bool unhidden, bool duplicated) const;  //Draw a circle
-	void DrawRPolygon(int* arrx, int* arrY, int nvertices, GfxInfo RPolygonGfxInfo, bool Hidden, bool unhidden, bool duplicated) const;  //Draw a Regular Polygon
-	void IrRegularPolygon(int* arrx, int* arry, int nvertices, GfxInfo IrRPolygonGfxInfo, bool Hidden, bool unhidden, bool duplicated) const;
-
+	void DrawRect(Point P1, Point P2, GfxInfo RectGfxInfo,bool scrambled , bool duplicated) const;  //Draw a rectangle
+	void DrawTri(Point P1, Point P2,Point P3, GfxInfo TriGfxInfo,bool scrambled, bool duplicated) const;  //Draw a Trinangle
+	void DrawL(Point P1, Point P2, GfxInfo LGfxInfo,bool scrambled, bool duplicated) const;
+	//void DrawL(Point P1, Point P2, GfxInfo LGfxInfo, bool scrambled) const;
+	//Draw a Line
+	void DrawSQU(int* arrx, int* arrY, int nvertices, GfxInfo SQUGfxInfo,bool scrambled, bool duplicated) const;  //Draw a Square
+	void DrawOVAL(Point P1, Point P2, GfxInfo EGfxInfo,bool scrambled, bool duplicated) const;  //Draw a Ellipse
+	void DrawCircle(Point P1, int raduis, GfxInfo CGfxInfo,bool scrambled, bool duplicated) const;  //Draw a circle
+	void DrawRPolygon(int* arrx, int* arrY, int nvertices, GfxInfo RPolygonGfxInfo,bool scrambled, bool duplicated) const;  //Draw a Regular Polygon
+	void IrRegularPolygon(int* arrx, int* arry, int nvertices, GfxInfo IrRPolygonGfxInfo) const;
+	void DuplicateRect(Point P1, Point P2, GfxInfo RectGfxInfo) const;
 
 	///Make similar functions for drawing all other shapes.
 
@@ -163,6 +177,7 @@ public:
 	void setCrntPenWidth(int Pen);
 	bool getFillSt()const;
 	bool getIsFilled();
+
 
 
 

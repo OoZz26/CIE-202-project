@@ -50,24 +50,33 @@ string shape::colortostring(color c)
 string shape::save(ofstream& savefile, string filename, string fcl, string drc, string pnw) {
 	return ",";
 }
-bool shape::Is_Hidden() const
+
+void shape::setShapeCut(bool cut)
 {
-	return this->Hidden;
-}
-void shape::appear()
-{
-	this->Hidden = false;
-	this->unhidden = true;
+	shapeCut = cut;
 }
 
-void shape::disappear()
+bool shape::IsCutOr() const
 {
-	this->Hidden = true;
-	this->unhidden = false;
-
+	return shapeCut;
 }
 
+bool shape::isFilled() const
+{
+	return ShpGfxInfo.isFilled;
+}
 void shape::setduplicate()
 {
 	this->duplicated = true;
+}
+void shape::setscrambled()
+{
+	this->scrambled = true;
+}
+void shape::setnotduplicated()
+{
+	this->duplicated = false();
+}
+void shape::setnotscrambled() {
+	this->scrambled = false;
 }
