@@ -1,0 +1,19 @@
+﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  opPaste.cpp
+  opSelect.cpp
+  opAddRegularPolygon.cpp
+  controller.cpp
+  RegularPolygon.cpp
+D:\cs-project\RegularPolygon.cpp(11,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\cs-project\RegularPolygon.cpp(14,22): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\cs-project\RegularPolygon.cpp(15,22): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\cs-project\RegularPolygon.cpp(48,23): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\cs-project\RegularPolygon.cpp(52,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\cs-project\RegularPolygon.cpp(60,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+D:\cs-project\RegularPolygon.cpp(100,52): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\cs-project\RegularPolygon.cpp(101,52): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Generating Code...
+D:\cs-project\RegularPolygon.cpp(125): warning C4172: returning address of local variable or temporary: listofparameters
+D:\cs-project\controller.cpp(274): warning C4715: 'controller::stringtocolor': not all control paths return a value
+Circle.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
+  CIE202-project.vcxproj -> D:\cs-project\Debug\CIE202-project.exe

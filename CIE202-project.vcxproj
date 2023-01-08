@@ -13,17 +13,18 @@
   <PropertyGroup Label="Globals">
     <ProjectName>CIE202-project</ProjectName>
     <ProjectGuid>{1AC3DDD7-FDDE-487E-A2A4-52A8FCF7BDB9}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -128,6 +129,7 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Circle.cpp" />
     <ClCompile Include="CMUgraphicsLib\auxil.cpp" />
     <ClCompile Include="CMUgraphicsLib\CMUgraphics.cpp" />
     <ClCompile Include="CMUgraphicsLib\image.cpp" />
@@ -163,15 +165,56 @@
     <ClCompile Include="CMUgraphicsLib\jpeg\jquant1.c" />
     <ClCompile Include="CMUgraphicsLib\jpeg\jquant2.c" />
     <ClCompile Include="CMUgraphicsLib\jpeg\jutils.c" />
+    <ClCompile Include="Duplicate.cpp" />
     <ClCompile Include="GUI\GUI.cpp" />
     <ClCompile Include="controller.cpp" />
+    <ClCompile Include="hide.cpp" />
+    <ClCompile Include="IrRegularPolygon.cpp" />
+    <ClCompile Include="Line.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Move.cpp" />
+    <ClCompile Include="opAddCircle.cpp" />
+    <ClCompile Include="opAddIrRegularPolygon.cpp" />
+    <ClCompile Include="opAddLine.cpp" />
+    <ClCompile Include="opAddOval.cpp" />
+    <ClCompile Include="opAddRegularPolygon.cpp" />
+    <ClCompile Include="opAddSquare.cpp" />
+    <ClCompile Include="opDel.cpp" />
+    <ClCompile Include="operations\OpAddPen.cpp" />
     <ClCompile Include="operations\opAddRect.cpp" />
+    <ClCompile Include="opAddTriangle.cpp" />
+    <ClCompile Include="operations\opAddSelect.cpp" />
+    <ClCompile Include="operations\opBorderWidth.cpp" />
+    <ClCompile Include="operations\OpChangeColor.cpp" />
+    <ClCompile Include="operations\opCopy.cpp" />
+    <ClCompile Include="operations\opCut.cpp" />
+    <ClCompile Include="operations\opDrawColor.cpp" />
+    <ClCompile Include="operations\opFillColor.cpp" />
+    <ClCompile Include="operations\opPaste.cpp" />
+    <ClCompile Include="operations\opStartGame.cpp" />
+    <ClCompile Include="opExit.cpp" />
+    <ClCompile Include="opLoad.cpp" />
+    <ClCompile Include="opModeDraw.cpp" />
+    <ClCompile Include="opModePlay.cpp" />
+    <ClCompile Include="opResize.cpp" />
+    <ClCompile Include="opRotate.cpp" />
+    <ClCompile Include="opSelect.cpp" />
+    <ClCompile Include="opUndo.cpp" />
+    <ClCompile Include="Oval.cpp" />
+    <ClCompile Include="Redo.cpp" />
+    <ClCompile Include="RegularPolygon.cpp" />
+    <ClCompile Include="Save.cpp" />
+    <ClCompile Include="Scramble.cpp" />
+    <ClCompile Include="Sendtoback.cpp" />
     <ClCompile Include="Shapes\Graph.cpp" />
     <ClCompile Include="Shapes\Shape.cpp" />
     <ClCompile Include="Shapes\Rect.cpp" />
+    <ClCompile Include="Square.cpp" />
+    <ClCompile Include="Triangle.cpp" />
+    <ClCompile Include="Unhide.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Circle.h" />
     <ClInclude Include="CMUgraphicsLib\auxil.h" />
     <ClInclude Include="CMUgraphicsLib\CMUgraphics.h" />
     <ClInclude Include="CMUgraphicsLib\colors.h" />
@@ -192,15 +235,55 @@
     <ClInclude Include="CMUgraphicsLib\jpeg\jpegint.h" />
     <ClInclude Include="CMUgraphicsLib\jpeg\jpeglib.h" />
     <ClInclude Include="CMUgraphicsLib\jpeg\jversion.h" />
+    <ClInclude Include="Duplicate.h" />
     <ClInclude Include="GUI\GUI.h" />
     <ClInclude Include="controller.h" />
     <ClInclude Include="DEFS.h" />
+    <ClInclude Include="hide.h" />
+    <ClInclude Include="IrRegularPolygon.h" />
+    <ClInclude Include="Line.h" />
+    <ClInclude Include="Move.h" />
+    <ClInclude Include="opAddCircle.h" />
+    <ClInclude Include="opAddIrRegularPolygon.h" />
+    <ClInclude Include="opAddLine.h" />
+    <ClInclude Include="opAddOval.h" />
+    <ClInclude Include="opAddRegularPolygon.h" />
+    <ClInclude Include="opAddSquare.h" />
+    <ClInclude Include="opDel.h" />
+    <ClInclude Include="operations\OpAddPen.h" />
     <ClInclude Include="operations\opAddRect.h" />
+    <ClInclude Include="operations\opAddSelect.h" />
+    <ClInclude Include="operations\opBorderWidth.h" />
+    <ClInclude Include="operations\OpChangeColor.h" />
+    <ClInclude Include="operations\opCopy.h" />
+    <ClInclude Include="operations\opCut.h" />
+    <ClInclude Include="operations\opDrawColor.h" />
     <ClInclude Include="operations\operation.h" />
+    <ClInclude Include="opAddTriangle.h" />
+    <ClInclude Include="operations\opFillColor.h" />
+    <ClInclude Include="operations\opPaste.h" />
+    <ClInclude Include="operations\opStartGame.h" />
+    <ClInclude Include="opExit.h" />
+    <ClInclude Include="opLoad.h" />
+    <ClInclude Include="opModeDraw.h" />
+    <ClInclude Include="opModePlay.h" />
+    <ClInclude Include="opResize.h" />
+    <ClInclude Include="opRotate.h" />
+    <ClInclude Include="opSave.h" />
+    <ClInclude Include="opSelect.h" />
+    <ClInclude Include="opUndo.h" />
+    <ClInclude Include="Oval.h" />
+    <ClInclude Include="Redo.h" />
+    <ClInclude Include="RegularPolygon.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="Scramble.h" />
+    <ClInclude Include="Sendtoback.h" />
     <ClInclude Include="Shapes\Graph.h" />
     <ClInclude Include="Shapes\Shape.h" />
     <ClInclude Include="Shapes\Rect.h" />
+    <ClInclude Include="Square.h" />
+    <ClInclude Include="Triangle.h" />
+    <ClInclude Include="Unhide.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="CIE202-project.rc" />

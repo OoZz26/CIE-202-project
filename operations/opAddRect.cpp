@@ -8,7 +8,22 @@
 opAddRect::opAddRect(controller * pCont):operation(pCont)
 {}
 opAddRect::~opAddRect()
-{} 
+{}
+void opAddRect::Undo()
+{
+	Graph* pGr = pControl->getGraph();
+	Graph* pGr2 = pControl->getGraph();
+	pGr->pushundo(pGr2->getshapelist());
+	pGr2->popShapelist();
+	//GUI* pUI = pControl->GetUI();
+	//pUI->PrintMessage("done");
+
+}
+
+void opAddRect::Redo()
+{
+}
+
 
 //Execute the operation
 void opAddRect::Execute() 
@@ -30,17 +45,22 @@ void opAddRect::Execute()
 	pUI->ClearStatusBar();
 
 	//Preapre all rectangle parameters
-	GfxInfo RectGfxInfo;
-	
+	GfxInfo RectGfxInfo;	//default is not filled
 	//get drawing, filling colors and pen width from the interface
 	RectGfxInfo.DrawClr = pUI->getCrntDrawColor();
-	RectGfxInfo.FillClr = pUI->getCrntFillColor();
+	//RectGfxInfo.FillClr = pUI->getCrntFillColor();
 	RectGfxInfo.BorderWdth = pUI->getCrntPenWidth();
+	if (pUI->getFillSt() == true)
+	{
+		RectGfxInfo.FillClr = pUI->getCrntFillColor();
+		RectGfxInfo.isFilled = true;
+	}
+	else
+	{
+		RectGfxInfo.isFilled = false;
+	}
 
-
-	RectGfxInfo.isFilled = false;	//default is not filled
 	RectGfxInfo.isSelected = false;	//defualt is not selected
-
 
 	//Create a rectangle with the above parameters
 	Rect *R=new Rect(P1, P2, RectGfxInfo);
@@ -50,5 +70,10 @@ void opAddRect::Execute()
 
 	//Add the rectangle to the list of shapes
 	pGr->Addshape(R);
+	pGr->Addshape2(R);
 
 }
+
+
+
+
