@@ -220,7 +220,11 @@ operation* controller::topOpetrations()
 
 	return OPerations.top();
 }
+operation* controller::topREDO()
+{
 
+	return Redo.top();
+}
 void controller::popOpeartion()
 
 {
@@ -230,7 +234,7 @@ void controller::popOpeartion()
 
 void controller::popRedo()
 {
-	OPerations.push(Redo.top());
+	/*OPerations.push(Redo.top());*/
 	Redo.pop();
 }
 

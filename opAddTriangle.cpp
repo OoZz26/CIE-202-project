@@ -20,6 +20,11 @@ void opAddTriangle::Undo()
 }
 void opAddTriangle::Redo()
 {
+	//Graph* pGr = pControl->getGraph();
+	Graph* pGr2 = pControl->getGraph();
+	//pGr->pushundo(pGr2->getshapelist());
+	pGr2->popundovector();
+
 }
 //Execute the operation
 void opAddTriangle::Execute()

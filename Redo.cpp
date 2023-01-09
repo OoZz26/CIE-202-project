@@ -19,8 +19,9 @@ void opRedo::Execute()
 {
 
 	GUI* pUI = pControl->GetUI();
+
 	if (pControl->countp() > 0) {
-		operation* op = pControl->topOpetrations();
+		operation* op = pControl->topREDO();
 
 
 

@@ -22,6 +22,11 @@ void opAddRect::Undo()
 
 void opAddRect::Redo()
 {
+	//Graph* pGr = pControl->getGraph();
+	Graph* pGr2 = pControl->getGraph();
+	//pGr->pushundo(pGr2->getshapelist());
+	pGr2->popundovector();
+	
 }
 
 

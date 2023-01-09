@@ -31,6 +31,8 @@ public:
 	int countp();
 	Graph* getGraph() const;
 	operation* topOpetrations();
+	operation* topREDO();
+		
 	void popOpeartion();
 	void popRedo();
 	int count();

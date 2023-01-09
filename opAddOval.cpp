@@ -21,6 +21,11 @@ void opAddOval::Undo()
 
 void opAddOval::Redo()
 {
+	//Graph* pGr = pControl->getGraph();
+	Graph* pGr2 = pControl->getGraph();
+	//pGr->pushundo(pGr2->getshapelist());
+	pGr2->popundovector();
+
 }
 
 //Execute the operation

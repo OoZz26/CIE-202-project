@@ -30,14 +30,29 @@ void Graph::popShapelist()
 {
 	cout << shapesList.size()<<endl;
 	undoshapesList.push_back(shapesList.back());
+	
 	cout << undoshapesList.back();
+	cout << shapesList.back();
+
 	shapesList.pop_back();
 	cout << "ss" << endl;
 	cout << shapesList.size() << endl;
 
 	
 }
+void Graph::popundovector() {
+	cout << "test" << endl;
+	cout << undoshapesList.size() << endl;
+	shapesList.push_back(undoshapesList.back());
 
+	cout << undoshapesList.back()<<endl;
+	cout << shapesList.back()<<endl;
+
+	shapesList.pop_back();
+	cout << "ss" << endl;
+	cout << shapesList.size() << endl;
+
+}
 shape* Graph::getshapelist()
 {
 	return shapesList.back();
@@ -156,6 +171,32 @@ vector<shape*> Graph::GetCopied() {
 	return CopiedV;
 
 }
+void Graph::Refresh() {
+	for (int i = 0; i < shapesList.size(); i++) {
+		shapesList.clear();
+	}
+}
+void Graph::Undo1() {
+	//Refresh();
+	//for (int i = 0; i < undoshapesList.size(); i++) {
+	//	shapesList.push_back(redoshapesList[i]);
+
+}
+
+//void Graph::Undo1() {
+//	Refresh();
+//	for (int i = 0; i < undoshapesList.size(); i++) {
+//		shapesList.push_back(redoshapesList[i]);
+//
+//}
+
+void Graph::Redo1()
+{
+	//Refresh();
+	//for (int i = 0; i < undoshapesList.size(); i++) {
+	//	shapesList.push_back(redoshapesList[i]);
+	//}
+}
 
 
 
@@ -178,23 +219,23 @@ void Graph::setCutShape()
 	//	}
 	//}
 	//}
-	//for (unsigned int i = 0;i< shapesList.size();i++)
+	// 
+	//for (unsigned int i = 0; i < shapesList.size(); i++)
 	//{
 	//	//shapeCount++;
 	//	if (shapesList[i]->IsSelected())
 	//	{
-	//		if (selectedshapes[i] == shapesList[i])
-	//		{
-	//			i++;
+	//		//if (selectedshapes[i] == shapesList[i])
+	//			//i++;
 	//			//shapesList.pop_back();
-	//			shapesList.erase(shapesList.begin() + i);
-	//		}
+	//		shapesList.erase(shapesList.begin() + i);
+
 	//	}
 	//}
 
 
 
-	setCopiedShape();
+	//setCopiedShape();
 	//int shapeCount = -1;
 	//for (auto selected : selectedshapes)
 	//{

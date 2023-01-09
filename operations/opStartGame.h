@@ -14,7 +14,7 @@ public:
 	void Redo() override;
 	opStartGame(controller* pCont);
 	virtual ~opStartGame();
-	int score();
+	int score(int m, int mm);
 
 	virtual void Execute();
 

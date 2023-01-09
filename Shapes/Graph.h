@@ -12,6 +12,7 @@ class Graph
 {
 private:
 	vector <shape*> undoshapesList;
+	vector <shape*> redoshapesList;
 	vector <shape*> shapesList;
 	vector <shape*> shapesList2;
 	//a container to hold all shapes	
@@ -20,6 +21,8 @@ private:
 public:										
 	Graph();
 	~Graph();
+
+	void popundovector();
 	void popShapelist();
 	shape* topundo();
 	shape* getshapelist();
@@ -44,7 +47,9 @@ public:
 	void setCopiedShape();
 	vector <shape*> CopiedV;
 	vector <shape*> GetCopied();
-
+	void Undo1();
+	void Redo1();
+	void Refresh();
 	void scramble(GUI* pUI);
 	void scramble();
 	void Duplicate(GUI* pUI);
