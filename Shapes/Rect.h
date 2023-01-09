@@ -13,6 +13,7 @@ public:
 	virtual void Rotate();
 	void Duplicate(GUI* pui);
 	int* Getshapeparameters();
+	void zoom(double s);
 	virtual ~Rect();
 	bool IsINSHAPE(Point test);
 	virtual void Draw(GUI* pUI) const;

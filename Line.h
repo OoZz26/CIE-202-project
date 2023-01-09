@@ -14,6 +14,7 @@ public:
 	int* Getshapeparameters();
 	void Move(int& e, int& s);
 	void Duplicate(GUI* pUI);
+	void zoom(double s);
 	void Duplicate();
 	Line(Point, Point, GfxInfo shapeGfxInfo);
 	void getncenter(int x1 , int x2 ,int y1,int y2);

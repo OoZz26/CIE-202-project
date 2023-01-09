@@ -129,3 +129,9 @@ void Square::Duplicate(GUI* pUI) {
 		ArrY[i] = ArrY[i] + 50;
 	}
 }
+void Square::zoom(double s) {
+	for (int i = 0; i < 4; i++) {
+		ArrX[i] = s * ArrX[i];
+		ArrY[i] = s * ArrY[i];
+	}
+}

@@ -39,8 +39,9 @@ public:
 	void Sendtoback(GUI* pUI);
 	void Hide(GUI* pUI);
 	void UnHide(GUI* pUI);
+	void ZoomOpration(double zoomvalue);
 	//void Duplicate();
 
 	vector<shape*> getshapeslist();
-
+	bool match(GUI* pUI);
 };

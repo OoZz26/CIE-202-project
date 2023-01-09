@@ -133,3 +133,13 @@ int* IrRegularPolygon::Getshapeparameters()
 {
 	return nullptr;
 }
+void IrRegularPolygon::zoom(double s) {
+	int z1, z2;
+	for (int i = 0; i < Vertices_num; i++) {
+		z1 = ArrX[i];
+		z2 = ArrY[i];
+
+		ArrX[i] = s * z1;
+		ArrY[i] = s * z2;
+	}
+}

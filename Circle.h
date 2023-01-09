@@ -16,6 +16,7 @@ public:
 	virtual void Rotate();
 	void Move(int& e, int& s);
 	void Duplicate(GUI* pUI);
+	void zoom(double s);
 	virtual ~Circle();
 	int* Getshapeparameters();
 	virtual void Draw(GUI* pUI) const;

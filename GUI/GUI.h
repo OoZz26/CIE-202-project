@@ -70,6 +70,8 @@ private:
 		ICON_MOVE,
 		ICON_SEND,
 		
+		ICON_Zoom_in,
+		ICON_Zoom_out,
 		DRAW_ICON_COUNT,		//no. of menu icons ==> This should be the last line in this enum
 
 	};
@@ -79,6 +81,7 @@ private:
 		//Note: Icons are ordered here as they appear in menu
 		//If you want to change the menu icons order, change the order here
 		ICON_HIDE,
+		Icone_MATCH,
 		//ICON_UNHIDE,
 		//ICON_HIDE,
 		//TODO: Add more icons names here

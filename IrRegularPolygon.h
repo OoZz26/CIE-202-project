@@ -12,6 +12,7 @@ public:
 	virtual void Resize(double factor);	//Resize the shape
 	virtual void Rotate();
 	int* Getshapeparameters();
+	void zoom(double s);
 	virtual ~IrRegularPolygon();
 	void Duplicate(GUI* pUI);
 	bool IsINSHAPE(Point test);

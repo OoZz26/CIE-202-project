@@ -137,3 +137,11 @@ void Oval::Duplicate(GUI* pUI) {
 
 	//pUI->DuplicateRect(Corner1, Corner2, ShpGfxInfo);
 }
+void Oval::zoom(double s) {
+
+	P1.x = s * P1.x;
+	P1.y = s * P1.y;
+	P2.x = s * P2.x;
+	P2.y = s * P2.y;
+
+}

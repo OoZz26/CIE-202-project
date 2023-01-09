@@ -14,6 +14,7 @@ public:
 	int* Getshapeparameters();
 	void Move(int& e, int& s);
 	void Duplicate(GUI* pUI);
+	void zoom(double s);
 	virtual ~Oval();
 	bool IsINSHAPE(Point test);
 	virtual void Draw(GUI* pUI) const;

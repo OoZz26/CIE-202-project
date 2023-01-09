@@ -42,7 +42,7 @@ void Graph::Addshape(shape* pShp)
 void Graph::Addshape2(shape* pShp)
 {
 	//Add a new shape to the shapes vector
-	//shapesList2.push_back(pShp);
+	shapesList2.push_back(pShp);
 	//shapesList2.push_back(pShp);
 	//shapesList2.push_back(pShp);
 }
@@ -124,7 +124,7 @@ void Graph::Duplicate(GUI* pUI)
 
 		for (int i = 0; i < shapesList2.size();i++) {
 			//shapesList[j]->Draw(pUI);
-			//shapesList2[i]->Duplicate(pUI);
+			shapesList2[i]->Duplicate(pUI);
 			cout << "nnnn";
 			Addshape(shapesList[i]);
 
@@ -133,6 +133,7 @@ void Graph::Duplicate(GUI* pUI)
 	}
 	cout << shapesList.size();
 }
+//void Graph::
 
 void Graph::Sendtoback(GUI* pUI)
 {
@@ -189,5 +190,47 @@ void Graph::UnHide(GUI* pUI) {
 		window* pWind = pUI->GetpWind();
 		pUI->ClearDrawArea();
 		shapesList[i]->Draw(pUI);
+	}
+}
+void Graph::ZoomOpration(double zoomvalue) {
+	for (int i = 0; i < shapesList.size(); i++)
+		shapesList[i]->zoom(zoomvalue);
+}
+//
+bool Graph::match(GUI* pUI) {
+	int shapesmatches;
+	if (GetSelected() == nullptr) {
+		pUI->PrintMessage("draw the shapes first");
+	}
+	else if (GetSelected() != nullptr)
+	{
+		for (auto selected : shapesList)
+		{
+			for (int i = 0; i < shapesList.size(); i++) {
+
+
+				for (int j = 0; j < shapesList2.size(); j++) {
+
+					if (shapesList[i] == shapesList2[j]) {
+						int g = i - j;
+						//shapesList[i]->distance(x1, y1, x2, y2) = shapesList2[i]->distance(x1, y1, x2, y2);
+
+						return true;
+
+					}
+					else if (shapesmatches == 0) {};
+					else {
+						//shapesList[i]->Hide( pUI);
+						pUI->ClearDrawArea();
+						return false;
+					}
+
+				}
+
+			}
+ 
+	
+
+		
 	}
 }

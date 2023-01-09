@@ -19,6 +19,7 @@ public:
 	virtual void Rotate();
 	int* Getshapeparameters();
 	void Duplicate(GUI* pUI);
+	void zoom(double s);
 	virtual ~RegularPolygon();
 	void Draw(GUI* pUI) const;
 	bool IsINSHAPE(Point test);

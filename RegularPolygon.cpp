@@ -130,3 +130,9 @@ void RegularPolygon::Duplicate(GUI* pUI) {
 		ArrY[i] = ArrY[i] + 50;
 	}
 }
+void RegularPolygon::zoom(double s) {
+	for (int i = 0; i < Vertices_num; i++) {
+		ArrX[i] = s * ArrX[i];
+		ArrY[i] = s * ArrY[i];
+	}
+}

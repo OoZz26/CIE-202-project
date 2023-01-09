@@ -19,7 +19,7 @@ public:
 	shape(GfxInfo shapeGfxInfo);
 
 	virtual ~shape() {}
-	double distance(int x1,int y1,int x2,int y2);
+	virtual double distance(int x1,int y1,int x2,int y2);
 	double tri_area(Point p1, Point p2, Point p3 );
 	void SetSelected(bool s);	//select/unselect the shape
 	bool IsSelected() const;	//check whether fig is selected
@@ -49,8 +49,11 @@ public:
 	virtual void Rotate() = 0;	//Rotate the shape
 	virtual void Resize(double factor) = 0;	//Resize the shape
 	virtual void Move(int& , int&) = 0;		//Move the shape
-	//virtual void Duplicate(GUI* pUI) = 0;
+	virtual void Duplicate(GUI* pUI) = 0;
 	virtual int* Getshapeparameters() = 0;
+	virtual void zoom(double s) = 0;
+	//virtual void match(double m1, double m2)=0;
+
 	//virtual void scramble() = 0;
 	//virtual void Scramble() = 0;
 	//virtual void Save(ofstream &OutFile) = 0;	//Save the shape parameters to the file

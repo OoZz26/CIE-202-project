@@ -21,5 +21,6 @@ public:
 	int getsmallest(int k, int n, int l);
 	int getbiggest(int k, int n, int l);
 	void Move(int& e, int& s);
+	void zoom(double s);
 };
 

@@ -94,3 +94,7 @@ void Circle::Duplicate(GUI* pUI) {
 	Raduis.x = Raduis.x + 50;
 	Raduis.y = Raduis.y + 50;
 }
+void Circle::zoom(double s) {
+	double z = Distance;
+	Distance = s * z;
+}

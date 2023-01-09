@@ -28,6 +28,10 @@
 #include"Move.h"
 #include"Sendtoback.h"
 #include"hide.h"
+#include"opZoomIN.h"
+#include"opZoomOUT.h"
+//#include"opMatch.h"
+
 //Constructor
 controller::controller()
 {
@@ -148,6 +152,17 @@ operation* controller::createOperation(operationType OpType)
 		case HIDE:
 			pOp = new opHide(this);
 			break;
+		case ZOOMIN:
+			pOp = new opZoomIN(this);
+			break;
+		case ZOOMOUT:
+			pOp = new opZoomOUT(this);
+			break;
+			
+		/*case MATCH:
+			pOp = new opMatch(this);
+			break;*/
+
 		//case STATUS:	//a click on the status bar ==> no operation
 		//	break;
 	}

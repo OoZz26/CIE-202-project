@@ -150,6 +150,15 @@ void Triangle::Move(int& e, int& s)
 	Corner1.y = (rand() % 500);
 	Corner2.x = Corner1.x - dist1x;
 	Corner2.y = Corner1.y - dist1y;*/
-
+}
+void Triangle::zoom(double s) {
+	Corner1.x = s * Corner1.x;
+	Corner1.y = s * Corner1.y;
+	s;
+	Corner2.x = s * Corner2.x;
+	Corner2.y = s * Corner2.y;
+	s;
+	Corner3.x = s * Corner3.x;
+	Corner3.y = s * Corner3.y;
 
 }

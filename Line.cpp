@@ -132,3 +132,10 @@ void Line::Duplicate(GUI*pUI) {
 	end.x = end.x + 150;
 	end.y = end.y + 150;
 }
+void Line::zoom(double s) {
+	start.x = start.x * s;
+	start.y = start.y * s;
+
+	end.x = end.x * s;
+	end.y = end.y * s;
+}
