@@ -23,5 +23,6 @@ public:
 	virtual string save(ofstream& savefile, string filename, string fcl, string drc, string pnw);
 	Point GetStart();
 	Point GetEnd();
+	void zoom(double s);
 };
 

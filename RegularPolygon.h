@@ -26,5 +26,6 @@ public:
 	string save(ofstream& savefile, string filename, string fcl, string drc, string pnw);
 	virtual void Paste(Point p);
 	shape* getPaste();
+	void zoom(double s);
 	shape* paste;
 };

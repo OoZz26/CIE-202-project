@@ -167,3 +167,15 @@ Point Triangle::GetCorner3()
 {
 	return Corner3;
 }
+void Triangle::zoom(double s) {
+	Corner1.x = s * Corner1.x;
+	Corner1.y = s * Corner1.y;
+	s;
+	Corner2.x = s * Corner2.x;
+	Corner2.y = s * Corner2.y;
+	s;
+	Corner3.x = s * Corner3.x;
+	Corner3.y = s * Corner3.y;
+
+}
+

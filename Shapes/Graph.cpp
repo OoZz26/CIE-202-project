@@ -343,3 +343,7 @@ void Graph::UnHide(GUI* pUI) {
 		shapesList[i]->Draw(pUI);
 	}
 }
+void Graph::ZoomOpration(double zoomvalue) {
+	for (int i = 0; i < shapesList.size(); i++)
+		shapesList[i]->zoom(zoomvalue);
+}

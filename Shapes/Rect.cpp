@@ -131,3 +131,11 @@ Point Rect::getP2()
 {
 	return Corner2;
 }
+void Rect::zoom(double s) {
+	Corner1.x = Corner1.x * s;
+
+	Corner1.y = Corner1.y * s;
+	Corner2.x = Corner2.x * s;
+	Corner2.y = Corner2.y * s;
+
+}

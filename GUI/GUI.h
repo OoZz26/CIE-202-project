@@ -73,7 +73,8 @@ private:
 		ICON_REDO,
 		ICON_MOVE,
 		ICON_SEND,
-		
+		ICON_Zoom_in,
+		ICON_Zoom_out,
 		DRAW_ICON_COUNT,		//no. of menu icons ==> This should be the last line in this enum
 
 	};

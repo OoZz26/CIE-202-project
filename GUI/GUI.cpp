@@ -142,7 +142,9 @@ operationType GUI::GetUseroperation() const
 			case ICON_DUPLICATE:return DUPL;
 			case ICON_MOVE:return MOVE;
 			case ICON_SEND:return SEND_BACK;
-			
+			case ICON_Zoom_in:return ZOOMIN;
+			case ICON_Zoom_out:return ZOOMOUT;
+
 			default: return EMPTY;	//A click on empty place in desgin toolbar
 			}
 		}
@@ -337,7 +339,8 @@ pWind->DrawRectangle(0, 0, width, ToolBarHeight);
 	MenuIconImages[ICON_DUPLICATE]= "images\\MenuIcons\\Menu_Duplicate.jpg";
 	MenuIconImages[ICON_MOVE]= "images\\MenuIcons\\Menu_Move.jpg";
 	MenuIconImages[ICON_SEND]= "images\\MenuIcons\\Menu_Send.jpg";
-	
+	MenuIconImages[ICON_Zoom_in] = "images\\MenuIcons\\Menu_Zoom_in.jpg";
+	MenuIconImages[ICON_Zoom_out] = "images\\MenuIcons\\Menu_Zoom_out.jpg";
 	//TODO: Prepare images for each menu icon and add it to the list
 	//Draw menu icon one image at a time
 	for (int i = 0; i < DRAW_ICON_COUNT; i++)

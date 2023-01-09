@@ -26,4 +26,5 @@ public:
 	Point getP1();
 	Point getP2();
 	int getLength();
+	void zoom(double s);
 };

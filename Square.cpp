@@ -141,3 +141,9 @@ int Square::getLength()
 {
 	return Lenght;
 }
+void Square::zoom(double s) {
+	for (int i = 0; i < 4; i++) {
+		ArrX[i] = s * ArrX[i];
+		ArrY[i] = s * ArrY[i];
+	}
+}

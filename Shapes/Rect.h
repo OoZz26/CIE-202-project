@@ -20,5 +20,6 @@ public:
 	void scramble();
 	Point getP1();
 	Point getP2();
+	void zoom(double s);
 };
 

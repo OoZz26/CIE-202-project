@@ -24,4 +24,5 @@ public:
 	Point GetCenter();
 	Point GetRadius();
 	int GetDistance();
+	void zoom(double s);
 };

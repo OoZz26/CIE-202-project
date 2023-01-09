@@ -33,6 +33,8 @@
 #include "operations/opCut.h"
 #include "operations/opPaste.h"
 #include "operations/opStartGame.h"
+#include"opZoomIN.h"
+#include"opZoomOUT.h"
 //Constructor
 controller::controller()
 {
@@ -181,6 +183,12 @@ operation* controller::createOperation(operationType OpType)
 			break;
 		case START:
 			pOp = new opStartGame(this);
+			break;
+		case ZOOMIN:
+			pOp = new opZoomIN(this);
+			break;
+		case ZOOMOUT:
+			pOp = new opZoomOUT(this);
 			break;
 
 		//case STATUS:	//a click on the status bar ==> no operation

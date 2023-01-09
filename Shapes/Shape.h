@@ -52,6 +52,7 @@ public:
 	//virtual void Duplicate(GUI* pUI) = 0;
 	virtual int* Getshapeparameters() = 0;
 	GfxInfo GetGfxInfo();
+	virtual void zoom(double s) = 0;
 	//virtual void scramble() = 0;
 	//virtual void Scramble() = 0;
 	//virtual void Save(ofstream &OutFile) = 0;	//Save the shape parameters to the file
