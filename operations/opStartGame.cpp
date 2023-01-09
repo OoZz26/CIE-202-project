@@ -28,10 +28,10 @@ void opStartGame::Execute()
 	GUI* pUI = pControl->GetUI();
 	Graph* pGraph = pControl->getGraph();
 	Point P1,P2;
-	//pControl->getGraph()->Duplicate(pUI);
-	//pControl->getGraph()->Hide(pUI);
-	//pControl->getGraph()->scramble(pUI);
-	//pUI->PrintMessage("CLICK AT THE FIRST SHAPE ");
+	pControl->getGraph()->Duplicate(pUI);
+	pControl->getGraph()->Hide(pUI);
+	pControl->getGraph()->scramble(pUI);
+	pUI->PrintMessage("CLICK AT THE FIRST SHAPE ");
 	//pUI->GetPointClicked(P1.x, P1.y);
 	//pUI->PrintMessage("CLICK AT THE SECOND SHAPE ");
 	//pUI->GetPointClicked(P2.x, P2.y);
@@ -43,14 +43,14 @@ void opStartGame::Execute()
 	//	string msg = "NICE MATCH ! YOUR CURRENT SCORE IS : ( "+ to_string(sc) +" )";
 	//	pUI->PrintMessage(msg);
 	//}
-	////else
+	//else
 	//	MismatchCounter += 1;
 	//	string msg = "TRY AGAIN, YOUR CURRENT SCORE IS : ( " + to_string(sc) + " )";
 	//	shape* sh1 = pGraph->Getshape(P1);
 	//	shape* sh2 = pGraph->Getshape(P2);
 	//	//pGraph->UnHide(sh1);
 
-	pUI->ClearStatusBar();
+	//pUI->ClearStatusBar();
 
 	
 }

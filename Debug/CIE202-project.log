@@ -1,19 +1,173 @@
 ﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  opStartGame.cpp
+E:\Zewail academic years\C++ project git hub\CIE-202-project\operations\opStartGame.cpp(30,8): warning C4101: 'P1': unreferenced local variable
+E:\Zewail academic years\C++ project git hub\CIE-202-project\operations\opStartGame.cpp(30,11): warning C4101: 'P2': unreferenced local variable
   opPaste.cpp
+  opFillColor.cpp
+  opDrawColor.cpp
+  opCut.cpp
+  opCopy.cpp
+  opBorderWidth.cpp
+  opAddRect.cpp
+  OpChangeColor.cpp
+  OpAddPen.cpp
+  opUndo.cpp
   opSelect.cpp
-  opAddRegularPolygon.cpp
-  controller.cpp
-  RegularPolygon.cpp
-D:\cs-project\RegularPolygon.cpp(11,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-D:\cs-project\RegularPolygon.cpp(14,22): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-D:\cs-project\RegularPolygon.cpp(15,22): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-D:\cs-project\RegularPolygon.cpp(48,23): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-D:\cs-project\RegularPolygon.cpp(52,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-D:\cs-project\RegularPolygon.cpp(60,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-D:\cs-project\RegularPolygon.cpp(100,52): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-D:\cs-project\RegularPolygon.cpp(101,52): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  opRotate.cpp
+  opResize.cpp
+  opModePlay.cpp
+  opModeDraw.cpp
+  opExit.cpp
+E:\Zewail academic years\C++ project git hub\CIE-202-project\opExit.cpp(47,3): warning C4551: function call missing argument list
+  opDel.cpp
+  opAddTriangle.cpp
+  opAddSquare.cpp
   Generating Code...
-D:\cs-project\RegularPolygon.cpp(125): warning C4172: returning address of local variable or temporary: listofparameters
-D:\cs-project\controller.cpp(274): warning C4715: 'controller::stringtocolor': not all control paths return a value
-Circle.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
-  CIE202-project.vcxproj -> D:\cs-project\Debug\CIE202-project.exe
+  Compiling...
+  opAddRegularPolygon.cpp
+  opAddOval.cpp
+  opAddLine.cpp
+  opAddIrRegularPolygon.cpp
+  opAddCircle.cpp
+  main.cpp
+  hide.cpp
+  controller.cpp
+  Unhide.cpp
+  Triangle.cpp
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Triangle.cpp(15,19): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Triangle.cpp(16,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Triangle.cpp(17,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Triangle.cpp(18,18): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Triangle.cpp(51,55): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Triangle.cpp(52,54): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Triangle.cpp(54,55): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Triangle.cpp(55,55): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Triangle.cpp(57,55): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Triangle.cpp(58,55): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Square.cpp
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Square.cpp(7,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Square.cpp(33,24): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Square.cpp(37,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Square.cpp(45,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Square.cpp(83,52): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Square.cpp(84,52): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Shape.cpp
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Shapes\Shape.cpp(78,21): warning C4353: nonstandard extension used: constant 0 as function expression.  Use '__noop' function intrinsic instead
+  Rect.cpp
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Shapes\Rect.cpp(49,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Shapes\Rect.cpp(54,24): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Shapes\Rect.cpp(55,24): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Shapes\Rect.cpp(63,55): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Shapes\Rect.cpp(64,55): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Shapes\Rect.cpp(65,55): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Shapes\Rect.cpp(66,55): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Graph.cpp
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Shapes\Graph.cpp(215,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Shapes\Graph.cpp(218,20): warning C4018: '<': signed/unsigned mismatch
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Shapes\Graph.cpp(236,21): warning C4018: '<': signed/unsigned mismatch
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Shapes\Graph.cpp(258,21): warning C4018: '<': signed/unsigned mismatch
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Shapes\Graph.cpp(285,20): warning C4018: '<': signed/unsigned mismatch
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Shapes\Graph.cpp(299,20): warning C4018: '<': signed/unsigned mismatch
+  Sendtoback.cpp
+  Scramble.cpp
+  Save.cpp
+  RegularPolygon.cpp
+E:\Zewail academic years\C++ project git hub\CIE-202-project\RegularPolygon.cpp(11,19): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\RegularPolygon.cpp(14,22): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\RegularPolygon.cpp(15,22): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\RegularPolygon.cpp(48,23): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\RegularPolygon.cpp(52,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\RegularPolygon.cpp(60,21): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\RegularPolygon.cpp(100,52): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\RegularPolygon.cpp(101,52): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Redo.cpp
+  Oval.cpp
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Oval.cpp(7,21): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Oval.cpp(55,45): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Oval.cpp(56,45): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Oval.cpp(57,45): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Oval.cpp(58,45): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Oval.cpp(79,10): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  Generating Code...
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Oval.cpp(109): warning C4715: 'Oval::Getshapeparameters': not all control paths return a value
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Oval.cpp(86): warning C4172: returning address of local variable or temporary: list
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Oval.cpp(93): warning C4172: returning address of local variable or temporary: list
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Oval.cpp(100): warning C4172: returning address of local variable or temporary: list
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Oval.cpp(107): warning C4172: returning address of local variable or temporary: list
+E:\Zewail academic years\C++ project git hub\CIE-202-project\RegularPolygon.cpp(125): warning C4172: returning address of local variable or temporary: listofparameters
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Shapes\Rect.cpp(124): warning C4715: 'Rect::Getshapeparameters': not all control paths return a value
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Shapes\Rect.cpp(101): warning C4172: returning address of local variable or temporary: listofparameters
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Shapes\Rect.cpp(108): warning C4172: returning address of local variable or temporary: listofparameters
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Shapes\Rect.cpp(115): warning C4172: returning address of local variable or temporary: listofparameters
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Shapes\Rect.cpp(122): warning C4172: returning address of local variable or temporary: listofparameters
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Square.cpp(96): warning C4172: returning address of local variable or temporary: listofparameters
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Triangle.cpp(107): warning C4172: returning address of local variable or temporary: listofparameters
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Triangle.cpp(119): warning C4715: 'Triangle::getsmallest': not all control paths return a value
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Triangle.cpp(130): warning C4715: 'Triangle::getbiggest': not all control paths return a value
+E:\Zewail academic years\C++ project git hub\CIE-202-project\controller.cpp(274): warning C4715: 'controller::stringtocolor': not all control paths return a value
+  Compiling...
+  Move.cpp
+  Line.cpp
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Line.cpp(17,12): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Line.cpp(55,51): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Line.cpp(56,51): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Line.cpp(58,47): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Line.cpp(59,47): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Line.cpp(83,10): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  IrRegularPolygon.cpp
+E:\Zewail academic years\C++ project git hub\CIE-202-project\IrRegularPolygon.cpp(34,24): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\IrRegularPolygon.cpp(38,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\IrRegularPolygon.cpp(46,22): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\IrRegularPolygon.cpp(105,50): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\IrRegularPolygon.cpp(106,50): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  GUI.cpp
+E:\Zewail academic years\C++ project git hub\CIE-202-project\GUI\GUI.cpp(7,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\GUI\GUI.cpp(445,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\GUI\GUI.cpp(467,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\GUI\GUI.cpp(488,16): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\GUI\GUI.cpp(489,16): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\GUI\GUI.cpp(517,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\GUI\GUI.cpp(553,15): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\GUI\GUI.cpp(554,15): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\GUI\GUI.cpp(555,15): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\GUI\GUI.cpp(556,15): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\GUI\GUI.cpp(564,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\GUI\GUI.cpp(596,15): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\GUI\GUI.cpp(597,15): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\GUI\GUI.cpp(598,15): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\GUI\GUI.cpp(599,15): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\GUI\GUI.cpp(631,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\GUI\GUI.cpp(656,15): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\GUI\GUI.cpp(657,15): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\GUI\GUI.cpp(661,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\GUI\GUI.cpp(686,15): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\GUI\GUI.cpp(687,15): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\GUI\GUI.cpp(715,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\GUI\GUI.cpp(738,23): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\GUI\GUI.cpp(739,23): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\GUI\GUI.cpp(745,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\GUI\GUI.cpp(768,22): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\GUI\GUI.cpp(769,22): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\GUI\GUI.cpp(798,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\GUI\GUI.cpp(823,15): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\GUI\GUI.cpp(824,15): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\GUI\GUI.cpp(829,13): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\GUI\GUI.cpp(854,15): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\GUI\GUI.cpp(855,15): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\GUI\GUI.cpp(979,22): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\GUI\GUI.cpp(980,22): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\GUI\GUI.cpp(1008,22): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\GUI\GUI.cpp(1009,22): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Duplicate.cpp
+  Circle.cpp
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Circle.cpp(7,21): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Circle.cpp(30,8): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Circle.cpp(41,20): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+  Generating Code...
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Circle.cpp(20): warning C4172: returning address of local variable or temporary: list
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Line.cpp(115): warning C4715: 'Line::Getshapeparameters': not all control paths return a value
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Line.cpp(90): warning C4172: returning address of local variable or temporary: list
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Line.cpp(97): warning C4172: returning address of local variable or temporary: list
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Line.cpp(104): warning C4172: returning address of local variable or temporary: list
+E:\Zewail academic years\C++ project git hub\CIE-202-project\Line.cpp(111): warning C4172: returning address of local variable or temporary: list
+  CIE202-project.vcxproj -> E:\Zewail academic years\C++ project git hub\CIE-202-project\Debug\CIE202-project.exe

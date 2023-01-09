@@ -17,7 +17,7 @@ GUI::GUI()
 	StatusBarHeight = 50;
 	StatusBarWidth = 1000;
 	ToolBarHeight = 50;
-	MenuIconWidth = 40;
+	MenuIconWidth = 50;
 
 	DrawColor = BLUE;	//default Drawing color
 	FillColor = SKYBLUE;	//default Filling color
@@ -169,8 +169,8 @@ operationType GUI::GetUseroperation() const
 			{
 			case ICON_DRAW: return TO_DRAW;
 			case ICON_HIDE:return HIDE;
-			case DRAW_ICON_COUNT: return TO_DRAW;
-			case ICON_START: return START;
+			case ICON_START:
+			//case ICON_MATCH: return MATCH;
 
 
 			default: return EMPTY;	//A click on empty place in desgin toolbar
@@ -362,9 +362,10 @@ void GUI::CreatePlayToolBar()
 
 	string PLAYMenuIconImages[PLAY_ICON_COUNT];
 	PLAYMenuIconImages[ICON_DRAW] = "images\\MenuIcons\\menu_draw_Mode.jpg";
-	PLAYMenuIconImages[ICON_HIDE] = "images\\MenuIcons\\Menu_Hide.jpg";
-	PLAYMenuIconImages[ICON_START] = "images\\MenuIcons\\Menu_Start.jpg";
-	PLAYMenuIconImages[ICON_MATCH] = "images\\MenuIcons\\Menu_Match.jpg";
+	PLAYMenuIconImages[ICON_START] = "images\\MenuIcons\\Menu_PEN.jpg";
+
+	//PLAYMenuIconImages[ICON_MATCH] = "images\\MenuIcons\\Menu_Match.jpg";
+//	PLAYMenuIconImages[ICON_MATCH] = "images\\MenuIcons\\Menu_Match.jpg";
 	for (int i = 0; i < PLAY_ICON_COUNT; i++)
 		pWind->DrawImage(PLAYMenuIconImages[i], i * MenuIconWidth, 0, MenuIconWidth, ToolBarHeight);
 

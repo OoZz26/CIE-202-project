@@ -88,8 +88,8 @@ private:
 		//TODO: Add more icons names here
 		ICON_DRAW,
 		ICON_START, // start game 
-		ICON_MATCH,
-		
+		//ICON_MATCH,
+	
 		PLAY_ICON_COUNT,		//no. of menu icons ==> This should be the last line in this enum
 
 	};
